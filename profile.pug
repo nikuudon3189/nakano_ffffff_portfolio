@@ -1,0 +1,304 @@
+extends layout.pug
+
+block content
+    .wrapper
+        .hero
+            .hero__title
+                p.jp
+                    |このページでは、プロフィールに加え、
+                    br
+                    |制作の進め方や料金の考え方について紹介しています。
+                    br
+                    |ご相談の前に、制作のスタンスを知っていただく入口として
+                    br
+                    |お読みいただければ嬉しいです。
+                p.en
+                    |In addition to the profile, this page introduces our production process and fee philosophy.
+                    br
+                    |We hope you will read this page as a gateway to learn about our production stance before consulting us.
+            .hero__img
+                a(href="index.html")
+                    img(src="images/logo.svg" alt="")
+
+        .section-profile
+            .section-profile__title
+                p.jp
+                    |プロフィール
+                p.en
+                    |( Profile )
+            .section-profile__text
+                .common-body-text
+                    p.jp
+                        |徳島県出身、2001年生まれ。大阪府のグラフィックデザインの専門学校を卒業後、2023年より東京都内のデザイン制作会社に勤務。エンターテイメント関連のグラフィックデザインに携わりながら、本業ではブランディングデザインをもとにしたWeb、UI、広告、パッケージのデザインを行う。
+                    p.en
+                        |Born in Tokushima Prefecture in 2001.
+                        br
+                        |After graduating from a graphic design school in Osaka, he has been working for a design production company in Tokyo since 2023. While working in entertainment-related graphic design, in his day job he designs web, UI, advertising, and packaging based on branding design.
+            .section-profile__img
+                img(src="images/works-17.png" alt="")   
+                img(src="images/works-2.png" alt="")   
+                img(src="images/works-18.png" alt="")   
+                img(src="images/works-16.png" alt="")   
+                img(src="images/works-19.png" alt="")   
+                img(src="images/works-20.png" alt="")
+        .section-features
+            .section-features__title
+                p.jp
+                    |制作の特徴
+                p.en
+                    |(Production Features)
+            .section-features__contents
+                .gyo
+                    .line
+                    .title 
+                        p.title
+                            |目的と、伝えるべき価値を
+                            br
+                            |見つけるところから
+                    .text
+                        p.jp
+                            |なにを、なぜつくるのか。ビジュアルに落とし込む前に、その問いに向き合うところから始めます。
+                            br
+                            |ヒアリングやワークショップを通して、目的や背景を言葉にしながら、伝えるべき価値を選んでいきます。
+                            br
+                            |コンテンツやビジュアルの柱はビジュアル制作以外にも活かせる資産として残ります。
+                        p.en 
+                            |What are we creating and why? We start by facing this question before putting it into visual form.
+                            br
+                            |Through interviews and workshops, we choose the values to be communicated while verbalizing the purpose and background.
+                            br
+                            |The content and visual pillars will remain as assets that can be utilized beyond visual production.
+                    .img 
+                        img(src="images/profile-1.png" alt="")
+                .gyo
+                    .line
+                    .title 
+                        p.title
+                            |美しさと意匠のある
+                            br
+                            |ビジュアルを制作
+                    .text
+                        p.jp
+                            |色や余白、タイポグラフィなど、細部まで丁寧に整えながら、心地よく伝わるビジュアルを目指します。 美しさに意匠を宿すのは、他と重ならないかたちにするため。その独自性が世界観をつくり、見る人の記憶に残る力になります。
+                            br
+                            |美しさに意匠を宿すのは、他と重ならないかたちにするため。
+                            br
+                            |その独自性が世界観をつくり、見る人の記憶に残る力になります。
+                        p.en 
+                            |We aim to create visuals that communicate comfortably while carefully arranging details such as color, margins, and typography. 
+                            br
+                            |The beauty of the design is to create a form that does not overlap with others. 
+                            br
+                            |This uniqueness creates a worldview and the power to remain in the memory of the viewer.
+                    .img 
+                        img(src="images/profile-2.png" alt="")
+                .gyo
+                    .line
+                    .title 
+                        p.title
+                            |展開可能な設計と
+                            br
+                            |継続的なデザイン提供
+                    .text
+                        p.jp
+                            |ロゴやキービジュアルをはじめ、あらゆるタッチポイントへの展開を見据えた設計がと支援が可能です。
+                            br
+                            |継続的に同じ世界観でビジュアルを展開していくことが、ブランドやコンテンツの認知を深めてもらうためにまず必要な行為です。
+                        p.en 
+                            |We can design and support logos, key visuals, and all other touchpoints with a view to developing them into all kinds of touchpoints.
+                            br
+                            |Continuously developing visuals with the same worldview is the first necessary action to deepen awareness of the brand and its contents. 
+                    .img 
+                        img(src="images/profile-3.png" alt="")
+                .gyo
+                    .line
+        .section-flow
+            .section-flow__title
+                p.jp
+                    |制作の流れ
+                p.en
+                    |( Work flow )
+            .section-flow__contents
+                .gyo
+                    .title
+                        p.jp.title-text-jp
+                            |一例としてご紹介している理想的なフローです。
+                            br
+                            |ご予算やご希望のスケジュール、制作内容に応じて柔軟に調整いたします。
+                        p.en.title-text-en
+                            |This is an ideal flow that we present as an example.
+                            br
+                            |We will be flexible to adjust according to your budget, desired schedule, and production details.
+                .gyo
+                    .line
+                    .number 
+                        p.number
+                            |01
+                    .title
+                        p.jp
+                            |ヒヤリング、
+                            br
+                            |スケジュール作成
+                    .text
+                        p.jp
+                            |まずは現在の課題やご希望、ブランドやコンテンツの背景についてお聞かせください。
+                            br
+                            |オンライン・対面を問わず、ざっくばらんな対話の中から、本質的な目的や向かうべき方向を一緒に探っていきます。必要に応じて、これまでのコンテンツやブランドの資産の共有をお願いすることもあります。
+                        p.en 
+                            |First, we would like to hear about your current challenges, your wishes, and the background of your brand and content.We will explore together the essential objectives and the direction in which you should be heading through a frank dialogue, whether online or in person. If necessary, we may ask you to share your previous brand assets.
+                .gyo
+                    .line
+                    .number 
+                        p.number
+                            |02
+                    .title
+                        p.jp
+                            |お見積りのご提出
+                    .text
+                        p.jp
+                            |ヒアリング内容とスケジュールをもとに、制作内容に応じたお見積りをご提案いたします。 
+                            br
+                            |ご予算や優先したい点に合わせて、内容の調整も可能です。 
+                            br
+                            |ご納得いただけましたら、正式なご依頼として進行させていただきます。
+                        p.en 
+                            |Based on the content and schedule of the hearing, we will propose an estimate according to the content of the production.
+                            br
+                            |We can also adjust the contents according to your budget and priorities. Once you are satisfied, we will proceed with the project as a formal request.
+                .gyo
+                    .line
+                    .number 
+                        p.number
+                            |03
+                    .title
+                        p.jp
+                            |１次案ご提案
+                    .text
+                        p.jp
+                            |整理した目的や価値をもとに、一次案を制作・ご提案します。
+                            br
+                            |この段階では方向性をすり合わせることが目的のため、異なる切り口の案をいくつかお出しします。 
+                            br
+                            |その中から、今後深めていきたい軸をひとつお選びいただき、次のステップへと進んでいきます
+                        p.en 
+                            |Based on the purpose and value we have organized, we will produce and propose a primary draft.
+                            br
+                            |Since the purpose of this stage is to match the direction of the project, we will present several ideas from different perspectives. We will then proceed to the next step by having you select one of the ideas that you would like to deepen in the future.
+                .gyo
+                    .line
+                    .number 
+                        p.number
+                            |04
+                    .title
+                        p.jp
+                            |2次案ご提案
+                    .text
+                        p.jp
+                            |一次案でお選びいただいた方向性をもとに、全体のデザインをブラッシュアップしていきます。 
+                            br
+                            |構成や配色、タイポグラフィ、ビジュアルのトーンなどを具体化し、実際の使用感をイメージできるかたちへと近づけます。 ここで、大まかな見た目や雰囲気が、ほぼ固まる段階となります。
+                        p.en 
+                            |Based on the direction selected in the first draft, we will brush up the overall design.
+                            br
+                            |We will flesh out the structure, color scheme, typography, visual tone, etc., and bring it closer to a form that will allow you to visualize the actual use of the product.This is the stage where the general look and feel of the product is almost completely established.
+                .gyo
+                    .line
+                    .number 
+                        p.number
+                            |05
+                    .title
+                        p.jp
+                            |最終調整作業
+                    .text
+                        p.jp
+                            |細かな文字のサイズや配置のバランス、文言などを整えながら、最終調整を行っていきます。
+                        p.en 
+                            |We make final adjustments while balancing the size and placement of fine text, wording, and other details.
+                .gyo
+                    .line
+                    .number 
+                        p.number
+                            |06
+                    .title
+                        p.jp
+                            |レギュレーション、
+                            br
+                            |ガイドラインの作成
+                    .text
+                        p.jp
+                            |制作したデザインの使い方、配色のルールなどをまとめたガイドラインを制作します。
+                        p.en 
+                            |We will produce guidelines outlining the use of the produced design, color scheme rules, etc.
+                .gyo
+                    .line
+                    .number 
+                        p.number
+                            |07
+                    .title
+                        p.jp
+                            |納品
+                    .text
+                        p.jp
+                            |ご確認いただいたデータを整理し、用途に応じた形式（PNG、PDF、AI、Figmaリンクなど）で納品いたします。
+                            br
+                            |ご希望に応じて簡単な使い方の補足資料を添えることもあります。
+                        p.en 
+                            |We will organize the data you have confirmed and deliver it in a format (PNG, PDF, AI, Figma link, etc.) appropriate for your use.
+                            br
+                            |We may also include supplementary materials with simple instructions for use upon request.
+                .gyo
+                    .line
+        .section-price
+            .section-price__title
+                p.jp
+                    |料金の考え方
+                p.en
+                    |( Price )
+            .section-price__contents
+                .block-1
+                    .text
+                        p.jp
+                            |制作料金は、一律の料金表ではなく、プロジェクトの内容や規模によって柔軟に変動します。
+                            br
+                            |デザイン制作には多くの要素が関わり、ご要望や目的、進行スピード、
+                            br
+                            |納品形式などによって必要な工数やリソースが大きく異なるためです。
+                    .mitsumori
+                        p.title
+                            |お見積りについて
+                        p.jp
+                            |最終的な料金は、ヒアリング後にお見積りをお出しします。
+                            br
+                            |お客様のご要望に最適な提案をするため、内容をしっかりとお伺いした後に、ご案内いたします。
+                            br
+                            |また、内容が変更になった場合や、追加作業が発生した場合も、
+                            br
+                            |そのお見積りの再算出を行う場合があります。  
+                    .img
+                        img(src="images/profile-4.png" alt="")
+                .block-2
+                    .osaeru
+                        p.title
+                            |料金を抑える方法
+                        p.number
+                            |01
+                        .title-and-text
+                            p.title
+                                |納期に余裕を持たせる
+                            p.jp
+                                |時間に余裕があれば、制作の進行に柔軟性が持てるため、リソースの調整がしやすく、結果的にコストダウンが可能です。
+                        p.number
+                            |02
+                        .title-and-text
+                            p.title
+                                |目的を明確にした制作と進行
+                            p.jp
+                                | 方向性が定まらない状態で進めると、途中で「やっぱりこうしたい」が繰り返され、修正回数が増えてしまうことで結果的に制作コストがかさむケースがあります。最初の段階でゴールや優先順位を一緒にしっかり言語化することが、スムーズな進行とコストの最適化につながります。
+                        p.number
+                            |03
+                        .title-and-text
+                            p.title
+                                |定期的なプロジェクト依頼
+                            p.jp
+                                |継続的な依頼や複数案件をまとめて依頼いただくことで、パッケージ料金や割引を適用することもできます。
+        include _footer.pug
