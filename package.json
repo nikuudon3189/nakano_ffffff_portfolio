@@ -6,7 +6,8 @@
     "scripts": {
         "pug:watch": "pug -w *.pug -o ./ -P",
         "sass:watch": "sass --watch scss/style.scss:style.css scss/reset.scss:reset.css",
-        "dev": "npm-run-all --parallel pug:watch sass:watch",
+        "serve": "browser-sync start --server --files '*.html, *.css' --startPath index.html",
+        "dev": "npm-run-all --parallel pug:watch sass:watch serve",
         "build": "pug index.pug -o ./ -P && sass scss/style.scss:style.css --style compressed && sass scss/reset.scss:reset.css --style compressed"
     },
     "keywords": [],
