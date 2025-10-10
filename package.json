@@ -3,14 +3,9 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
-    "scripts": {
-        "sass:watch": "sass --watch scss/style.scss:style.css scss/reset.scss:reset.css",
-        "sass:build": "sass scss/style.scss:style.css --style compressed && sass scss/reset.scss:reset.css --style compressed"
-    },
+    "scripts": {},
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "devDependencies": {
-        "sass": "^1.89.0"
-    }
+    "devDependencies": {}
 }
