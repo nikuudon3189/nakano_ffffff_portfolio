@@ -1,0 +1,227 @@
+{
+    "works": {
+        "work-1": {
+            "id": "work-1",
+            "title": "SONY Music VEE Geppaku-Rui",
+            "titleEn": "SONY Music VEE Geppaku-Rui",
+            "heroImage": "images/works-1.png",
+            "info": {
+                "scope": "ビジュアルアイデンティティの構築と展開",
+                "date": "2023.4.10〜",
+                "client": "Sony Music Entertainment (Japan) Inc.",
+                "clientUrl": "https://www.youtube.com/@Geppaku_Lui",
+                "output": "Logo,OBS overlay"
+            },
+            "description": {
+                "ja": {
+                    "body1": "Sony Music VEEよりデビューし、タレント活動を行う月白累さんの<br class=\"common-br-sp\">デザイン制作を担当しています。<br class=\"common-br-sp\">「デジタルカメラで映し出された中でしか見えない存在」をコンセプトに自信の世界観はとても無機質な存在となっています。<br class=\"common-br-sp\">しかし、月白さんの活動の魅力として歌唱の高さもあり、その歌唱を行なっている際は、いつもとは違う力強い歌声を魅せてくれます。",
+                    "body2": "その無機質な中にところどころ感じられる人としての有機さは、他の活動者にはない一番の価値と感じ、<br class=\"common-br-sp\">有機なものと曖昧な世界観を世界観の基点としロゴをはじめとした、配信画面デザイン、スケジュール表デザインなどに展開しつつビジュアル開発を行いました。"
+                },
+                "en": {
+                    "body1": "We are in charge of design production for Rui Tsukihaku, who debuted from Sony Music VEE and is active as a TV personality.<br class=\"common-br-sp\">Her worldview is very inorganic, based on the concept of \"an existence that can only be seen in the reflection of a digital camera.\"<br class=\"common-br-sp\">However, one of the most attractive aspects of Ms. Tsukihira's activities is her singing, and when she sings, her powerful voice is always different from her usual voice.",
+                    "body2": "The organic quality that can be felt in some places in the inorganic nature of his activities is the most valuable thing that he does not have in other activities,<br class=\"common-br-sp\">We developed the logo, distribution screen design, schedule design, and other visuals based on this organic and ambiguous view of the world."
+                }
+            },
+            "overviewImage": "images/works-1-01.png",
+            "gallery": [
+                "images/works-1-02.png",
+                "images/works-1-03.png",
+                "images/works-1-04.png",
+                "images/works-1-05.png",
+                "images/works-1-06.png",
+                "images/works-1-07.png",
+                "images/works-1-08.png"
+            ],
+            "textSections": [
+                {
+                    "ja": "2024年の月白さんの誕生日企画として行われた「孤独の点でつながる歌枠リレー」のロゴデザインです。<br class=\"common-br-sp\">この企画は月白さんと関わりの多い活動者を招待して歌唱を行うライブストリーミングを時間をずらしたリレー形式で行うものです。<br class=\"common-br-sp\">個々の個性を点とし、それぞが繋がる様子と月白さんの他者との関わり方への考えが企画のネーミングに表現されています。",
+                    "en": "This is the logo design for the \"Singing Frame Relay Connecting at the Dots of Solitude\" project, which was held as a birthday project for Mr. Geshaku in 2024.<br class=\"common-br-sp\">This project is a time-staggered relay of live-streamed singing performances by invited activists who are often associated with Mr. Geshaku.<br class=\"common-br-sp\">The naming of the project expresses the connection between the dots of individuality and Mr. Geshaku's thoughts on how to relate to others.",
+                    "image": "images/works-1-09.png"
+                },
+                {
+                    "ja": "月白さんが所属するVEEと同じ所属の言のハさんと共同で配信や歌唱を行う際に使用するユニット名<br class=\"common-br-sp\">月言夜行局 - GETSUGEN YAKOUKYOKUの作字ロゴタイプです。<br class=\"common-br-sp\">ファンアートとしてXに投稿したものを採用いただき、活用いただいています。<br class=\"common-br-sp\">夜をテーマにした静かで落ち着きのある雰囲気を醸す造形を行なっています。",
+                    "en": "Unit name to be used for joint distribution and singing with Mr. Tsukihaku's VEE and Mr. Kotoba's Ha of the same affiliation.<br class=\"common-br-sp\">This is a logotype of GETSUGEN YAKOUKYOKU.<br class=\"common-br-sp\">It was submitted to X as fan art and has been adopted and utilized.<br class=\"common-br-sp\">The logo is designed to create a quiet and calm atmosphere based on the theme of night.",
+                    "image": "images/works-1-10.png"
+                }
+            ],
+            "nextWork": {
+                "title": "VOCALROCK MANIA DJ NIGHT",
+                "image": "images/works-2-01.png",
+                "link": "work-2.html"
+            }
+        },
+        "work-2": {
+            "id": "work-2",
+            "title": "VOCALROCK MANIA DJ NIGHT",
+            "titleEn": "VOCALROCK MANIA DJ NIGHT",
+            "heroImage": "images/works-2.png",
+            "info": {
+                "scope": "イベントビジュアルデザイン",
+                "date": "2023.4.10",
+                "client": "VOCALROCK MANIA",
+                "clientUrl": "https://example.com",
+                "output": "Poster, Flyer, Social Media"
+            },
+            "description": {
+                "ja": {
+                    "body1": "VOCALROCK MANIA DJ NIGHTのイベントビジュアルデザインを担当しました。<br class=\"common-br-sp\">ロックとボーカロイドの融合をテーマに、エネルギッシュで力強いデザインを展開しています。<br class=\"common-br-sp\">イベントの熱量と音楽の迫力を視覚的に表現し、多くのファンに愛されるデザインを目指しました。",
+                    "body2": "ポスター、フライヤー、SNS用素材など、多様な媒体に展開し、<br class=\"common-br-sp\">イベントの認知度向上と集客に貢献しました。"
+                },
+                "en": {
+                    "body1": "We were responsible for the visual design of VOCALROCK MANIA DJ NIGHT event.<br class=\"common-br-sp\">Based on the theme of fusion between rock and vocaloid, we developed energetic and powerful designs.<br class=\"common-br-sp\">We aimed to create designs that visually express the energy of the event and the power of music, loved by many fans.",
+                    "body2": "We expanded to various media including posters, flyers, and SNS materials,<br class=\"common-br-sp\">contributing to the event's awareness and audience attraction."
+                }
+            },
+            "overviewImage": "images/works-2-01.png",
+            "gallery": [
+                "images/works-2-01.png",
+                "images/works-2-01.png",
+                "images/works-2-01.png"
+            ],
+            "textSections": [
+                {
+                    "ja": "イベントのメインビジュアルとして、ロックとボーカロイドの要素を融合させたデザインを作成しました。<br class=\"common-br-sp\">力強いタイポグラフィとエネルギッシュなカラーパレットで、イベントの熱量を表現しています。",
+                    "en": "As the main visual for the event, we created a design that fuses rock and vocaloid elements.<br class=\"common-br-sp\">We express the energy of the event with powerful typography and energetic color palette.",
+                    "image": "images/works-2-01.png"
+                }
+            ],
+            "nextWork": {
+                "title": "SONY Music VEE Geppaku-Rui",
+                "image": "images/works-1.png",
+                "link": "work.html?id=work-1"
+            }
+        },
+        "work-3": {
+            "id": "work-3",
+            "title": "ASHMEa",
+            "titleEn": "ASHMEa",
+            "heroImage": "images/works-3.png",
+            "info": {
+                "scope": "ブランドデザイン",
+                "date": "2023.4.10",
+                "client": "ASHMEa",
+                "clientUrl": "https://example.com",
+                "output": "Logo, Brand Identity"
+            },
+            "description": {
+                "ja": {
+                    "body1": "ASHMEaのブランドデザインを担当しました。",
+                    "body2": "シンプルで洗練されたデザインを展開しています。"
+                },
+                "en": {
+                    "body1": "We were responsible for ASHMEa's brand design.",
+                    "body2": "We developed simple and sophisticated designs."
+                }
+            },
+            "overviewImage": "images/works-3.png",
+            "gallery": [
+                "images/works-3.png"
+            ],
+            "textSections": [],
+            "nextWork": {
+                "title": "FIRST PiECE",
+                "image": "images/works-4.png",
+                "link": "work.html?id=work-4"
+            }
+        },
+        "work-4": {
+            "id": "work-4",
+            "title": "FIRST PiECE",
+            "titleEn": "FIRST PiECE",
+            "heroImage": "images/works-4.png",
+            "info": {
+                "scope": "ブランドデザイン",
+                "date": "2023.4.10",
+                "client": "FIRST PiECE",
+                "clientUrl": "https://example.com",
+                "output": "Logo, Brand Identity"
+            },
+            "description": {
+                "ja": {
+                    "body1": "FIRST PiECEのブランドデザインを担当しました。",
+                    "body2": "力強いデザインを展開しています。"
+                },
+                "en": {
+                    "body1": "We were responsible for FIRST PiECE's brand design.",
+                    "body2": "We developed powerful designs."
+                }
+            },
+            "overviewImage": "images/works-4.png",
+            "gallery": [
+                "images/works-4.png"
+            ],
+            "textSections": [],
+            "nextWork": {
+                "title": "tamaya",
+                "image": "images/works-5.png",
+                "link": "work.html?id=work-5"
+            }
+        },
+        "work-5": {
+            "id": "work-5",
+            "title": "tamaya",
+            "titleEn": "tamaya",
+            "heroImage": "images/works-5.png",
+            "info": {
+                "scope": "ブランドデザイン",
+                "date": "2023.4.10",
+                "client": "tamaya",
+                "clientUrl": "https://example.com",
+                "output": "Logo, Brand Identity"
+            },
+            "description": {
+                "ja": {
+                    "body1": "tamayaのブランドデザインを担当しました。",
+                    "body2": "温かみのあるデザインを展開しています。"
+                },
+                "en": {
+                    "body1": "We were responsible for tamaya's brand design.",
+                    "body2": "We developed warm and inviting designs."
+                }
+            },
+            "overviewImage": "images/works-5.png",
+            "gallery": [
+                "images/works-5.png"
+            ],
+            "textSections": [],
+            "nextWork": {
+                "title": "Bathycaphe",
+                "image": "images/works-6.png",
+                "link": "work.html?id=work-6"
+            }
+        },
+        "work-6": {
+            "id": "work-6",
+            "title": "Bathycaphe",
+            "titleEn": "Bathycaphe",
+            "heroImage": "images/works-6.png",
+            "info": {
+                "scope": "ブランドデザイン",
+                "date": "2023.4.10",
+                "client": "Bathycaphe",
+                "clientUrl": "https://example.com",
+                "output": "Logo, Brand Identity"
+            },
+            "description": {
+                "ja": {
+                    "body1": "Bathycapheのブランドデザインを担当しました。",
+                    "body2": "深みのあるデザインを展開しています。"
+                },
+                "en": {
+                    "body1": "We were responsible for Bathycaphe's brand design.",
+                    "body2": "We developed deep and profound designs."
+                }
+            },
+            "overviewImage": "images/works-6.png",
+            "gallery": [
+                "images/works-6.png"
+            ],
+            "textSections": [],
+            "nextWork": {
+                "title": "SONY Music VEE Geppaku-Rui",
+                "image": "images/works-1.png",
+                "link": "work.html?id=work-1"
+            }
+        }
+    }
+}

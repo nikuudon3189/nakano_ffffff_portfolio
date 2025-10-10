@@ -50,6 +50,11 @@
     height: 58px;
   }
 }
+::view-transition-group(hero) {
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.65, 0.01, 0.27, 0.98);
+}
+
 html,
 body {
   color: #242426;
@@ -99,6 +104,10 @@ h1.logo-header.common-h1-header a img {
     max-width: 400px;
     height: auto;
   }
+}
+
+.hero {
+  view-transition-name: hero;
 }
 
 .common-nakaguro-to-kakko-no-en {
@@ -223,45 +232,6 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
   }
 }
 
-.work-thumbnail-expanding {
-  position: fixed !important;
-  z-index: 9999 !important;
-  object-fit: cover !important;
-  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-}
-
-.page-transition-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: transparent;
-  z-index: 9998;
-  pointer-events: none;
-}
-
-body.thumbnail-transitioning {
-  overflow: hidden;
-}
-
-.page-fadeout-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #fff;
-  opacity: 0;
-  z-index: 9998;
-  pointer-events: none;
-  transition: opacity 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.page-fadeout-overlay.active {
-  opacity: 1;
-}
-
 .wrapper-top {
   display: flex;
   flex-direction: column;
@@ -307,18 +277,17 @@ body.thumbnail-transitioning {
   animation: menuClose 0.5s cubic-bezier(0.3, 1, 0.3, 1) forwards;
 }
 .wrapper-top .menu-bar .menu-visible {
-  width: 100%;
+  align-self: stretch;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   gap: 16px;
-  margin-top: -12px;
-  margin-bottom: -12px;
 }
 .wrapper-top .menu-bar .menu-visible .text-wrapper {
-  width: 100%;
+  flex-grow: 1;
   overflow: hidden;
+  margin-top: -8px;
   text-overflow: clip;
 }
 .wrapper-top .menu-bar .menu-visible .text-wrapper p.text {
@@ -352,10 +321,12 @@ body.thumbnail-transitioning {
 .wrapper-top .menu-bar .menu-visible button.open-menu {
   transition: all 0.2s ease;
   width: 48px;
-  height: 48px;
+  aspect-ratio: 1/1;
   border-radius: 4px;
   background-color: #424242;
   border: 1px solid #5E5E5E;
+  margin-top: -12px;
+  margin-right: -12px;
   position: relative;
   cursor: pointer;
 }
@@ -543,10 +514,10 @@ body.thumbnail-transitioning {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 104px;
-  font-size: 16px;
 }
 .wrapper-top main.main section.client-works {
   display: flex;
+  margin-bottom: 40px;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
@@ -1645,6 +1616,7 @@ body.thumbnail-transitioning {
   gap: 0px;
   width: 100%;
   padding: 0 64px;
+  background-color: #F4F4F4;
 }
 @media screen and (max-width: 809px) {
   .wrapper-works {
@@ -1683,6 +1655,11 @@ body.thumbnail-transitioning {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 0px;
+}
+.wrapper-works article.work section.work--overview .common-reveal-mask {
+  overflow: hidden;
+  display: block;
+  width: 100%;
 }
 .wrapper-works article.work section.work--overview h2.title {
   margin-top: 80px;

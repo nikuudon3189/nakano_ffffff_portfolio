@@ -23,8 +23,8 @@ function splitTextToSpans(target) {
             chars.forEach(function (char, i) {
                 var span = document.createElement('span');
                 span.textContent = char;
-                // 空白・記号はアニメーションしない
-                if (/^[\s\p{P}\p{S}]+$/u.test(char)) {
+                // 空白のみアニメーションしない（ハイフンはアニメーション対象）
+                if (/^\s+$/u.test(char)) {
                     span.className = 'char-static';
                 } else {
                     span.className = 'char';
@@ -53,6 +53,8 @@ function splitTextToSpans(target) {
 
 document.addEventListener('DOMContentLoaded', function () {
     var targets = document.querySelectorAll('h2.common-nakaguro-to-kakko-no-en');
+    console.log('fadeInOnScroll: Found', targets.length, 'targets');
+    console.log('fadeInOnScroll: Targets:', targets);
     targets.forEach(splitTextToSpans);
 
     if (!('IntersectionObserver' in window)) {
@@ -63,13 +65,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
+            console.log('fadeInOnScroll: Entry intersecting:', entry.isIntersecting, entry.target);
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-inview');
+                console.log('fadeInOnScroll: Added is-inview class to', entry.target);
                 observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.2 });
     for (var i = 0; i < targets.length; i++) {
+        console.log('fadeInOnScroll: Observing target', i, targets[i]);
         observer.observe(targets[i]);
+    }
+
+    // work.htmlページの場合は即座にアニメーションを開始
+    if (window.location.pathname.includes('work.html')) {
+        console.log('fadeInOnScroll: Work page detected, starting animation immediately');
+        setTimeout(function () {
+            for (var i = 0; i < targets.length; i++) {
+                targets[i].classList.add('is-inview');
+                console.log('fadeInOnScroll: Added is-inview class immediately to', targets[i]);
+            }
+        }, 100);
     }
 }); 

@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const openButton = document.querySelector('.menu-bar .menu-visible .open-menu');
     const hiddenMenu = document.querySelector('.menu-bar .menu-hidden');
 
+    // 要素が存在しない場合は処理を終了
+    if (!menuBar || !openButton || !hiddenMenu) {
+        return;
+    }
+
     // ボタンクリック時の処理
     openButton.addEventListener('click', function () {
         // 現在の状態をチェック（toggle前に）
