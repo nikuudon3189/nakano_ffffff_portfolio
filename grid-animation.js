@@ -21,19 +21,52 @@
     };
 
     // imgタグをグリッドアニメーションに変換
-    function initGridAnimation(img) {
+    function initGridAnimation(img, startImmediately) {
         // すでに処理済みの場合はスキップ
         if (img.dataset.gridInitialized) return;
         img.dataset.gridInitialized = 'true';
 
-        // 画像の読み込みを待つ
-        if (!img.complete) {
-            img.addEventListener('load', function () {
+        // すぐに開始する場合
+        if (startImmediately) {
+            // 画像の読み込みを待つ
+            if (!img.complete) {
+                img.addEventListener('load', function () {
+                    transformToGrid(img);
+                });
+            } else {
                 transformToGrid(img);
-            });
+            }
         } else {
-            transformToGrid(img);
+            // IntersectionObserverで画面内に入ったら開始
+            setupIntersectionObserver(img);
         }
+    }
+
+    // IntersectionObserverのセットアップ
+    function setupIntersectionObserver(img) {
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    console.log('Image entered viewport:', img.src);
+                    // 画面内に入ったらアニメーション開始
+                    if (!img.complete) {
+                        img.addEventListener('load', function () {
+                            transformToGrid(img);
+                        });
+                    } else {
+                        transformToGrid(img);
+                    }
+                    // 一度実行したら監視を解除
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            root: null, // ビューポートを基準
+            rootMargin: '50px', // 画面に入る50px前から検知
+            threshold: 0.1 // 10%表示されたら発火
+        });
+
+        observer.observe(img);
     }
 
     function transformToGrid(img) {
@@ -60,31 +93,49 @@
             return;
         }
 
+        // 既にコンテナが存在する場合はスキップ
+        var existingContainer = img.parentNode.querySelector('.grid-animation-container');
+        if (existingContainer) {
+            console.log('Grid container already exists, skipping:', img.src);
+            return;
+        }
+
+        // さらに、同じsrcを持つ他の画像でコンテナが存在する場合もスキップ
+        var allContainers = document.querySelectorAll('.grid-animation-container');
+        for (var k = 0; k < allContainers.length; k++) {
+            var container = allContainers[k];
+            var containerImg = container.querySelector('.grid-animation-item');
+            if (containerImg && containerImg.style.backgroundImage.includes(imageUrl)) {
+                console.log('Same image already has container, skipping:', imageUrl);
+                return;
+            }
+        }
+
+        // 元の画像の正確な位置情報を取得
+        var rect = img.getBoundingClientRect();
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
         // 元の画像を非表示にする
         img.style.opacity = '0';
         img.style.transition = 'opacity 0.3s ease';
 
-        // コンテナを作成（元の画像の上に配置）
+        // コンテナを作成（元の画像の正確な位置に配置）
         var container = document.createElement('div');
         container.className = 'grid-animation-container';
         container.style.position = 'absolute';
-        container.style.top = '0';
-        container.style.left = '0';
-        container.style.width = width + 'px';
-        container.style.height = height + 'px';
+        container.style.top = (rect.top + scrollTop) + 'px';
+        container.style.left = (rect.left + scrollLeft) + 'px';
+        container.style.width = rect.width + 'px';
+        container.style.height = rect.height + 'px';
         container.style.display = 'grid';
         container.style.gridTemplateColumns = 'repeat(' + config.gridCols + ', 1fr)';
         container.style.gridTemplateRows = 'repeat(' + config.gridRows + ', 1fr)';
         container.style.gap = '0';
         container.style.zIndex = '1';
 
-        // 親要素を相対位置に設定
-        if (img.parentNode.style.position !== 'absolute' && img.parentNode.style.position !== 'relative') {
-            img.parentNode.style.position = 'relative';
-        }
-
-        // コンテナをimgの後に挿入
-        img.parentNode.insertBefore(container, img.nextSibling);
+        // コンテナをbodyに直接追加（親要素の影響を受けないように）
+        document.body.appendChild(container);
 
         var totalItems = config.gridCols * config.gridRows;
 
@@ -183,15 +234,38 @@
         }
     }
 
+    // グローバルクリーンアップ関数
+    function cleanupAllGridAnimations() {
+        var allContainers = document.querySelectorAll('.grid-animation-container');
+        console.log('Cleaning up', allContainers.length, 'existing containers');
+        for (var i = 0; i < allContainers.length; i++) {
+            allContainers[i].remove();
+        }
+
+        var allImages = document.querySelectorAll('img.grid-animation');
+        for (var j = 0; j < allImages.length; j++) {
+            var img = allImages[j];
+            delete img.dataset.gridInitialized;
+            img.style.opacity = '1';
+        }
+    }
+
     // ページ読み込み時に実行
     function init() {
+        console.log('GridAnimation.init() called');
+
+        // まず全ての既存アニメーションをクリーンアップ
+        cleanupAllGridAnimations();
+
         var images = document.querySelectorAll('img.grid-animation');
-        console.log('GridAnimation.init() called, found', images.length, 'images');
+        console.log('Found', images.length, 'images after cleanup');
+
         images.forEach(function (img, index) {
-            console.log('Image', index, ':', img.src, 'complete:', img.complete, 'initialized:', img.dataset.gridInitialized);
-            // 初期化フラグをリセット（再初期化を許可）
-            delete img.dataset.gridInitialized;
-            initGridAnimation(img);
+            console.log('Image', index, ':', img.src, 'complete:', img.complete);
+
+            // data-grid-immediate属性がある場合は即座に開始、それ以外はスクロールで開始
+            var startImmediately = img.hasAttribute('data-grid-immediate');
+            initGridAnimation(img, startImmediately);
         });
 
         // 動的に追加された画像にも対応（MutationObserver）
