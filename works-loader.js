@@ -44,8 +44,11 @@ function generateWorkContent(workData) {
     // ヒーロー画像を設定
     const heroImage = document.querySelector('section.work--hero img.kv');
     if (heroImage) {
+        console.log('Setting hero image:', workData.heroImage);
         heroImage.src = workData.heroImage;
         heroImage.alt = workData.title;
+    } else {
+        console.error('Hero image element not found');
     }
 
     // 情報セクションを設定
@@ -85,8 +88,10 @@ function generateWorkContent(workData) {
 
     // ギャラリー画像を設定
     const galleryImages = document.querySelectorAll('section.work--contents .gyo img');
+    console.log('Found gallery images:', galleryImages.length);
     workData.gallery.forEach((imageSrc, index) => {
         if (galleryImages[index]) {
+            console.log('Setting gallery image', index, ':', imageSrc);
             galleryImages[index].src = imageSrc;
             galleryImages[index].alt = workData.title;
         }
@@ -132,6 +137,17 @@ document.addEventListener('DOMContentLoaded', async function () {
     const worksData = await loadWorksData();
     if (worksData && worksData[workId]) {
         generateWorkContent(worksData[workId]);
+
+        // 画像の読み込み完了後にgrid-animationを初期化
+        setTimeout(function () {
+            console.log('Initializing grid animation...');
+            if (typeof GridAnimation !== 'undefined') {
+                console.log('GridAnimation found, calling init()');
+                GridAnimation.init();
+            } else {
+                console.error('GridAnimation not found');
+            }
+        }, 500);
     } else {
         console.error('Work data not found for:', workId);
     }
