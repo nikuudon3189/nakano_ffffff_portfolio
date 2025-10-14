@@ -143,22 +143,30 @@
         img.style.opacity = '0';
         img.style.transition = 'opacity 0.3s ease';
 
-        // コンテナを作成（元の画像の正確な位置に配置）
+        // 元の画像の親要素を取得
+        var parentElement = img.parentNode;
+
+        // 親要素にposition: relativeを設定（まだ設定されていない場合）
+        if (getComputedStyle(parentElement).position === 'static') {
+            parentElement.style.position = 'relative';
+        }
+
+        // コンテナを作成（親要素内に配置）
         var container = document.createElement('div');
         container.className = 'grid-animation-container';
         container.style.position = 'absolute';
-        container.style.top = (rect.top + scrollTop) + 'px';
-        container.style.left = (rect.left + scrollLeft) + 'px';
-        container.style.width = rect.width + 'px';
-        container.style.height = rect.height + 'px';
+        container.style.top = '0';
+        container.style.left = '0';
+        container.style.width = '100%';
+        container.style.height = '100%';
         container.style.display = 'grid';
         container.style.gridTemplateColumns = 'repeat(' + config.gridCols + ', 1fr)';
         container.style.gridTemplateRows = 'repeat(' + config.gridRows + ', 1fr)';
         container.style.gap = '0';
         container.style.zIndex = '1';
 
-        // コンテナをbodyに直接追加（親要素の影響を受けないように）
-        document.body.appendChild(container);
+        // コンテナを親要素に追加
+        parentElement.appendChild(container);
 
         var totalItems = config.gridCols * config.gridRows;
 
@@ -176,8 +184,18 @@
             gridItem.style.width = '100%';
             gridItem.style.height = '100%';
             gridItem.style.backgroundImage = 'url(' + imageUrl + ')';
+            gridItem.style.backgroundRepeat = 'no-repeat';
+
+            // グリッド分割のための正確な背景サイズと位置計算
+            // object-fit: coverを考慮したグリッド分割
             gridItem.style.backgroundSize = (config.gridCols * 100) + '% ' + (config.gridRows * 100) + '%';
-            gridItem.style.backgroundPosition = posX + '% ' + posY + '%';
+
+            // 各グリッドセルの正確な位置を計算
+            var bgPosX = (col / (config.gridCols - 1)) * 100;
+            var bgPosY = (row / (config.gridRows - 1)) * 100;
+
+            gridItem.style.backgroundPosition = bgPosX + '% ' + bgPosY + '%';
+
             gridItem.style.opacity = '0';
             gridItem.style.transition = 'opacity 0.3s ease-in-out';
 
