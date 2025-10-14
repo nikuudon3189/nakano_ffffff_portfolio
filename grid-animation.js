@@ -71,15 +71,30 @@
 
     function transformToGrid(img) {
         var imageUrl = img.src;
-        var width = img.offsetWidth || img.width;
-        var height = img.offsetHeight || img.height;
 
-        console.log('transformToGrid called:', {
-            src: imageUrl,
-            width: width,
-            height: height,
-            complete: img.complete
-        });
+        // レイアウトが完全に適用されるまで少し待つ
+        setTimeout(function () {
+            // 元の画像の正確な位置情報を取得
+            var rect = img.getBoundingClientRect();
+            var width = rect.width;
+            var height = rect.height;
+
+            console.log('transformToGrid called:', {
+                src: imageUrl,
+                width: width,
+                height: height,
+                offsetWidth: img.offsetWidth,
+                offsetHeight: img.offsetHeight,
+                rect: rect,
+                complete: img.complete
+            });
+
+            // 実際のグリッド変換処理を実行
+            executeGridTransform(img, imageUrl, width, height);
+        }, 100); // 100ms待機
+    }
+
+    function executeGridTransform(img, imageUrl, width, height) {
 
         // 画像URLが空の場合はスキップ
         if (!imageUrl || imageUrl === '' || imageUrl.endsWith('/work.html')) {
@@ -111,10 +126,18 @@
             }
         }
 
-        // 元の画像の正確な位置情報を取得
+        // 位置情報を関数内で再取得（最新の位置を確実に取得）
         var rect = img.getBoundingClientRect();
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+        console.log('Position info:', {
+            rect: rect,
+            scrollTop: scrollTop,
+            scrollLeft: scrollLeft,
+            finalTop: rect.top + scrollTop,
+            finalLeft: rect.left + scrollLeft
+        });
 
         // 元の画像を非表示にする
         img.style.opacity = '0';
