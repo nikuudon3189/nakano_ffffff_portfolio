@@ -119,8 +119,8 @@ h1.logo-header.common-h1-header a img {
 
 
 .common-nakaguro-to-kakko-no-en {
-    transform: translateY(40px);
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    /* transform: translateY(40px); */
+    /* transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); */
     will-change: transform;
 }
 
@@ -2390,8 +2390,8 @@ footer.footer-wrapper .footer .sns a {
 
 .common-nakaguro-to-kakko-no-en .char {
     display: inline-block;
-    transform: translateY(40px);
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    /* transform: translateY(40px); */
+    /* transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); */
     will-change: transform;
 }
 

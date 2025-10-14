@@ -57,35 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('fadeInOnScroll: Targets:', targets);
     targets.forEach(splitTextToSpans);
 
-    if (!('IntersectionObserver' in window)) {
-        for (var i = 0; i < targets.length; i++) {
-            targets[i].classList.add('is-inview');
-        }
-        return;
-    }
-    var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            console.log('fadeInOnScroll: Entry intersecting:', entry.isIntersecting, entry.target);
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-inview');
-                console.log('fadeInOnScroll: Added is-inview class to', entry.target);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.2 });
-    for (var i = 0; i < targets.length; i++) {
-        console.log('fadeInOnScroll: Observing target', i, targets[i]);
-        observer.observe(targets[i]);
-    }
+    // IntersectionObserverと即時アニメーション設定の削除
 
-    // work.htmlページの場合は即座にアニメーションを開始
-    if (window.location.pathname.includes('work.html')) {
-        console.log('fadeInOnScroll: Work page detected, starting animation immediately');
-        setTimeout(function () {
-            for (var i = 0; i < targets.length; i++) {
-                targets[i].classList.add('is-inview');
-                console.log('fadeInOnScroll: Added is-inview class immediately to', targets[i]);
-            }
-        }, 100);
-    }
+    // TODO: 他の関連するアニメーションがあれば、それらも適宜削除する。
 }); 
