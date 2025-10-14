@@ -304,7 +304,7 @@ function initHackingTypeWriters() {
 
     for (var i = 0; i < elements.length; i++) {
         var element = elements[i];
-        var originalText = element.innerHTML.replace(/<br[^>]*>/gi, '\n');
+        var originalText = element.innerHTML.replace(/<br[^>]*>/gi, '\n').replace(/\s+/g, ' ').trim();
         var settings = Utils.extractElementSettings(element);
 
         // 遅延実行でスタガード効果
