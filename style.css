@@ -244,7 +244,7 @@ h1.logo-header.common-h1-header a img {
     width: 100%;
 }
 
-h2.common-nakaguro-to-kakko-no-en {
+h2.section-title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -252,24 +252,24 @@ h2.common-nakaguro-to-kakko-no-en {
     width: 100%;
 }
 
-h2.common-nakaguro-to-kakko-no-en span {
+h2.section-title span {
     display: inline-block;
     vertical-align: top;
 }
 
-h2.common-nakaguro-to-kakko-no-en span.first-span {
+h2.section-title span.first-span {
     font-size: 32px;
     text-align: left;
     flex: 1;
 }
 
 @media screen and (max-width: 809px) {
-    h2.common-nakaguro-to-kakko-no-en span.first-span {
+    h2.section-title span.first-span {
         font-size: 20px;
     }
 }
 
-h2.common-nakaguro-to-kakko-no-en span.first-span::before {
+h2.section-title span.first-span::before {
     content: "";
     display: inline-block;
     width: 6px;
@@ -281,7 +281,7 @@ h2.common-nakaguro-to-kakko-no-en span.first-span::before {
 }
 
 @media screen and (max-width: 809px) {
-    h2.common-nakaguro-to-kakko-no-en span.first-span::before {
+    h2.section-title span.first-span::before {
         transform: translateY(-5px);
         width: 4px;
         height: 4px;
@@ -289,23 +289,23 @@ h2.common-nakaguro-to-kakko-no-en span.first-span::before {
     }
 }
 
-h2.common-nakaguro-to-kakko-no-en span.second-span {
+h2.section-title span.second-span {
     font-size: var(--text-md);
     text-align: right;
     flex: 1;
 }
 
 @media screen and (max-width: 809px) {
-    h2.common-nakaguro-to-kakko-no-en span.second-span {
+    h2.section-title span.second-span {
         font-size: var(--text-xs);
     }
 }
 
-h2.common-nakaguro-to-kakko-no-en span[lang=ja] {
+h2.section-title span[lang=ja] {
     font-family: "Konshoku";
 }
 
-h2.common-nakaguro-to-kakko-no-en span[lang=en] {
+h2.section-title span[lang=en] {
     font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
@@ -1102,7 +1102,7 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
     }
 }
 
-.wrapper-top main.main section.private-works .common-reveal-mask h2.title.common-nakaguro-to-kakko-no-en {
+.wrapper-top main.main section.private-works .common-reveal-mask h2.title.section-title {
     margin-top: 0px;
     padding-top: 32px;
 }
@@ -1353,7 +1353,7 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
     }
 }
 
-.wrapper-profile main.main section.feature .common-reveal-mask h2.title.common-nakaguro-to-kakko-no-en span.first-span[lang=ja]::before {
+.wrapper-profile main.main section.feature .common-reveal-mask h2.title.section-title span.first-span[lang=ja]::before {
     background-color: #fff;
 }
 
@@ -1487,7 +1487,7 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
     }
 }
 
-.wrapper-profile main.main section.flow .common-reveal-mask h2.title.common-nakaguro-to-kakko-no-en span[lang=ja]::before {
+.wrapper-profile main.main section.flow .common-reveal-mask h2.title.section-title span[lang=ja]::before {
     background-color: #fff;
 }
 
@@ -1660,7 +1660,7 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
     }
 }
 
-.wrapper-profile main.main section.price .common-reveal-mask h2.title.common-nakaguro-to-kakko-no-en span[lang=ja]::before {
+.wrapper-profile main.main section.price .common-reveal-mask h2.title.section-title span[lang=ja]::before {
     background-color: #fff;
 }
 
@@ -2492,12 +2492,12 @@ footer.footer-wrapper .footer .sns a {
     font-size: var(--text-sm);
 }
 
-.common-nakaguro-to-kakko-no-en .char {
+.section-title .char {
     display: inline-block;
     will-change: transform;
 }
 
-.common-nakaguro-to-kakko-no-en.is-inview .char {
+.section-title.is-inview .char {
     transform: translateY(0);
 }
 

@@ -1,5 +1,5 @@
 /*
- * h2.common-nakaguro-to-kakko-no-en のテキストを1文字ずつspanでラップし、
+ * h2.section-title のテキストを1文字ずつspanでラップし、
  * IntersectionObserverで画面内に入ったタイミングで1文字ずつ下からスライドインするアニメーションを実現する。
  * - :beforeや:afterは分割しない
  * - 英語も分割対象
@@ -52,7 +52,7 @@ function splitTextToSpans(target) {
 // 古いブラウザでは即時表示
 
 document.addEventListener('DOMContentLoaded', function () {
-    var targets = document.querySelectorAll('h2.common-nakaguro-to-kakko-no-en');
+    var targets = document.querySelectorAll('h2.section-title');
     console.log('fadeInOnScroll: Found', targets.length, 'targets');
     console.log('fadeInOnScroll: Targets:', targets);
     targets.forEach(splitTextToSpans);
