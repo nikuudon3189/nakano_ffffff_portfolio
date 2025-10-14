@@ -1,5 +1,36 @@
 @charset "UTF-8";
 
+/* ============================================
+   CSS Variables (Custom Properties)
+   ============================================ */
+:root {
+    /* Font Families */
+    --font-sans-jp: "IBM Plex Sans JP", sans-serif;
+    --font-serif-en: "Nuosu SIL", serif;
+    --font-mincho: "Shippori Mincho", serif;
+    --font-konshoku: "Konshoku";
+
+    /* Font Sizes */
+    --text-xs: 10px;
+    --text-sm: 12px;
+    --text-base: 14px;
+    --text-md: 16px;
+    --text-lg: 20px;
+    --text-xl: 32px;
+    --text-2xl: 40px;
+
+    /* Line Heights */
+    --leading-tight: 120%;
+    --leading-normal: 180%;
+
+    /* Letter Spacing */
+    --tracking-normal: 1px;
+    --tracking-wide: 1.5px;
+}
+
+/* ============================================
+   Font Face Declarations
+   ============================================ */
 @font-face {
     font-family: "Nuosu SIL";
     src: url("fonts/nuosu-sil-latin-400-normal.woff2") format("woff2"), url("fonts/nuosu-sil-latin-400-normal.woff") format("woff");
@@ -24,6 +55,94 @@
     font-style: normal;
     unicode-range: U+4E00-9FAF, U+3400-4DBF;
     /* 漢字 */
+}
+
+/* ============================================
+   Utility Classes - Typography
+   ============================================ */
+
+/* 日本語テキスト - IBM Plex Sans JP */
+.text-ja-body {
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-base);
+    font-style: normal;
+    font-weight: 300;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
+}
+
+.text-ja-body-md {
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-md);
+    font-style: normal;
+    font-weight: 300;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
+}
+
+.text-ja-body-sm {
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-sm);
+    font-style: normal;
+    font-weight: 300;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
+}
+
+.text-ja-body-xs {
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-xs);
+    font-style: normal;
+    font-weight: 300;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
+}
+
+.text-ja-heading {
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-lg);
+    font-style: normal;
+    font-weight: 300;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
+}
+
+/* 英語テキスト - Nuosu SIL */
+.text-en-body {
+    font-family: var(--font-serif-en);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-md);
+}
+
+.text-en-body-sm {
+    font-family: var(--font-serif-en);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-sm);
+}
+
+.text-en-body-xs {
+    font-family: var(--font-serif-en);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-xs);
+}
+
+/* 英語テキスト (IBM Plex Sans JPスタイル) */
+.text-en-ja-style {
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-xs);
+    font-style: normal;
+    font-weight: 300;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 @keyframes menuOpen {
@@ -119,8 +238,6 @@ h1.logo-header.common-h1-header a img {
 
 
 .common-nakaguro-to-kakko-no-en {
-    /* transform: translateY(40px); */
-    /* transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); */
     will-change: transform;
 }
 
@@ -180,14 +297,14 @@ h2.common-nakaguro-to-kakko-no-en span.first-span::before {
 }
 
 h2.common-nakaguro-to-kakko-no-en span.second-span {
-    font-size: 16px;
+    font-size: var(--text-md);
     text-align: right;
     flex: 1;
 }
 
 @media screen and (max-width: 809px) {
     h2.common-nakaguro-to-kakko-no-en span.second-span {
-        font-size: 10px;
+        font-size: var(--text-xs);
     }
 }
 
@@ -196,11 +313,11 @@ h2.common-nakaguro-to-kakko-no-en span[lang=ja] {
 }
 
 h2.common-nakaguro-to-kakko-no-en span[lang=en] {
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
 }
 
 .common-konshoku {
@@ -216,11 +333,11 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 }
 
 .custom-en {
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
 }
 
 @media screen and (max-width: 809px) {
@@ -321,12 +438,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 }
 
 .wrapper-top .menu-bar .menu-visible .text-wrapper p.text {
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 16px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-md);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
@@ -415,12 +532,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 }
 
 .wrapper-top .menu-bar .menu-hidden nav.links a {
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 14px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-base);
 }
 
 .wrapper-top .menu-bar .menu-hidden nav.links-sns {
@@ -435,12 +552,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 }
 
 .wrapper-top .menu-bar .menu-hidden nav.links-sns a {
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 12px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-sm);
 }
 
 .wrapper-top .menu-bar .menu-hidden .contact {
@@ -455,20 +572,20 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 }
 
 .wrapper-top .menu-bar .menu-hidden .contact p.title {
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 14px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-base);
 }
 
 .wrapper-top .menu-bar .menu-hidden .contact a {
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
     font-size: 30px;
     text-wrap: balance;
     margin-top: 0px;
@@ -526,12 +643,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 
 .wrapper-top header.header div.copy .copy-en p[lang=en] {
     margin-top: 8px;
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
     line-height: 1.4;
-    letter-spacing: 1px;
-    font-size: 16px;
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-md);
     white-space: normal !important;
 }
 
@@ -548,7 +665,7 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 
     .wrapper-top header.header div.copy .copy-ja p[lang=ja] {
         margin-top: -8px;
-        font-size: 16px;
+        font-size: var(--text-md);
         height: auto;
         width: 100%;
     }
@@ -559,12 +676,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
     }
 
     .wrapper-top header.header div.copy .copy-en p[lang=en] {
-        font-family: "Nuosu SIL", serif;
+        font-family: var(--font-serif-en);
         font-style: normal;
         font-weight: 400;
         line-height: 1.4;
-        letter-spacing: 1px;
-        font-size: 10px;
+        letter-spacing: var(--tracking-normal);
+        font-size: var(--text-xs);
         white-space: normal !important;
     }
 }
@@ -617,21 +734,21 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 }
 
 .wrapper-top main.main section.client-works article.work a.link .work-text h3.title {
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 16px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-md);
 }
 
 .wrapper-top main.main section.client-works article.work a.link .work-text time.day {
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 10px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-xs);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 .wrapper-top main.main section.client-works article.work:nth-of-type(1),
@@ -1040,22 +1157,22 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 }
 
 .wrapper-top main.main section.private-works .contents article.work h3.title {
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 16px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-md);
     margin-top: 6px;
 }
 
 .wrapper-top main.main section.private-works .contents article.work time.date {
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 10px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-xs);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
     margin-top: 0px;
 }
 
@@ -1102,12 +1219,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 
 .wrapper-profile header.header div.copy .copy-en p[lang=en] {
     margin-top: 16px;
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 16px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-md);
     height: auto;
     width: 100%;
 }
@@ -1119,17 +1236,17 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 
     .wrapper-profile header.header div.copy p[lang=ja] {
         margin-top: -8px;
-        font-size: 16px;
+        font-size: var(--text-md);
     }
 
     .wrapper-profile header.header div.copy p[lang=en] {
         margin-top: 24px;
-        font-family: "Nuosu SIL", serif;
+        font-family: var(--font-serif-en);
         font-style: normal;
         font-weight: 400;
-        line-height: 120%;
-        letter-spacing: 1px;
-        font-size: 10px;
+        line-height: var(--leading-tight);
+        letter-spacing: var(--tracking-normal);
+        font-size: var(--text-xs);
     }
 }
 
@@ -1163,23 +1280,23 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 }
 
 .wrapper-profile main.main section.profile div.text p[lang=ja] {
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 16px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-md);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
     grid-column: 1/2;
 }
 
 .wrapper-profile main.main section.profile div.text p[lang=en] {
     margin-top: 16px;
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 16px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-md);
     grid-column: 1/2;
 }
 
@@ -1317,23 +1434,23 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 
 .wrapper-profile main.main section.feature div.contents article.article div.body p[lang=ja] {
     width: 100%;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 14px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-base);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 .wrapper-profile main.main section.feature div.contents article.article div.body p[lang=en] {
     margin-top: 16px;
     width: 100%;
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 12px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-sm);
 }
 
 .wrapper-profile main.main section.feature div.contents article.article img {
@@ -1398,22 +1515,22 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 
 .wrapper-profile main.main section.flow .lead div.lead-lead p[lang=ja] {
     width: 100%;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 14px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-base);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 .wrapper-profile main.main section.flow .lead div.lead-lead p[lang=en] {
     margin-top: 16px;
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 12px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-sm);
 }
 
 @media screen and (max-width: 1439px) {
@@ -1450,12 +1567,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
     padding-top: 24px;
     grid-column: 2/-1;
     grid-row: 1/2;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 10px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-xs);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
     margin-top: 24px;
 }
 
@@ -1468,12 +1585,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 .wrapper-profile main.main section.flow ol.flow-items li.flow-item h3.title {
     grid-column: 2/4;
     grid-row: 2/3;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 20px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-lg);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 @media screen and (max-width: 1439px) {
@@ -1489,23 +1606,23 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 
 .wrapper-profile main.main section.flow ol.flow-items li.flow-item .body p[lang=ja] {
     width: 100%;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 14px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-base);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 .wrapper-profile main.main section.flow ol.flow-items li.flow-item .body p[lang=en] {
     margin-top: 16px;
     width: 100%;
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 12px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-sm);
 }
 
 @media screen and (max-width: 1439px) {
@@ -1580,12 +1697,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
     grid-column: 2/4;
     grid-row: 1/2;
     padding-bottom: 24px;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 14px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-base);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 @media screen and (max-width: 1439px) {
@@ -1599,12 +1716,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
     padding-top: 24px;
     grid-column: 2/-3;
     grid-row: 2/3;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 20px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-lg);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 @media screen and (max-width: 1439px) {
@@ -1616,12 +1733,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 .wrapper-profile main.main section.price div.lead-mitsumori p.body {
     grid-column: 2/-3;
     grid-row: 3/4;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 14px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-base);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 @media screen and (max-width: 1439px) {
@@ -1673,12 +1790,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
     padding-top: 24px;
     display: block;
     grid-column: 2/5;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 20px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-lg);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 @media screen and (max-width: 1439px) {
@@ -1749,19 +1866,13 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 .wrapper-profile main.main section.price div.osaeru ol.list li.item-3 span.number {
     grid-column: 1/2;
     grid-row: 1/2;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 10px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-xs);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
     margin-top: 24px;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
 }
 
 @media screen and (max-width: 1439px) {
@@ -1788,12 +1899,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 .wrapper-profile main.main section.price div.osaeru ol.list li.item-3 h4.title {
     grid-column: 1/2;
     grid-row: 2/3;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 16px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-md);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 @media screen and (max-width: 1439px) {
@@ -1819,12 +1930,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 .wrapper-profile main.main section.price div.osaeru ol.list li.item-3 p.body {
     grid-column: 2/5;
     grid-row: 2/3;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 14px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-base);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 .wrapper-profile main.main section.price div.osaeru ol.list li.item-1 {
@@ -1902,8 +2013,8 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 
 .wrapper-works article.work section.work--overview h2.title {
     margin-top: 80px;
-    font-family: "Shippori Mincho", serif;
-    font-size: 32px;
+    font-family: var(--font-mincho);
+    font-size: var(--text-xl);
     font-weight: 400;
     font-style: normal;
 }
@@ -1951,24 +2062,24 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 .wrapper-works article.work section.work--overview .info dl.list div.item dd {
     white-space: normal;
     word-break: break-word;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 14px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-base);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 @media screen and (max-width: 809px) {
 
     .wrapper-works article.work section.work--overview .info dl.list div.item dt,
     .wrapper-works article.work section.work--overview .info dl.list div.item dd {
-        font-family: "IBM Plex Sans JP", sans-serif;
-        font-size: 10px;
+        font-family: var(--font-sans-jp);
+        font-size: var(--text-xs);
         font-style: normal;
         font-weight: 300;
-        line-height: 180%;
-        letter-spacing: 1.5px;
+        line-height: var(--leading-normal);
+        letter-spacing: var(--tracking-wide);
     }
 }
 
@@ -1991,22 +2102,22 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 }
 
 .wrapper-works article.work section.work--overview .info p[lang=ja] {
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 14px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-base);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 @media screen and (max-width: 809px) {
     .wrapper-works article.work section.work--overview .info p[lang=ja] {
-        font-family: "IBM Plex Sans JP", sans-serif;
-        font-size: 12px;
+        font-family: var(--font-sans-jp);
+        font-size: var(--text-sm);
         font-style: normal;
         font-weight: 300;
-        line-height: 180%;
-        letter-spacing: 1.5px;
+        line-height: var(--leading-normal);
+        letter-spacing: var(--tracking-wide);
     }
 }
 
@@ -2021,12 +2132,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 }
 
 .wrapper-works article.work section.work--overview .info p[lang=en] {
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 10px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-xs);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
     margin-top: 16px;
 }
 
@@ -2062,12 +2173,12 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 .wrapper-works article.work section.work--overview .url a {
     grid-column: 2/3;
     grid-row: 1/2;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 14px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-base);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 .wrapper-works article.work section.work--overview figure.img {
@@ -2154,22 +2265,22 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 }
 
 .wrapper-works article.work section.work--contents .gyo .text p[lang=ja] {
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 14px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-base);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 .wrapper-works article.work section.work--contents .gyo .text p[lang=en] {
     margin-top: 24px;
-    font-family: "IBM Plex Sans JP", sans-serif;
-    font-size: 10px;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-xs);
     font-style: normal;
     font-weight: 300;
-    line-height: 180%;
-    letter-spacing: 1.5px;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
 }
 
 .wrapper-works article.work section.work--contents .gyo figure.img {
@@ -2188,22 +2299,22 @@ h2.common-nakaguro-to-kakko-no-en span[lang=en] {
 }
 
 .wrapper-works aside.work--next-work span.label {
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 16px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-md);
 }
 
 .wrapper-works aside.work--next-work a.link p.title {
     margin-top: 24px;
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 40px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-2xl);
 }
 
 .wrapper-works aside.work--next-work a.link img {
@@ -2292,12 +2403,12 @@ footer.footer-wrapper .main nav.links {
 }
 
 footer.footer-wrapper .main nav.links a {
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 16px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-md);
 }
 
 footer.footer-wrapper .main .contact {
@@ -2317,21 +2428,21 @@ footer.footer-wrapper .main .contact {
 }
 
 footer.footer-wrapper .main .contact p.title {
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 16px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-md);
 }
 
 footer.footer-wrapper .main .contact a.text-fit {
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 32px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-xl);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
@@ -2340,11 +2451,11 @@ footer.footer-wrapper .main .contact a.text-fit {
 
 @media screen and (max-width: 809px) {
     footer.footer-wrapper .main .contact a.text-fit {
-        font-family: "Nuosu SIL", serif;
+        font-family: var(--font-serif-en);
         font-style: normal;
         font-weight: 400;
-        line-height: 120%;
-        letter-spacing: 1px;
+        line-height: var(--leading-tight);
+        letter-spacing: var(--tracking-normal);
         white-space: nowrap;
         display: inline-block;
     }
@@ -2362,12 +2473,12 @@ footer.footer-wrapper .footer {
 }
 
 footer.footer-wrapper .footer .copyright p {
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 12px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-sm);
 }
 
 footer.footer-wrapper .footer .sns {
@@ -2380,18 +2491,16 @@ footer.footer-wrapper .footer .sns {
 }
 
 footer.footer-wrapper .footer .sns a {
-    font-family: "Nuosu SIL", serif;
+    font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
-    line-height: 120%;
-    letter-spacing: 1px;
-    font-size: 12px;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-sm);
 }
 
 .common-nakaguro-to-kakko-no-en .char {
     display: inline-block;
-    /* transform: translateY(40px); */
-    /* transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); */
     will-change: transform;
 }
 

@@ -36,7 +36,7 @@ function generateWorkContent(workData) {
     if (!workData) return;
 
     // タイトルを設定
-    const titleElement = document.querySelector('h2.title.common-nakaguro-to-kakko-no-en span');
+    const titleElement = document.querySelector('h2.title.common-nakaguro-to-kakko-no-en span[lang="en"]');
     if (titleElement) {
         titleElement.textContent = workData.titleEn;
     }
