@@ -462,7 +462,7 @@ p.announcement__text {
     }
 }
 
-.page-home .menu-bar .menu-visible button.open-menu {
+button.open-menu {
     transition: all 0.2s ease;
     width: 48px;
     aspect-ratio: 1/1;
@@ -475,8 +475,8 @@ p.announcement__text {
     cursor: pointer;
 }
 
-.page-home .menu-bar .menu-visible button.open-menu::before,
-.page-home .menu-bar .menu-visible button.open-menu::after {
+button.open-menu::before,
+button.open-menu::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -485,6 +485,10 @@ p.announcement__text {
     background-color: #fff;
 }
 
+button.open-menu::before {
+    width: 16px;
+    height: 1px;
+}
 
 button.open-menu::after {
     width: 1px;
