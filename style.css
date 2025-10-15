@@ -500,7 +500,7 @@ button.open-menu:hover {
     transition: all 0.2s ease;
 }
 
-.page-home .menu-bar .menu-hidden {
+.menu-bar .menu-hidden {
     display: none;
     flex-direction: column;
     justify-content: flex-start;
@@ -512,7 +512,7 @@ button.open-menu:hover {
     width: 100%;
 }
 
-.page-home .menu-bar .menu-hidden nav.links {
+nav.links {
     width: 100%;
     margin-top: 64px;
     display: flex;
@@ -520,11 +520,9 @@ button.open-menu:hover {
     justify-content: flex-start;
     align-items: flex-start;
     gap: 16px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid #494949;
 }
 
-.page-home .menu-bar .menu-hidden nav.links a {
+nav.links a {
     font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
@@ -533,7 +531,7 @@ button.open-menu:hover {
     font-size: var(--text-base);
 }
 
-.page-home .menu-bar .menu-hidden nav.links-sns {
+nav.links-sns {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -544,7 +542,7 @@ button.open-menu:hover {
     border-bottom: 1px solid #494949;
 }
 
-.page-home .menu-bar .menu-hidden nav.links-sns a {
+nav.links-sns a {
     font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
@@ -553,7 +551,7 @@ button.open-menu:hover {
     font-size: var(--text-sm);
 }
 
-.page-home .menu-bar .menu-hidden .contact {
+.contact {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -564,7 +562,7 @@ button.open-menu:hover {
     width: 100%;
 }
 
-.page-home .menu-bar .menu-hidden .contact p.title {
+.contact p.title {
     font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
@@ -573,7 +571,7 @@ button.open-menu:hover {
     font-size: var(--text-base);
 }
 
-.page-home .menu-bar .menu-hidden .contact a {
+.contact a {
     font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
@@ -592,27 +590,27 @@ button.open-menu:hover {
     width: 100%;
 }
 
-.page-home .menu-bar.is-open .menu-visible button.open-menu::before {
+.menu-bar.is-open .menu-visible button.open-menu::before {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.page-home .menu-bar.is-open .menu-visible button.open-menu::after {
+.menu-bar.is-open .menu-visible button.open-menu::after {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.page-home .menu-bar.is-open .menu-hidden {
+.menu-bar.is-open .menu-hidden {
     display: flex;
     opacity: 1;
     transform: translateY(0);
 }
 
-.page-home header.header {
+header.header {
     z-index: 1;
     position: relative;
     width: 100%;
 }
 
-.page-home header.header div.copy {
+div.main-copy {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -620,7 +618,7 @@ button.open-menu:hover {
     gap: 0px;
 }
 
-.page-home header.header div.copy .copy-ja p[lang=ja] {
+div.main-copy .copy-ja p[lang=ja] {
     margin-top: -8px;
     font-size: 32px;
     height: 56px;
@@ -630,11 +628,11 @@ button.open-menu:hover {
     width: 100%;
 }
 
-.page-home header.header div.copy .copy-en {
+div.main-copy .copy-en {
     margin-top: 40px;
 }
 
-.page-home header.header div.copy .copy-en p[lang=en] {
+div.main-copy .copy-en p[lang=en] {
     margin-top: 8px;
     font-family: var(--font-serif-en);
     font-style: normal;
@@ -646,29 +644,29 @@ button.open-menu:hover {
 }
 
 @media screen and (max-width: 809px) {
-    .page-home header.header div.copy {
+    div.main-copy {
         margin-top: 80px;
         width: 100%;
     }
 
-    .page-home header.header div.copy .copy-ja {
+    div.main-copy .copy-ja {
         width: 100%;
         height: 80px;
     }
 
-    .page-home header.header div.copy .copy-ja p[lang=ja] {
+    div.main-copy .copy-ja p[lang=ja] {
         margin-top: -8px;
         font-size: var(--text-md);
         height: auto;
         width: 100%;
     }
 
-    .page-home header.header div.copy .copy-en {
+    div.main-copy .copy-en {
         margin-top: 24px;
         height: 48px;
     }
 
-    .page-home header.header div.copy .copy-en p[lang=en] {
+    div.main-copy .copy-en p[lang=en] {
         font-family: var(--font-serif-en);
         font-style: normal;
         font-weight: 400;
@@ -679,7 +677,7 @@ button.open-menu:hover {
     }
 }
 
-.page-home main.main {
+main.main {
     margin-top: 104px;
     display: flex;
     flex-direction: column;
@@ -688,7 +686,7 @@ button.open-menu:hover {
     gap: 104px;
 }
 
-.page-home main.main section.client-works {
+section.client-works {
     display: flex;
     margin-bottom: 40px;
     flex-direction: row;
@@ -699,7 +697,7 @@ button.open-menu:hover {
     column-gap: 24px;
 }
 
-.page-home main.main section.client-works article.work {
+section.client-works article.work {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -707,18 +705,18 @@ button.open-menu:hover {
     row-gap: 8px;
 }
 
-.page-home main.main section.client-works article.work a.link {
+section.client-works article.work a.link {
     width: 100%;
     height: 100%;
 }
 
-.page-home main.main section.client-works article.work a.link img {
+section.client-works article.work a.link img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.page-home main.main section.client-works article.work a.link .work-text {
+section.client-works article.work a.link .work-text {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -726,7 +724,7 @@ button.open-menu:hover {
     gap: 0px;
 }
 
-.page-home main.main section.client-works article.work a.link .work-text h3.title {
+section.client-works article.work a.link .work-text h3.title {
     font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
@@ -735,7 +733,7 @@ button.open-menu:hover {
     font-size: var(--text-md);
 }
 
-.page-home main.main section.client-works article.work a.link .work-text time.day {
+section.client-works article.work a.link .work-text time.day {
     font-family: var(--font-sans-jp);
     font-size: var(--text-xs);
     font-style: normal;
@@ -744,53 +742,53 @@ button.open-menu:hover {
     letter-spacing: var(--tracking-wide);
 }
 
-.page-home main.main section.client-works article.work:nth-of-type(1),
-.page-home main.main section.client-works article.work:nth-of-type(5),
-.page-home main.main section.client-works article.work:nth-of-type(9),
-.page-home main.main section.client-works article.work:nth-of-type(10),
-.page-home main.main section.client-works article.work:nth-of-type(14) {
+main.main section.client-works article.work:nth-of-type(1),
+main.main section.client-works article.work:nth-of-type(5),
+main.main section.client-works article.work:nth-of-type(9),
+main.main section.client-works article.work:nth-of-type(10),
+main.main section.client-works article.work:nth-of-type(14) {
     width: calc(50% - 12px);
 }
 
-.page-home main.main section.client-works article.work:nth-of-type(1) a.link img,
-.page-home main.main section.client-works article.work:nth-of-type(5) a.link img,
-.page-home main.main section.client-works article.work:nth-of-type(9) a.link img,
-.page-home main.main section.client-works article.work:nth-of-type(10) a.link img,
-.page-home main.main section.client-works article.work:nth-of-type(14) a.link img {
+main.main section.client-works article.work:nth-of-type(1) a.link img,
+main.main section.client-works article.work:nth-of-type(5) a.link img,
+main.main section.client-works article.work:nth-of-type(9) a.link img,
+main.main section.client-works article.work:nth-of-type(10) a.link img,
+main.main section.client-works article.work:nth-of-type(14) a.link img {
     height: 700px;
 }
 
-.page-home main.main section.client-works article.work:nth-of-type(2),
-.page-home main.main section.client-works article.work:nth-of-type(6),
-.page-home main.main section.client-works article.work:nth-of-type(8),
-.page-home main.main section.client-works article.work:nth-of-type(11),
-.page-home main.main section.client-works article.work:nth-of-type(15) {
+main.main section.client-works article.work:nth-of-type(2),
+main.main section.client-works article.work:nth-of-type(6),
+main.main section.client-works article.work:nth-of-type(8),
+main.main section.client-works article.work:nth-of-type(11),
+main.main section.client-works article.work:nth-of-type(15) {
     margin-top: 0px;
     width: calc(25% - 18px);
 }
 
-.page-home main.main section.client-works article.work:nth-of-type(2) a.link img,
-.page-home main.main section.client-works article.work:nth-of-type(6) a.link img,
-.page-home main.main section.client-works article.work:nth-of-type(8) a.link img,
-.page-home main.main section.client-works article.work:nth-of-type(11) a.link img,
-.page-home main.main section.client-works article.work:nth-of-type(15) a.link img {
+main.main section.client-works article.work:nth-of-type(2) a.link img,
+main.main section.client-works article.work:nth-of-type(6) a.link img,
+main.main section.client-works article.work:nth-of-type(8) a.link img,
+main.main section.client-works article.work:nth-of-type(11) a.link img,
+main.main section.client-works article.work:nth-of-type(15) a.link img {
     height: 350px;
 }
 
-.page-home main.main section.client-works article.work:nth-of-type(3),
-.page-home main.main section.client-works article.work:nth-of-type(4),
-.page-home main.main section.client-works article.work:nth-of-type(7),
-.page-home main.main section.client-works article.work:nth-of-type(12),
-.page-home main.main section.client-works article.work:nth-of-type(13) {
+main.main section.client-works article.work:nth-of-type(3),
+main.main section.client-works article.work:nth-of-type(4),
+main.main section.client-works article.work:nth-of-type(7),
+main.main section.client-works article.work:nth-of-type(12),
+main.main section.client-works article.work:nth-of-type(13) {
     margin-top: 350px;
     width: calc(25% - 18px);
 }
 
-.page-home main.main section.client-works article.work:nth-of-type(3) a.link img,
-.page-home main.main section.client-works article.work:nth-of-type(4) a.link img,
-.page-home main.main section.client-works article.work:nth-of-type(7) a.link img,
-.page-home main.main section.client-works article.work:nth-of-type(12) a.link img,
-.page-home main.main section.client-works article.work:nth-of-type(13) a.link img {
+main.main section.client-works article.work:nth-of-type(3) a.link img,
+main.main section.client-works article.work:nth-of-type(4) a.link img,
+main.main section.client-works article.work:nth-of-type(7) a.link img,
+main.main section.client-works article.work:nth-of-type(12) a.link img,
+main.main section.client-works article.work:nth-of-type(13) a.link img {
     height: 350px;
 }
 
@@ -1187,7 +1185,7 @@ button.open-menu:hover {
     gap: 0px;
 }
 
-.page-profile header.header div.copy {
+.page-profile div.main-copy {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1195,22 +1193,22 @@ button.open-menu:hover {
     gap: 0px;
 }
 
-.page-profile header.header div.copy .copy-ja {
+.page-profile div.main-copy .copy-ja {
     width: 100%;
 }
 
-.page-profile header.header div.copy .copy-ja p[lang=ja] {
+.page-profile div.main-copy .copy-ja p[lang=ja] {
     margin-top: -8px;
     font-size: 32px;
     height: 56px;
     width: 100%;
 }
 
-.page-profile header.header div.copy .copy-en {
+.page-profile div.main-copy .copy-en {
     width: 100%;
 }
 
-.page-profile header.header div.copy .copy-en p[lang=en] {
+.page-profile div.main-copy .copy-en p[lang=en] {
     margin-top: 16px;
     font-family: var(--font-serif-en);
     font-style: normal;
@@ -1223,16 +1221,16 @@ button.open-menu:hover {
 }
 
 @media screen and (max-width: 809px) {
-    .page-profile header.header div.copy {
+    .page-profile div.main-copy {
         margin-top: 80px;
     }
 
-    .page-profile header.header div.copy p[lang=ja] {
+    .page-profile div.main-copy p[lang=ja] {
         margin-top: -8px;
         font-size: var(--text-md);
     }
 
-    .page-profile header.header div.copy p[lang=en] {
+    .page-profile div.main-copy p[lang=en] {
         margin-top: 24px;
         font-family: var(--font-serif-en);
         font-style: normal;
