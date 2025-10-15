@@ -485,17 +485,13 @@ p.announcement__text {
     background-color: #fff;
 }
 
-.page-home .menu-bar .menu-visible button.open-menu::before {
-    width: 16px;
-    height: 1px;
-}
 
-.page-home .menu-bar .menu-visible button.open-menu::after {
+button.open-menu::after {
     width: 1px;
     height: 16px;
 }
 
-.page-home .menu-bar .menu-visible button.open-menu:hover {
+button.open-menu:hover {
     opacity: 0.4;
     transition: all 0.2s ease;
 }
