@@ -722,6 +722,13 @@ main.main {
     justify-content: flex-start;
     align-items: flex-start;
     gap: 0px;
+    position: relative;
+    z-index: 5;
+}
+
+/* グリッドアニメーションのz-index設定 */
+.grid-animation-container {
+    z-index: 1 !important;
 }
 
 .works__text h3.title {
@@ -742,53 +749,53 @@ main.main {
     letter-spacing: var(--tracking-wide);
 }
 
-main.main .works .works__item:nth-of-type(1),
-main.main .works .works__item:nth-of-type(5),
-main.main .works .works__item:nth-of-type(9),
-main.main .works .works__item:nth-of-type(10),
-main.main .works .works__item:nth-of-type(14) {
+.works__item:nth-of-type(1),
+.works__item:nth-of-type(5),
+.works__item:nth-of-type(9),
+.works__item:nth-of-type(10),
+.works__item:nth-of-type(14) {
     width: calc(50% - 12px);
 }
 
-main.main .works .works__item:nth-of-type(1) .works__link img,
-main.main .works .works__item:nth-of-type(5) .works__link img,
-main.main .works .works__item:nth-of-type(9) .works__link img,
-main.main .works .works__item:nth-of-type(10) .works__link img,
-main.main .works .works__item:nth-of-type(14) .works__link img {
+.works__item:nth-of-type(1) .works__link img,
+.works__item:nth-of-type(5) .works__link img,
+.works__item:nth-of-type(9) .works__link img,
+.works__item:nth-of-type(10) .works__link img,
+.works__item:nth-of-type(14) .works__link img {
     height: 700px;
 }
 
-main.main .works .works__item:nth-of-type(2),
-main.main .works .works__item:nth-of-type(6),
-main.main .works .works__item:nth-of-type(8),
-main.main .works .works__item:nth-of-type(11),
-main.main .works .works__item:nth-of-type(15) {
+.works__item:nth-of-type(2),
+.works__item:nth-of-type(6),
+.works__item:nth-of-type(8),
+.works__item:nth-of-type(11),
+.works__item:nth-of-type(15) {
     margin-top: 0px;
     width: calc(25% - 18px);
 }
 
-main.main .works .works__item:nth-of-type(2) .works__link img,
-main.main .works .works__item:nth-of-type(6) .works__link img,
-main.main .works .works__item:nth-of-type(8) .works__link img,
-main.main .works .works__item:nth-of-type(11) .works__link img,
-main.main .works .works__item:nth-of-type(15) .works__link img {
+.works__item:nth-of-type(2) .works__link img,
+.works__item:nth-of-type(6) .works__link img,
+.works__item:nth-of-type(8) .works__link img,
+.works__item:nth-of-type(11) .works__link img,
+.works__item:nth-of-type(15) .works__link img {
     height: 350px;
 }
 
-main.main .works .works__item:nth-of-type(3),
-main.main .works .works__item:nth-of-type(4),
-main.main .works .works__item:nth-of-type(7),
-main.main .works .works__item:nth-of-type(12),
-main.main .works .works__item:nth-of-type(13) {
+.works__item:nth-of-type(3),
+.works__item:nth-of-type(4),
+.works__item:nth-of-type(7),
+.works__item:nth-of-type(12),
+.works__item:nth-of-type(13) {
     margin-top: 350px;
     width: calc(25% - 18px);
 }
 
-main.main .works .works__item:nth-of-type(3) .works__link img,
-main.main .works .works__item:nth-of-type(4) .works__link img,
-main.main .works .works__item:nth-of-type(7) .works__link img,
-main.main .works .works__item:nth-of-type(12) .works__link img,
-main.main .works .works__item:nth-of-type(13) .works__link img {
+.works__item:nth-of-type(3) .works__link img,
+.works__item:nth-of-type(4) .works__link img,
+.works__item:nth-of-type(7) .works__link img,
+.works__item:nth-of-type(12) .works__link img,
+.works__item:nth-of-type(13) .works__link img {
     height: 350px;
 }
 
@@ -833,6 +840,10 @@ main.main .works .works__item:nth-of-type(13) .works__link img {
         top: 350px;
         left: 0;
         width: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px;
+        border-radius: 4px;
     }
 
     .page-home main.main .works .works__item:nth-of-type(3) {
@@ -855,6 +866,10 @@ main.main .works .works__item:nth-of-type(13) .works__link img {
         top: 350px;
         left: 0;
         width: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px;
+        border-radius: 4px;
     }
 
     .page-home main.main .works .works__item:nth-of-type(4) {
@@ -874,6 +889,10 @@ main.main .works .works__item:nth-of-type(13) .works__link img {
         top: 350px;
         left: 0;
         width: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px;
+        border-radius: 4px;
     }
 
     .page-home main.main .works .works__item:nth-of-type(5) {
@@ -910,6 +929,10 @@ main.main .works .works__item:nth-of-type(13) .works__link img {
         top: 350px;
         left: 0;
         width: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px;
+        border-radius: 4px;
     }
 
     .page-home main.main .works .works__item:nth-of-type(7) {
@@ -929,6 +952,10 @@ main.main .works .works__item:nth-of-type(13) .works__link img {
         top: 350px;
         left: 0;
         width: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px;
+        border-radius: 4px;
     }
 
     .page-home main.main .works .works__item:nth-of-type(8) {
@@ -949,6 +976,10 @@ main.main .works .works__item:nth-of-type(13) .works__link img {
         top: 350px;
         left: 0;
         width: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px;
+        border-radius: 4px;
     }
 
     .page-home main.main .works .works__item:nth-of-type(9) {
@@ -969,6 +1000,10 @@ main.main .works .works__item:nth-of-type(13) .works__link img {
         top: 350px;
         left: 0;
         width: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px;
+        border-radius: 4px;
     }
 
     .page-home main.main .works .works__item:nth-of-type(10) {
@@ -1004,6 +1039,10 @@ main.main .works .works__item:nth-of-type(13) .works__link img {
         top: 350px;
         left: 0;
         width: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px;
+        border-radius: 4px;
     }
 
     .page-home main.main .works .works__item:nth-of-type(12) {
@@ -1024,6 +1063,10 @@ main.main .works .works__item:nth-of-type(13) .works__link img {
         top: 350px;
         left: 0;
         width: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px;
+        border-radius: 4px;
     }
 
     .page-home main.main .works .works__item:nth-of-type(13) {
@@ -1059,6 +1102,10 @@ main.main .works .works__item:nth-of-type(13) .works__link img {
         top: 350px;
         left: 0;
         width: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px;
+        border-radius: 4px;
     }
 
     .page-home main.main .works .works__item:nth-of-type(15) {
@@ -1079,6 +1126,10 @@ main.main .works .works__item:nth-of-type(13) .works__link img {
         top: 350px;
         left: 0;
         width: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px;
+        border-radius: 4px;
     }
 }
 

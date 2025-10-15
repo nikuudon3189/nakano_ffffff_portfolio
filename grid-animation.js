@@ -151,6 +151,9 @@
             parentElement.style.position = 'relative';
         }
 
+        // 親要素の高さを元の画像の高さに合わせる
+        parentElement.style.height = height + 'px';
+
         // コンテナを作成（親要素内に配置）
         var container = document.createElement('div');
         container.className = 'grid-animation-container';
@@ -158,12 +161,12 @@
         container.style.top = '0';
         container.style.left = '0';
         container.style.width = '100%';
-        container.style.height = '100%';
+        container.style.height = height + 'px'; // 元の画像の高さに合わせる
         container.style.display = 'grid';
         container.style.gridTemplateColumns = 'repeat(' + config.gridCols + ', 1fr)';
         container.style.gridTemplateRows = 'repeat(' + config.gridRows + ', 1fr)';
         container.style.gap = '0';
-        container.style.zIndex = '1';
+        container.style.zIndex = '0';
 
         // コンテナを親要素に追加
         parentElement.appendChild(container);
