@@ -406,11 +406,11 @@ h2.section-title span[lang=en] {
     border: 1px solid #666;
 }
 
-.menu-bar .is-open {
+.menu-bar.is-open {
     animation: menuOpen 0.5s cubic-bezier(0.3, 1, 0.3, 1) forwards;
 }
 
-.menu-bar .is-close {
+.menu-bar.is-close {
     animation: menuClose 0.5s cubic-bezier(0.3, 1, 0.3, 1) forwards;
 }
 
