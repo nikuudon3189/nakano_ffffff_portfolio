@@ -199,7 +199,7 @@ img {
     display: block;
 }
 
-h1.logo-header.common-h1-header {
+h1.logo-header {
     position: fixed;
     top: 64px;
     right: 64px;
@@ -208,27 +208,27 @@ h1.logo-header.common-h1-header {
 }
 
 @media screen and (max-width: 809px) {
-    h1.logo-header.common-h1-header {
+    h1.logo-header {
         top: 64px;
         left: 16px;
     }
 }
 
-h1.logo-header.common-h1-header a {
+a.logo-header-link {
     z-index: 10;
     display: block;
     width: auto;
     height: auto;
 }
 
-h1.logo-header.common-h1-header a img {
+img.logo-header-img {
     display: block;
     width: auto;
     height: 24px;
 }
 
 @media screen and (max-width: 809px) {
-    h1.logo-header.common-h1-header a img {
+    img.logo-header-img {
         width: 40vw;
         min-width: 160px;
         max-width: 400px;
@@ -383,7 +383,7 @@ h2.section-title span[lang=en] {
     }
 }
 
-.page-home .menu-bar {
+.menu-bar {
     width: 480px;
     height: 58px;
     transition: all 0.3s cubic-bezier(0.3, 1, 0.3, 1);
@@ -406,15 +406,15 @@ h2.section-title span[lang=en] {
     border: 1px solid #666;
 }
 
-.page-home .menu-bar.is-open {
+.menu-bar .is-open {
     animation: menuOpen 0.5s cubic-bezier(0.3, 1, 0.3, 1) forwards;
 }
 
-.page-home .menu-bar.is-close {
+.menu-bar .is-close {
     animation: menuClose 0.5s cubic-bezier(0.3, 1, 0.3, 1) forwards;
 }
 
-.page-home .menu-bar .menu-visible {
+.menu-visible {
     align-self: stretch;
     display: flex;
     flex-direction: row;
@@ -423,14 +423,14 @@ h2.section-title span[lang=en] {
     gap: 16px;
 }
 
-.page-home .menu-bar .menu-visible .text-wrapper {
+.announcement__text-wrapper {
     flex-grow: 1;
     overflow: hidden;
     margin-top: -8px;
     text-overflow: clip;
 }
 
-.page-home .menu-bar .menu-visible .text-wrapper p.text {
+p.announcement__text {
     font-family: var(--font-sans-jp);
     font-size: var(--text-md);
     font-style: normal;
