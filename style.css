@@ -1585,8 +1585,31 @@ section.profile figure.figure img {
     }
 }
 
+
+.profile-section__flow-list {
+    grid-column: 2/-1;
+}
+
+@media screen and (max-width: 1024px) {
+    .profile-section__flow-list {
+        grid-column: 1/-1;
+    }
+}
+
+.profile-section__flow-item {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 24px;
+    grid-row-gap: 0px;
+    margin-top: 24px;
+    width: 100%;
+    grid-column: 2/-1;
+}
+
 .profile-section__flow-item__number {
     grid-column: 1/2;
+    grid-row: 1;
     border-top: 1px solid #424242;
     padding-top: 24px;
     font-family: var(--font-sans-jp);
@@ -1599,6 +1622,7 @@ section.profile figure.figure img {
 
 .profile-section__flow-item__title {
     grid-column: 2/4;
+    grid-row: 1;
     font-family: var(--font-sans-jp);
     font-size: var(--text-lg);
     font-style: normal;
@@ -1609,6 +1633,7 @@ section.profile figure.figure img {
 
 .profile-section__flow-item__content {
     grid-column: 4/-1;
+    grid-row: 1;
 }
 
 .profile-section__flow-item__content p[lang=ja] {
