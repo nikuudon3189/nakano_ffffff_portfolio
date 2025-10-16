@@ -390,11 +390,11 @@ img.logo-header-img {
 
 
 @media screen and (max-width: 809px) {
-    br.common-br-sp {
+    br.br-sp {
         display: none;
     }
 
-    br.common-br-pc {
+    br.br-pc {
         display: none;
     }
 }
@@ -718,13 +718,11 @@ div.main-copy .copy-en p[lang=en] {
     }
 }
 
-main.main {
-    margin-top: 104px;
+.main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 104px;
 }
 
 .works {
@@ -1333,7 +1331,7 @@ div.main-copy .copy-en p[lang=en] {
     }
 }
 
-main.main {
+.main {
     width: 100%;
     margin-top: 104px;
 }
@@ -1870,7 +1868,7 @@ section.profile figure.figure img {
 }
 
 .profile-section__price__osaeru__list__item__text {
-    grid-column: 2/-1;
+    grid-column: 2/4;
     grid-row: 2/3;
 }
 
