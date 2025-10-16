@@ -1598,13 +1598,9 @@ section.profile figure.figure img {
 
 .profile-section__flow-item {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: auto;
-    grid-column-gap: 24px;
-    grid-row-gap: 0px;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
     margin-top: 24px;
-    width: 100%;
-    grid-column: 2/-1;
     border-top: 1px solid #424242;
     padding-top: 24px;
 }
@@ -1632,8 +1628,8 @@ section.profile figure.figure img {
 }
 
 .profile-section__flow-item__content {
-    grid-column: 4/-1;
-    grid-row: 1;
+    grid-column: 2/-1;
+    grid-row: 2;
 }
 
 .profile-section__flow-item__content p[lang=ja] {
@@ -1679,8 +1675,6 @@ section.profile figure.figure img {
         grid-column: 1/-1;
     }
 }
-
-
 
 
 .profile-section__flow-item .line {
