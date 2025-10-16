@@ -1605,13 +1605,13 @@ section.profile figure.figure img {
     margin-top: 24px;
     width: 100%;
     grid-column: 2/-1;
+    border-top: 1px solid #424242;
+    padding-top: 24px;
 }
 
 .profile-section__flow-item__number {
     grid-column: 1/2;
     grid-row: 1;
-    border-top: 1px solid #424242;
-    padding-top: 24px;
     font-family: var(--font-sans-jp);
     font-size: var(--text-xs);
     font-style: normal;
@@ -1621,8 +1621,8 @@ section.profile figure.figure img {
 }
 
 .profile-section__flow-item__title {
-    grid-column: 2/4;
-    grid-row: 1;
+    grid-column: 1/2;
+    grid-row: 2;
     font-family: var(--font-sans-jp);
     font-size: var(--text-lg);
     font-style: normal;
