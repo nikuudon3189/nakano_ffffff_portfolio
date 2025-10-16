@@ -1681,54 +1681,7 @@ section.profile figure.figure img {
 }
 
 
-.profile-section__flow-item__title {
-    grid-column: 2/4;
-    grid-row: 2/3;
-    font-family: var(--font-sans-jp);
-    font-size: var(--text-lg);
-    font-style: normal;
-    font-weight: 300;
-    line-height: var(--leading-normal);
-    letter-spacing: var(--tracking-wide);
-}
 
-@media screen and (max-width: 1024px) {
-    .profile-section__flow-item__title {
-        grid-column: 1/4;
-    }
-}
-
-.profile-section__flow-item__content {
-    grid-column: 4/-1;
-    grid-row: 2/3;
-}
-
-.profile-section__flow-item__content p[lang=ja] {
-    width: 100%;
-    font-family: var(--font-sans-jp);
-    font-size: var(--text-base);
-    font-style: normal;
-    font-weight: 300;
-    line-height: var(--leading-normal);
-    letter-spacing: var(--tracking-wide);
-}
-
-.profile-section__flow-item__content p[lang=en] {
-    margin-top: 16px;
-    width: 100%;
-    font-family: var(--font-serif-en);
-    font-style: normal;
-    font-weight: 400;
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-normal);
-    font-size: var(--text-sm);
-}
-
-@media screen and (max-width: 1024px) {
-    .profile-section__flow-item__content {
-        grid-column: 3/-1;
-    }
-}
 
 .profile-section__flow-item .line {
     width: 100%;
@@ -1959,9 +1912,9 @@ section.price div.pricing-list ol.list li.item-3:last-child {
     }
 }
 
-section.price div.pricing-list ol.list li.item-1 span.profile-section__flow-item__number,
-section.price div.pricing-list ol.list li.item-2 span.profile-section__flow-item__number,
-section.price div.pricing-list ol.list li.item-3 span.profile-section__flow-item__number {
+section.price div.pricing-list ol.list li.item-1 span.number,
+section.price div.pricing-list ol.list li.item-2 span.number,
+section.price div.pricing-list ol.list li.item-3 span.number {
     grid-column: 1/2;
     grid-row: 1/2;
     font-family: var(--font-sans-jp);
@@ -1975,18 +1928,18 @@ section.price div.pricing-list ol.list li.item-3 span.profile-section__flow-item
 
 @media screen and (max-width: 1024px) {
 
-    section.price div.pricing-list ol.list li.item-1 span.profile-section__flow-item__number,
-    section.price div.pricing-list ol.list li.item-2 span.profile-section__flow-item__number,
-    section.price div.pricing-list ol.list li.item-3 span.profile-section__flow-item__number {
+    section.price div.pricing-list ol.list li.item-1 span.number,
+    section.price div.pricing-list ol.list li.item-2 span.number,
+    section.price div.pricing-list ol.list li.item-3 span.number {
         grid-column: 1/2;
     }
 }
 
 @media screen and (max-width: 809px) {
 
-    section.price div.pricing-list ol.list li.item-1 span.profile-section__flow-item__number,
-    section.price div.pricing-list ol.list li.item-2 span.profile-section__flow-item__number,
-    section.price div.pricing-list ol.list li.item-3 span.profile-section__flow-item__number {
+    section.price div.pricing-list ol.list li.item-1 span.number,
+    section.price div.pricing-list ol.list li.item-2 span.number,
+    section.price div.pricing-list ol.list li.item-3 span.number {
         width: auto;
         margin-top: 5px;
     }
