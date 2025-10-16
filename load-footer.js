@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(data => {
                 footerContainer.innerHTML = data;
+                // Footer読み込み完了後にtext-fit機能を実行
+                if (typeof resizeTextToFit === 'function') {
+                    resizeTextToFit();
+                }
             })
             .catch(error => {
                 console.error('Error loading footer:', error);

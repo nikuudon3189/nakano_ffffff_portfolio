@@ -1,9 +1,15 @@
 // テキストを画面幅に合わせてリサイズする関数
 function resizeTextToFit() {
+    // .text-fit クラスを持つ要素を取得
+    const el = document.querySelector('.text-fit');
+
+    // 要素が見つからない場合は何もしない
+    if (!el) {
+        return;
+    }
+
     // SPサイズ（809px以下）の場合のみ実行
     if (window.innerWidth <= 809) {
-        // .text-fit クラスを持つ要素を取得
-        const el = document.querySelector('.text-fit');
         // テキストの文字数を取得
         const textLength = el.textContent.length;
         // 画面幅のNN%を目標幅として設定
@@ -14,12 +20,9 @@ function resizeTextToFit() {
         el.style.fontSize = fontSize + 'px';
     } else {
         // PCサイズの場合はデフォルトのフォントサイズに戻す
-        const el = document.querySelector('.text-fit');
         el.style.fontSize = ''; // スタイルをリセット
     }
 }
 
-// ページ読み込み時に実行
-resizeTextToFit();
 // ウィンドウサイズが変更されるたびに実行
 window.addEventListener('resize', resizeTextToFit);

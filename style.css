@@ -2387,6 +2387,7 @@ section.profile figure.figure img {
 }
 
 .footer__contact__mail {
+    margin-top: 8px;
     font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
@@ -2421,6 +2422,13 @@ section.profile figure.figure img {
     grid-auto-rows: auto;
     grid-column-gap: 24px;
     grid-row-gap: 0px;
+
+    font-family: var(--font-serif-en);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-sm);
 }
 
 .footer__bottom__copyright {
@@ -2428,32 +2436,25 @@ section.profile figure.figure img {
     grid-row: 1/2;
 }
 
-.footer__bottom__copyright p {
-    font-family: var(--font-serif-en);
-    font-style: normal;
-    font-weight: 400;
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-normal);
-    font-size: var(--text-sm);
-}
 
 .footer__bottom__sns {
     grid-column: 4/-1;
     grid-row: 1/2;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-start;
-    gap: 160px;
 }
 
-.footer__bottom__sns a {
-    font-family: var(--font-serif-en);
-    font-style: normal;
-    font-weight: 400;
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-normal);
-    font-size: var(--text-sm);
+.footer__sns__x {
+    grid-column: 4/5;
+}
+
+.footer__sns__instagram {
+    grid-column: 5/6;
+}
+
+@media screen and (max-width: 809px) {
+    .footer__sns__x {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
 }
 
 @media screen and (max-width: 809px) {
