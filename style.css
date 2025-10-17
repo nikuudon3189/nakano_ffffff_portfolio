@@ -234,6 +234,14 @@
     background-color: #1F1F20;
 }
 
+/* 中黒のbefore要素 */
+.bg-black-before::before {
+    background-color: #1F1F20;
+}
+
+.bg-black-white::before {
+    background-color: #fff;
+}
 
 html,
 body {
