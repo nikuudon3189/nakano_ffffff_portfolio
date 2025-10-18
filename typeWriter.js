@@ -240,7 +240,7 @@ TypeWriterAnimation.prototype = {
      */
     updateDisplay: function () {
         var displayText = this.buildDisplayText();
-        this.element.innerHTML = displayText.replace(/\n/g, '<br>');
+        this.element.innerHTML = displayText;
     },
 
     /**
