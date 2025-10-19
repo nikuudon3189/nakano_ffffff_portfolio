@@ -235,6 +235,22 @@
         grid-column: 1/-1;
     }
 
+    .profile-section__feature__item {
+        grid-column: 1/-1;
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .profile-section__feature__item__text {
+        grid-column: 1/-1;
+        grid-row: auto;
+    }
+
+    .profile-section__feature__item__img {
+        margin-top: 24px;
+        grid-column: 1/-1;
+        grid-row: auto;
+    }
+
 
     .profile-section__flow-list {
         grid-column: 1/-1;
