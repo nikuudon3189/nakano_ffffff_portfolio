@@ -963,7 +963,6 @@ nav.links-sns a {
 
 /* プロフィールセクションのセクションごとのスタイル＿＿price*/
 
-
 .profile-section__price__intro-mitsumori {
     margin-top: 80px;
     display: grid;
@@ -1044,7 +1043,7 @@ nav.links-sns a {
     font-family: var(--font-mincho);
 }
 
-.profile-section__price__osaeru__title span[lang=ja] {
+.profile-section__price__osaeru__title span {
 
     grid-column: 2/5;
     grid-row: 1/2;
@@ -1055,7 +1054,7 @@ nav.links-sns a {
     grid-row: 2/4;
 }
 
-.profile-section__price__osaeru__list__item {
+.profile-section__price__osaeru__item {
     margin-top: 24px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -1064,7 +1063,7 @@ nav.links-sns a {
     grid-row-gap: 0px;
 }
 
-.profile-section__price__osaeru__list__item__number {
+.profile-section__price__osaeru__item__number {
     grid-column: 1/2;
     grid-row: 1/2;
     font-size: var(--text-4);
@@ -1074,7 +1073,7 @@ nav.links-sns a {
     font-family: var(--font-serif-en);
 }
 
-.profile-section__price__osaeru__list__item__title {
+.profile-section__price__osaeru__item__title {
     grid-column: 1/2;
     grid-row: 2;
     font-size: var(--text-5);
@@ -1084,7 +1083,7 @@ nav.links-sns a {
     font-family: var(--font-mincho);
 }
 
-.profile-section__price__osaeru__list__item__text {
+.profile-section__price__osaeru__item__text {
     grid-column: 2/4;
     grid-row: 2/3;
     font-size: var(--text-3);
