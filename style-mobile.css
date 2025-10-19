@@ -333,11 +333,20 @@
     }
 
     .page-work__kv {
-        aspect-ratio: 3/4;
         width: calc(100% + 32px);
         margin: 0 -16px;
         min-height: 260px;
         max-height: 940px;
+        height: auto;
+    }
+
+    .page-work__kv__img {
+        aspect-ratio: 3/4;
+        height: auto;
+    }
+
+    .page-work__title {
+        margin-top: 40px;
     }
 
     .page-work__overview {
