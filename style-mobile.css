@@ -22,17 +22,17 @@
         flex: 1;
     }
 
-    .menu-bar {
+    .menu {
         width: 100%;
         height: 58px;
     }
 
-    .menu-visible {
+    .menu--visible {
         align-self: stretch;
         display: flex;
     }
 
-    .announcement__text-wrapper {
+    .menu--visible__announcement__text {
         flex-grow: 1;
         overflow: hidden;
     }

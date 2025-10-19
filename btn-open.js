@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     // メニューバーとボタン、隠れメニューの要素を取得
-    const menuBar = document.querySelector('.menu-bar');
-    const openButton = document.querySelector('.menu-bar .menu-visible .open-menu');
-    const hiddenMenu = document.querySelector('.menu-bar .menu-hidden');
+    const menuBar = document.querySelector('.menu');
+    const openButton = document.querySelector('.menu .menu--visible .menu--visible__open-menu');
+    const hiddenMenu = document.querySelector('.menu .menu--hidden');
 
     // デバッグ用のログ
     console.log('menuBar:', menuBar);

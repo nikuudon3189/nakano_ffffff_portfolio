@@ -221,7 +221,7 @@ img.logo-header-img {
 }
 
 
-.menu-bar {
+.menu {
     width: 480px;
     height: 58px;
     transition: all 0.3s cubic-bezier(0.3, 1, 0.3, 1);
@@ -244,15 +244,15 @@ img.logo-header-img {
     border: 1px solid #666;
 }
 
-.menu-bar.is-open {
+.menu.is-open {
     animation: menuOpen 0.5s cubic-bezier(0.3, 1, 0.3, 1) forwards;
 }
 
-.menu-bar.is-close {
+.menu.is-close {
     animation: menuClose 0.5s cubic-bezier(0.3, 1, 0.3, 1) forwards;
 }
 
-.menu-visible {
+.menu--visible {
     align-self: stretch;
     display: flex;
     flex-direction: row;
@@ -261,14 +261,14 @@ img.logo-header-img {
     gap: 16px;
 }
 
-.announcement__text-wrapper {
+.menu--visible__announcement__text {
     flex-grow: 1;
     overflow: hidden;
     margin-top: -8px;
     text-overflow: clip;
 }
 
-p.announcement__text {
+.menu--visible__announcement__text p {
     font-family: var(--font-sans-jp);
     font-size: var(--text-4);
     font-style: normal;
@@ -306,7 +306,7 @@ p.announcement__text {
 }
 
 
-button.open-menu {
+button.menu--visible__open-menu {
     transition: all 0.2s ease;
     width: 48px;
     aspect-ratio: 1/1;
@@ -319,8 +319,8 @@ button.open-menu {
     cursor: pointer;
 }
 
-button.open-menu::before,
-button.open-menu::after {
+button.menu--visible__open-menu::before,
+button.menu--visible__open-menu::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -329,22 +329,22 @@ button.open-menu::after {
     background-color: #fff;
 }
 
-button.open-menu::before {
+button.menu--visible__open-menu::before {
     width: 16px;
     height: 1px;
 }
 
-button.open-menu::after {
+button.menu--visible__open-menu::after {
     width: 1px;
     height: 16px;
 }
 
-button.open-menu:hover {
+button.menu--visible__open-menu:hover {
     opacity: 0.4;
     transition: all 0.2s ease;
 }
 
-.menu-bar .menu-hidden {
+.menu .menu--hidden {
     display: none;
     flex-direction: column;
     justify-content: flex-start;
@@ -356,7 +356,7 @@ button.open-menu:hover {
     width: 100%;
 }
 
-nav.links {
+.menu--hidden__links {
     width: 100%;
     margin-top: 64px;
     display: flex;
@@ -366,7 +366,7 @@ nav.links {
     gap: 16px;
 }
 
-nav.links a {
+.menu--hidden__links a {
     font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
@@ -375,7 +375,7 @@ nav.links a {
     font-size: var(--text-3);
 }
 
-nav.links-sns {
+.menu--hidden__sns {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -386,7 +386,7 @@ nav.links-sns {
     border-bottom: 1px solid #494949;
 }
 
-nav.links-sns a {
+.menu--hidden__sns a {
     font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
@@ -406,7 +406,7 @@ nav.links-sns a {
     width: 100%;
 }
 
-.contact p.title {
+.menu--hidden__contact__title {
     font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
@@ -415,13 +415,13 @@ nav.links-sns a {
     font-size: var(--text-3);
 }
 
-.contact a {
+.menu--hidden__contact__mail {
     font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: 30px;
+    font-size: var(--text-3);
     text-wrap: balance;
     margin-top: 0px;
     text-decoration: underline;
@@ -434,24 +434,18 @@ nav.links-sns a {
     width: 100%;
 }
 
-.menu-bar.is-open .menu-visible button.open-menu::before {
+.menu--visible__open-menu::before {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.menu-bar.is-open .menu-visible button.open-menu::after {
+.menu--visible__open-menu::after {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.menu-bar.is-open .menu-hidden {
+.menu--hidden {
     display: flex;
     opacity: 1;
     transform: translateY(0);
-}
-
-.logo {
-    z-index: 1;
-    position: relative;
-    width: 100%;
 }
 
 .main-copy {
