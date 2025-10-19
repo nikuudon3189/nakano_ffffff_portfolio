@@ -902,9 +902,13 @@ nav.links-sns a {
     margin-top: 24px;
     border-top: 1px solid #424242;
     padding-top: 48px;
-
     counter-increment: flow-counter;
     position: relative;
+}
+
+.profile-section__flow__item:last-child {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #424242;
 }
 
 .profile-section__flow__item::before {
@@ -968,7 +972,7 @@ nav.links-sns a {
     grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: auto;
     grid-column-gap: 24px;
-    grid-row-gap: 40px;
+    grid-row-gap: 24px;
 }
 
 .profile-section__price__intro-mitsumori__intro {
@@ -976,7 +980,6 @@ nav.links-sns a {
     padding-top: 24px;
     grid-column: 1/4;
     grid-row: 1/2;
-    padding-bottom: 24px;
     font-size: var(--text-5);
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -984,11 +987,16 @@ nav.links-sns a {
     font-family: var(--font-mincho);
 }
 
-.profile-section__price__intro-mitsumori__mitsumori-title {
-    border-top: 1px solid #424242;
-    padding-top: 24px;
+.profile-section__price__intro-mitsumori__mitsumori {
     grid-column: 1/4;
     grid-row: 2/3;
+    border-bottom: 1px solid #424242;
+    padding-bottom: 24px;
+}
+
+.profile-section__price__intro-mitsumori__mitsumori h3 {
+    border-top: 1px solid #424242;
+    padding-top: 24px;
     font-size: var(--text-5);
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -996,9 +1004,8 @@ nav.links-sns a {
     font-family: var(--font-mincho);
 }
 
-.profile-section__price__intro-mitsumori__mitsumori-content {
-    grid-column: 1/4;
-    grid-row: 3/4;
+.profile-section__price__intro-mitsumori__mitsumori p {
+    margin-top: 24px;
     font-size: var(--text-3);
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -1008,7 +1015,7 @@ nav.links-sns a {
 
 .profile-section__price__intro-mitsumori__img {
     grid-column: 4/-1;
-    grid-row: 1/4;
+    grid-row: 1/3;
     width: 100%;
     height: 100%;
     object-fit: cover;
