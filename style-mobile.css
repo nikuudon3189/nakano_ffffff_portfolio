@@ -390,6 +390,7 @@
         grid-row-gap: 8px;
     }
 
+
     .page-work__contents__grid-3-6 {
         grid-column: 1/-1;
         grid-row: auto;
@@ -400,9 +401,39 @@
         grid-row: auto;
     }
 
+    .page-work__contents__grid-half {
+        grid-column: 1/-1;
+        grid-row: auto;
+    }
+
+    .page-work__contents__grid-1-2 {
+        grid-column: 1/-1;
+        grid-row: auto;
+    }
+
+    .page-work__contents__grid-text {
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    .page-work__next-work__img {
+        aspect-ratio: 16/9;
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* フッター */
+
+
     .footer-wrapper {
         width: calc(100% + 32px);
         margin: 0 -16px;
+        padding: 40px 16px;
+    }
+
+    .footer__header {
+        padding-bottom: 24px;
     }
 
     .footer__header a img {

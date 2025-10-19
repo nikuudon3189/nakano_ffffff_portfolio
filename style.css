@@ -1257,12 +1257,6 @@ nav.links-sns a {
     grid-row-gap: 40px;
 }
 
-
-
-.page-work__contents .content-row.text-and-image {
-    grid-template-columns: repeat(3, 1fr);
-}
-
 .page-work__contents__grid-3-6 {
     grid-column: 3/-1;
 }
