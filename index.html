@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400&amp;display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&amp;display=swap" rel="stylesheet">
+    <!-- フォントのプリロード -->
+    <link rel="preload" href="fonts/ShipporiMincho-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="fonts/IBMPlexSansJP-Regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="icon" type="image/png" href="images/favicon.png" sizes="180x180">
     <meta property="og:type" content="website">
     <meta property="og:title" content="ページタイトル">
@@ -48,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <div class="logo">
+            <div class="logo-header-wrapper">
                 <h1 class="logo-header">
                     <a href="index.html" class="logo-header-link">
                         <img src="images/logo.svg" alt="" class="logo-header-img">
@@ -56,18 +59,18 @@
                 </h1>
             </div>
             <section class="main-copy">
-                <div class="main-copy__content pc">
+                <div class="main-copy__content-ja pc">
                     <p class="main-copy__text konshoku typewriter" lang="ja">私は、目的や意図の解像度を高めながら、</p>
                     <p class="main-copy__text konshoku typewriter" lang="ja">設計と表現の両面で精度を追求するデザイナーです。</p>
                     <p class="main-copy__text konshoku typewriter" lang="ja">つくって終わるのではなく、つくり続けることで</p>
                     <p class="main-copy__text konshoku typewriter" lang="ja">表現に厚みを加えていきたいと考えています。</p>
                 </div>
-                <div class="main-copy__content sp">
+                <div class="main-copy__content-ja sp">
                     <p class="main-copy__text konshoku typewriter" lang="ja">
                         私は、目的や意図の解像度を高めながら、設計と表現の両面で精度を追求するデザイナーです。つくって終わるのではなく、つくり続けることで表現に厚みを加えていきたいと考えています。
                     </p>
                 </div>
-                <div class="main-copy__content pc">
+                <div class="main-copy__content-en pc">
                     <p class="main-copy__text typewriter" lang="en">I'm a designer who pursures precision in both
                         form and
                         expression,constantly refining purpose and intent.</p>
@@ -76,7 +79,7 @@
                         over time.</p>
                 </div>
 
-                <div class="main-copy__content sp">
+                <div class="main-copy__content-en sp">
                     <p class="main-copy__text typewriter" lang="en">I'm a designer who pursures precision in both
                         form and
                         expression,constantly refining purpose and intent. I aim not just to create, but to
@@ -86,55 +89,60 @@
                 </div>
             </section>
             <section class="home__works">
-                <article class="home__works__item  size-l">
+                <div class="home__works__item  home__works__item--size-l">
                     <a class="home__works__link" href="work-1.html">
-                        <img class="hero grid-animation" src="images/works-1.png" alt="">
+                        <img class="home__works__img" src="images/works-1.png" alt="">
                         <div class="home__works__text">
                             <h3 class="home__works__title">SONY Music VEE Geppaku-Rui </h3>
                             <time class="home__works__day" datetime="2023-04-10">2023.4.10</time>
                         </div>
                     </a>
-                </article>
-                <article class="home__works__item size-s"><a class="home__works__link" href="work-2.html"><img
-                            class="grid-animation" src="images/works-2.png" alt="">
+                </div>
+                <div class="home__works__item home__works__item--size-s">
+                    <a class="home__works__link" href="work-2.html">
+                        <img class="home__works__img" src="images/works-2.png" alt="">
                         <div class="home__works__text">
                             <h3 class="home__works__title">VOCALROCK MANIA DJ NIGHT</h3>
                             <time class="home__works__day" datetime="2023-04-10">2023.4.10</time>
                         </div>
                     </a>
-                </article>
-                <article class="home__works__item size-s"><a class="home__works__link" href="work-3.html"><img
-                            class="grid-animation" src="images/works-3.png" alt="">
+                </div>
+                <div class="home__works__item home__works__item--size-s">
+                    <a class="home__works__link" href="work-3.html">
+                        <img class="home__works__img" src="images/works-3.png" alt="">
                         <div class="home__works__text">
                             <h3 class="home__works__title">ASHMEa</h3>
                             <time class="home__works__day" datetime="2023-04-10">2023.4.10</time>
                         </div>
                     </a>
-                </article>
-                <article class="home__works__item size-s"><a class="home__works__link" href="work-4.html"><img
-                            class="grid-animation" src="images/works-4.png" alt="">
+                </div>
+                <div class="home__works__item home__works__item--size-s">
+                    <a class="home__works__link" href="work-4.html">
+                        <img class="home__works__img" src="images/works-4.png" alt="">
                         <div class="home__works__text">
                             <h3 class="home__works__title">FIRST PiECE</h3>
                             <time class="home__works__day" datetime="2023-04-10">2023.4.10</time>
                         </div>
                     </a>
-                </article>
-                <article class="home__works__item size-l"><a class="home__works__link" href="work-5.html"><img
-                            class="grid-animation" src="images/works-5.png" alt="">
+                </div>
+                <div class="home__works__item home__works__item--size-l"><a class="home__works__link"
+                        href="work-5.html">
+                        <img class="home__works__img" src="images/works-5.png" alt="">
                         <div class="home__works__text">
                             <h3 class="home__works__title">tamaya</h3>
                             <time class="home__works__day" datetime="2023-04-10">2023.4.10</time>
                         </div>
                     </a>
-                </article>
-                <article class="home__works__item size-s"><a class="home__works__link" href="work-6.html"><img
-                            class="grid-animation" src="images/works-6.png" alt="">
+                </div>
+                <div class="home__works__item home__works__item--size-s">
+                    <a class="home__works__link" href="work-6.html">
+                        <img class="home__works__img" src="images/works-6.png" alt="">
                         <div class="home__works__text">
                             <h3 class="home__works__title">Bathycaphe</h3>
                             <time class="home__works__day" datetime="2023-04-10">2023.4.10</time>
                         </div>
                     </a>
-                </article>
+                </div>
             </section>
         </div>
         <div id="footer-container"></div>
@@ -142,7 +150,7 @@
     <script src="btn-open.js"></script>
     <script src="font-size-window-fit.js"></script>
     <script src="typeWriter.js"></script>
-    <script src="grid-animation.js"></script>
+    <script src=" .js"></script>
     <script src="load-footer.js"></script>
 </body>
 

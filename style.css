@@ -72,6 +72,8 @@
     font-weight: 400;
     font-style: normal;
     unicode-range: U+3000-303F, U+3040-309F, U+30A0-30FF;
+    font-display: swap;
+    /* フォント読み込み最適化 */
 }
 
 @font-face {
@@ -81,6 +83,8 @@
     font-style: normal;
     unicode-range: U+4E00-9FAF, U+3400-4DBF;
     /* 漢字 */
+    font-display: swap;
+    /* フォント読み込み最適化 */
 }
 
 /* ============================================
@@ -447,6 +451,8 @@ nav.links-sns a {
     justify-content: flex-start;
     align-items: flex-start;
     gap: 0px;
+    min-height: 200px;
+    /* タイプライター演出中の高さを固定 */
 }
 
 .main-copy__content-jp {
@@ -465,6 +471,8 @@ nav.links-sns a {
     letter-spacing: var(--tracking-normal);
     font-size: var(--text-xl);
     white-space: normal !important;
+    min-height: 1.4em;
+    /* 行の高さを固定 */
 }
 
 .main-copy__text[lang=en] {
@@ -476,6 +484,8 @@ nav.links-sns a {
     letter-spacing: var(--tracking-normal);
     font-size: var(--text-md);
     white-space: normal !important;
+    min-height: 1.4em;
+    /* 行の高さを固定 */
 }
 
 
@@ -509,7 +519,7 @@ nav.links-sns a {
     height: 100%;
 }
 
-.home__works__link img {
+.home__works__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -524,8 +534,6 @@ nav.links-sns a {
     position: relative;
     z-index: 5;
 }
-
-
 
 .home__works__title {
     font-family: var(--font-serif-en);
@@ -545,56 +553,31 @@ nav.links-sns a {
     letter-spacing: var(--tracking-wide);
 }
 
-.home__works__item:nth-of-type(1),
-.home__works__item:nth-of-type(5),
-.home__works__item:nth-of-type(9),
-.home__works__item:nth-of-type(10),
-.home__works__item:nth-of-type(14) {
+/* サイズ別のスタイル */
+.home__works__item--size-l {
     width: calc(50% - 12px);
 }
 
-.home__works__item:nth-of-type(1) .home__works__link img,
-.home__works__item:nth-of-type(5) .home__works__link img,
-.home__works__item:nth-of-type(9) .home__works__link img,
-.home__works__item:nth-of-type(10) .home__works__link img,
-.home__works__item:nth-of-type(14) .home__works__link img {
+.home__works__item--size-l .home__works__img {
     height: 700px;
 }
 
-.home__works__item:nth-of-type(2),
-.home__works__item:nth-of-type(6),
-.home__works__item:nth-of-type(8),
-.home__works__item:nth-of-type(11),
-.home__works__item:nth-of-type(15) {
-    margin-top: 0px;
+.home__works__item--size-s {
     width: calc(25% - 18px);
 }
 
-.home__works__item:nth-of-type(2) .home__works__link img,
-.home__works__item:nth-of-type(6) .home__works__link img,
-.home__works__item:nth-of-type(8) .home__works__link img,
-.home__works__item:nth-of-type(11) .home__works__link img,
-.home__works__item:nth-of-type(15) .home__works__link img {
+.home__works__item--size-s .home__works__img {
     height: 350px;
 }
 
-.home__works__item:nth-of-type(3),
-.home__works__item:nth-of-type(4),
-.home__works__item:nth-of-type(7),
-.home__works__item:nth-of-type(12),
-.home__works__item:nth-of-type(13) {
+/* 2列目の要素（3番目、4番目）は上にマージン */
+.home__works__item:nth-of-type(3) {
     margin-top: 350px;
-    width: calc(25% - 18px);
 }
 
-.home__works__item:nth-of-type(3) .home__works__link img,
-.home__works__item:nth-of-type(4) .home__works__link img,
-.home__works__item:nth-of-type(7) .home__works__link img,
-.home__works__item:nth-of-type(12) .home__works__link img,
-.home__works__item:nth-of-type(13) .home__works__link img {
-    height: 350px;
+.home__works__item:nth-of-type(4) {
+    margin-top: 350px;
 }
-
 
 .private-works {
     display: flex;
@@ -789,7 +772,7 @@ nav.links-sns a {
 
 
 .konshoku {
-    font-family: "Konshoku";
+    font-family: "Konshoku", "Shippori Mincho", "Hiragino Mincho Pro", "Yu Mincho", "YuMincho", "MS PMincho", "MS Mincho", serif;
 }
 
 
@@ -1522,6 +1505,48 @@ nav.links-sns a {
 
 /* Mobile Styles (max-width: 809px) */
 @media screen and (max-width: 809px) {
+    .page-wrapper {
+        padding: 24px 16px 0;
+    }
+
+    .logo-header-wrapper {
+        z-index: 1;
+        position: relative;
+    }
+
+    .logo-header {
+        position: fixed;
+        top: 32px;
+        left: 16px;
+        z-index: 10;
+    }
+
+
+
+    .main-content {
+        flex: 1;
+    }
+
+    .menu-bar {
+        width: 100%;
+        height: 58px;
+    }
+
+    .menu-visible {
+        align-self: stretch;
+        display: flex;
+    }
+
+    .announcement__text-wrapper {
+        flex-grow: 1;
+        overflow: hidden;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+    }
+
     .pc {
         display: none;
     }
@@ -1552,11 +1577,25 @@ nav.links-sns a {
     .main-copy {
         margin-top: 80px;
         width: 100%;
+        min-height: 150px;
+        /* スマホ用のタイプライター演出中の高さを固定 */
     }
 
     .main-copy__content {
         width: 100%;
         height: 80px;
+    }
+
+    .main-copy__content-jp {
+        margin-top: 0px;
+    }
+
+    .main-copy__content-ja {
+        margin-top: 0px;
+    }
+
+    .main-copy__content-en {
+        margin-top: 32px;
     }
 
     .main-copy__content p[lang=ja] {
@@ -1595,12 +1634,60 @@ nav.links-sns a {
         padding: 64px 16px 0 16px;
     }
 
-    .works {
-        column-gap: 12px;
-        row-gap: 0px;
+    .home__works {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 40px;
+        margin-bottom: 40px;
     }
+
+    .home__works__item {
+        margin-top: 0;
+    }
+
+    .home__works__link {
+        width: 100%;
+        height: 100%;
+    }
+
+    .home__works__img {
+        height: auto;
+        aspect-ratio: 4/3;
+    }
+
+    /* サイズ別のスタイル */
+    .home__works__item--size-l {
+        width: calc(100% - 6px);
+    }
+
+    .home__works__item--size-s {
+        width: calc(50% - 6px);
+    }
+
+    .home__works__item--size-l .home__works__img {
+        height: 440px;
+    }
+
+
+    /* 2列目の要素（3番目、4番目）は上にマージン */
+    .home__works__item:nth-of-type(3) {
+        margin-top: 350px;
+    }
+
+    .home__works__item:nth-of-type(4) {
+        margin-top: 0px;
+    }
+
+    .home__works__item:nth-of-type(6) {
+        margin-left: auto;
+    }
+
+
+
+
+    /* プロフィールページ */
 
     .profile-section__title__main {
         font-size: 20px;
@@ -1816,63 +1903,6 @@ nav.links-sns a {
     }
 
 
-    .footer-wrapper {
-        margin: 0px -16px 0px;
-        padding: 40px 16px 32px;
-        width: calc(100% + 32px);
-        grid-template-columns: 1fr;
-    }
-
-    .footer__header {
-        padding-bottom: 24px;
-    }
-
-    .footer__header a img {
-        width: 40vw;
-        min-width: 160px;
-        max-width: 400px;
-        height: auto;
-    }
-
-    .footer__header {
-        grid-column: 1/-1;
-        grid-row: 1/2;
-    }
-
-    .footer__links {
-        grid-column: 1/-1;
-        grid-row: 1/2;
-    }
-
-    .footer__contact__mail {
-        font-family: var(--font-serif-en);
-        font-style: normal;
-        font-weight: 400;
-        line-height: var(--leading-tight);
-        letter-spacing: var(--tracking-normal);
-    }
-
-    .footer__sns__x {
-        grid-column: 1/2;
-        grid-row: 1/2;
-    }
-
-    .footer__bottom__copyright {
-        grid-column: 1/-1;
-        grid-row: 1/2;
-    }
-
-    .footer__bottom__sns {
-        grid-column: 1/-1;
-        grid-row: 2/3;
-        justify-content: flex-start;
-        gap: 40px;
-    }
-
-    h1.logo-header {
-        top: 64px;
-        left: 16px;
-    }
 }
 
 /* Tablet Styles (min-width: 810px) */
