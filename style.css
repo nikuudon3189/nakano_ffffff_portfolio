@@ -39,23 +39,6 @@
 /* ============================================
    Text Utility Classes
    ============================================ */
-.text-body {
-    font-family: var(--font-sans-jp);
-    font-size: var(--text-base);
-    font-style: normal;
-    font-weight: 300;
-    line-height: var(--leading-normal);
-    letter-spacing: var(--tracking-wide);
-}
-
-.text-number {
-    font-family: var(--font-sans-jp);
-    font-size: var(--text-xs);
-    font-style: normal;
-    font-weight: 300;
-    line-height: var(--leading-normal);
-    letter-spacing: var(--tracking-wide);
-}
 
 /* ============================================
    Page Layout
@@ -105,96 +88,12 @@
    ============================================ */
 
 /* 日本語テキスト - IBM Plex Sans JP */
-.text-ja-body {
-    font-family: var(--font-sans-jp);
-    font-size: var(--text-base);
-    font-style: normal;
-    font-weight: 300;
-    line-height: var(--leading-normal);
-    letter-spacing: var(--tracking-wide);
-}
 
-.text-ja-body-md {
-    font-family: var(--font-sans-jp);
-    font-size: var(--text-md);
-    font-style: normal;
-    font-weight: 300;
-    line-height: var(--leading-normal);
-    letter-spacing: var(--tracking-wide);
-}
-
-.text-ja-body-sm {
-    font-family: var(--font-sans-jp);
-    font-size: var(--text-sm);
-    font-style: normal;
-    font-weight: 300;
-    line-height: var(--leading-normal);
-    letter-spacing: var(--tracking-wide);
-}
-
-.text-ja-body-xs {
-    font-family: var(--font-sans-jp);
-    font-size: var(--text-xs);
-    font-style: normal;
-    font-weight: 300;
-    line-height: var(--leading-normal);
-    letter-spacing: var(--tracking-wide);
-}
-
-.text-ja-heading {
-    font-family: var(--font-sans-jp);
-    font-size: var(--text-lg);
-    font-style: normal;
-    font-weight: 300;
-    line-height: var(--leading-normal);
-    letter-spacing: var(--tracking-wide);
-}
-
-/* 英語テキスト - Nuosu SIL */
-.text-en-body {
-    font-family: var(--font-serif-en);
-    font-style: normal;
-    font-weight: 400;
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-normal);
-    font-size: var(--text-md);
-}
-
-.text-en-body-sm {
-    font-family: var(--font-serif-en);
-    font-style: normal;
-    font-weight: 400;
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-normal);
-    font-size: var(--text-sm);
-}
-
-.text-en-body-xs {
-    font-family: var(--font-serif-en);
-    font-style: normal;
-    font-weight: 400;
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-normal);
-    font-size: var(--text-xs);
-}
-
-/* 英語テキスト (IBM Plex Sans JPスタイル) */
-.text-en-ja-style {
-    font-family: var(--font-sans-jp);
-    font-size: var(--text-xs);
-    font-style: normal;
-    font-weight: 300;
-    line-height: var(--leading-normal);
-    letter-spacing: var(--tracking-wide);
-}
 
 .text-light {
     color: #f1f0f3;
 }
 
-.text-dark {
-    color: #242426;
-}
 
 @keyframes menuOpen {
     0% {
@@ -244,10 +143,6 @@
 }
 
 
-/* グリッドアニメーションのz-index設定 */
-.grid-animation-container {
-    z-index: 1 !important;
-}
 
 html,
 body {
@@ -898,13 +793,6 @@ nav.links-sns a {
 }
 
 
-.u-en-font {
-    font-family: var(--font-serif-en);
-    font-style: normal;
-    font-weight: 400;
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-normal);
-}
 
 .profile-section__paragragh {
     grid-column: 1/-1;
