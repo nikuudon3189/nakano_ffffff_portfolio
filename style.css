@@ -1902,6 +1902,25 @@ nav.links-sns a {
         width: 100%;
     }
 
+    .footer__header a img {
+        height: 20px;
+    }
+
+    .footer__links {
+        grid-column: 1/-1;
+        grid-row: auto;
+    }
+
+    .footer__contact {
+        grid-column: 1/-1;
+        grid-row: auto;
+    }
+
+    .footer__bottom {
+        grid-column: 1/-1;
+        grid-row: auto;
+    }
+
 
 }
 
