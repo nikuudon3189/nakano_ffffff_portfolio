@@ -185,6 +185,10 @@
 
     /* プロフィールページ */
 
+    .page-profile {
+        padding: 80px 16px 0 16px;
+    }
+
     .profile-section__title__main {
         font-size: 20px;
     }
@@ -207,35 +211,6 @@
         margin-right: 8px;
     }
 
-    .konshoku {
-        word-break: break-word;
-        overflow-wrap: break-word;
-        white-space: normal;
-    }
-
-    .typewriter {
-        white-space: normal !important;
-    }
-
-    .private-works {
-        margin-bottom: 160px;
-    }
-
-    .private-works .contents {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        grid-column-gap: 12px;
-        grid-row-gap: 16px;
-    }
-
-    .private-works .contents .works__item {
-        width: 100%;
-    }
-
-    .page-profile {
-        padding: 80px 16px 0 16px;
-    }
-
     .profile-section__paragragh p[lang=en] {
         font-family: var(--font-serif-en);
         font-style: normal;
@@ -245,49 +220,21 @@
         font-size: var(--text-2);
     }
 
-
-    .feature {
-        padding: 80px 16px;
-        width: calc(100% + 32px);
-        margin: 0 -16px;
-    }
-
-    .feature div.contents {
-        margin-top: 80px;
-    }
-
-    .profile-section__article {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        width: 100%;
-    }
-
-    .profile-section__article__title {
+    .profile-section__profile__gallary {
+        margin-top: 40px;
+        display: grid;
         grid-column: 1/-1;
-        padding-top: 80px;
-    }
-
-    .profile-section__article__text {
-        grid-column: 1/-1;
-    }
-
-    .profile-section__article__img {
-        grid-column: 1/-1;
-        margin-top: 16px;
         grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-    }
-
-    .flow {
-        padding: 80px 16px;
+        grid-template-rows: 260px 260px;
+        margin-bottom: -96px;
         width: calc(100% + 32px);
         margin: 0 -16px;
     }
 
-    .profile-section__intro {
+    .profile-section__profile__paragragh {
         grid-column: 1/-1;
     }
+
 
     .profile-section__flow-list {
         grid-column: 1/-1;
