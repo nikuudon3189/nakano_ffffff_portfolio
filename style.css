@@ -11,13 +11,13 @@
     --font-konshoku: "Konshoku";
 
     /* Font Sizes */
-    --text-xs: 10px;
-    --text-sm: 10px;
-    --text-base: 13px;
-    --text-md: 14px;
-    --text-lg: 16px;
-    --text-xl: 28px;
-    --text-2xl: 36px;
+    --text-1: 10px;
+    --text-2: 10px;
+    --text-3: 13px;
+    --text-4: 14px;
+    --text-5: 16px;
+    --text-6: 28px;
+    --text-7: 36px;
 
     /* Line Heights */
     --leading-tight: 120%;
@@ -267,7 +267,7 @@ img.logo-header-img {
 
 p.announcement__text {
     font-family: var(--font-sans-jp);
-    font-size: var(--text-md);
+    font-size: var(--text-4);
     font-style: normal;
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -363,7 +363,7 @@ nav.links a {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-base);
+    font-size: var(--text-3);
 }
 
 nav.links-sns {
@@ -383,7 +383,7 @@ nav.links-sns a {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-sm);
+    font-size: var(--text-2);
 }
 
 .contact {
@@ -403,7 +403,7 @@ nav.links-sns a {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-base);
+    font-size: var(--text-3);
 }
 
 .contact a {
@@ -469,7 +469,7 @@ nav.links-sns a {
     font-weight: 400;
     line-height: 1.4;
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-xl);
+    font-size: var(--text-6);
     white-space: normal !important;
     min-height: 1.4em;
     /* 行の高さを固定 */
@@ -482,7 +482,7 @@ nav.links-sns a {
     font-weight: 400;
     line-height: 1.4;
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-md);
+    font-size: var(--text-4);
     white-space: normal !important;
     min-height: 1.4em;
     /* 行の高さを固定 */
@@ -541,12 +541,12 @@ nav.links-sns a {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-md);
+    font-size: var(--text-4);
 }
 
 .home__works__day {
     font-family: var(--font-sans-jp);
-    font-size: var(--text-xs);
+    font-size: var(--text-1);
     font-style: normal;
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -627,13 +627,13 @@ nav.links-sns a {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-md);
+    font-size: var(--text-4);
     margin-top: 6px;
 }
 
 .private-works .contents .works__item time.date {
     font-family: var(--font-sans-jp);
-    font-size: var(--text-xs);
+    font-size: var(--text-1);
     font-style: normal;
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -643,66 +643,6 @@ nav.links-sns a {
 
 .page-profile {
     padding: 64px 64px 0 64px;
-}
-
-.profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 0px;
-}
-
-.profile-section__profile__text {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    grid-column-gap: 24px;
-    grid-row-gap: 0px;
-    width: 100%;
-    margin-top: 24px;
-}
-
-
-.profile-section__profile__text p[lang=ja] {
-    font-family: var(--font-sans-jp);
-    font-size: var(--text-md);
-    font-style: normal;
-    font-weight: 300;
-    line-height: var(--leading-normal);
-    letter-spacing: var(--tracking-wide);
-    grid-column: 1/2;
-}
-
-.profile-section__profile__text p[lang=en] {
-    margin-top: 16px;
-    font-family: var(--font-serif-en);
-    font-style: normal;
-    font-weight: 400;
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-normal);
-    font-size: var(--text-md);
-    grid-column: 1/2;
-}
-
-
-.profile figure.figure {
-    margin-top: 24px;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: auto;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    width: 100%;
-}
-
-
-.profile figure.figure img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 
@@ -739,7 +679,7 @@ nav.links-sns a {
 .profile-section__title p[lang=en] {
     font-family: var(--font-serif-en);
     font-style: normal;
-    font-size: var(--text-md);
+    font-size: var(--text-4);
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
@@ -748,7 +688,7 @@ nav.links-sns a {
 
 
 .profile-section__title__main {
-    font-size: var(--text-xl);
+    font-size: var(--text-6);
     text-align: left;
 }
 
@@ -766,7 +706,7 @@ nav.links-sns a {
 
 
 .profile-section__title__sub {
-    font-size: var(--text-md);
+    font-size: var(--text-4);
     text-align: right;
 }
 
@@ -787,7 +727,7 @@ nav.links-sns a {
 .profile-section__paragragh p {
     margin-top: 8px;
     font-family: var(--font-sans-jp);
-    font-size: var(--text-base);
+    font-size: var(--text-3);
     font-style: normal;
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -800,8 +740,42 @@ nav.links-sns a {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-sm);
+    font-size: var(--text-2);
 }
+
+
+.profile-section__profile__paragraph {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 24px;
+    grid-row-gap: 0px;
+    width: 100%;
+    margin-top: 24px;
+}
+
+
+.profile-section__profile__paragraph p[lang=ja] {
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-4);
+    font-style: normal;
+    font-weight: 300;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-wide);
+    grid-column: 1/2;
+}
+
+.profile-section__profile__paragraph p[lang=en] {
+    margin-top: 16px;
+    font-family: var(--font-serif-en);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-normal);
+    font-size: var(--text-4);
+    grid-column: 1/2;
+}
+
 
 
 .profile-section__article:not(:first-child) {
@@ -839,7 +813,7 @@ nav.links-sns a {
 .profile-section__article__text p[lang=ja] {
     width: 100%;
     font-family: var(--font-sans-jp);
-    font-size: var(--text-base);
+    font-size: var(--text-3);
     font-style: normal;
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -854,7 +828,7 @@ nav.links-sns a {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-sm);
+    font-size: var(--text-2);
 }
 
 .profile-section__article__img {
@@ -906,7 +880,7 @@ nav.links-sns a {
 .profile-section__intro p[lang=ja] {
     width: 100%;
     font-family: var(--font-sans-jp);
-    font-size: var(--text-base);
+    font-size: var(--text-3);
     font-style: normal;
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -920,7 +894,7 @@ nav.links-sns a {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-sm);
+    font-size: var(--text-2);
 }
 
 
@@ -945,7 +919,7 @@ nav.links-sns a {
     grid-column: 1/2;
     grid-row: 1;
     font-family: var(--font-sans-jp);
-    font-size: var(--text-xs);
+    font-size: var(--text-1);
     font-style: normal;
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -956,7 +930,7 @@ nav.links-sns a {
     grid-column: 1/2;
     grid-row: 2;
     font-family: var(--font-sans-jp);
-    font-size: var(--text-lg);
+    font-size: var(--text-5);
     font-style: normal;
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -972,7 +946,7 @@ nav.links-sns a {
 .profile-section__flow-item__content p[lang=ja] {
     width: 100%;
     font-family: var(--font-sans-jp);
-    font-size: var(--text-base);
+    font-size: var(--text-3);
     font-style: normal;
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -987,7 +961,7 @@ nav.links-sns a {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-sm);
+    font-size: var(--text-2);
 }
 
 
@@ -1138,7 +1112,7 @@ nav.links-sns a {
 .page-work__title {
     margin-top: 80px;
     font-family: var(--font-mincho);
-    font-size: var(--text-xl);
+    font-size: var(--text-6);
     font-weight: 400;
     font-style: normal;
 }
@@ -1170,7 +1144,7 @@ nav.links-sns a {
     white-space: normal;
     word-break: break-word;
     font-family: var(--font-sans-jp);
-    font-size: var(--text-sm);
+    font-size: var(--text-2);
     font-style: normal;
     font-weight: 400;
     line-height: var(--leading-tight);
@@ -1210,7 +1184,7 @@ nav.links-sns a {
 
 .page-work__overview__paragraph p[lang=ja] {
     font-family: var(--font-sans-jp);
-    font-size: var(--text-base);
+    font-size: var(--text-3);
     font-style: normal;
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -1219,7 +1193,7 @@ nav.links-sns a {
 
 .page-work__overview__paragraph p[lang=en] {
     font-family: var(--font-sans-jp);
-    font-size: var(--text-xs);
+    font-size: var(--text-1);
     font-style: normal;
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -1257,7 +1231,7 @@ nav.links-sns a {
 
 .page-work__overview__paragraph__url a {
     font-family: var(--font-serif-en);
-    font-size: var(--text-lg);
+    font-size: var(--text-5);
     font-style: normal;
     font-weight: 400;
     line-height: var(--leading-tight);
@@ -1298,7 +1272,7 @@ nav.links-sns a {
 
 .page-work__contents__grid-text[lang=ja] {
     font-family: var(--font-sans-jp);
-    font-size: var(--text-base);
+    font-size: var(--text-3);
     font-style: normal;
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -1307,7 +1281,7 @@ nav.links-sns a {
 
 .page-work__contents__grid-text[lang=en] {
     font-family: var(--font-serif-en);
-    font-size: var(--text-sm);
+    font-size: var(--text-2);
     font-style: normal;
     font-weight: 300;
     line-height: var(--leading-normal);
@@ -1328,7 +1302,7 @@ nav.links-sns a {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-md);
+    font-size: var(--text-4);
 }
 
 .page-work__next-work__title {
@@ -1338,7 +1312,7 @@ nav.links-sns a {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-xl);
+    font-size: var(--text-6);
 }
 
 .page-work__next-work__img {
@@ -1401,7 +1375,7 @@ nav.links-sns a {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-md);
+    font-size: var(--text-4);
 }
 
 
@@ -1422,7 +1396,7 @@ nav.links-sns a {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-md);
+    font-size: var(--text-4);
 }
 
 .footer__contact__mail {
@@ -1432,7 +1406,7 @@ nav.links-sns a {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-xl);
+    font-size: var(--text-6);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
@@ -1456,7 +1430,7 @@ nav.links-sns a {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-sm);
+    font-size: var(--text-2);
 }
 
 .footer__bottom__copyright {
@@ -1614,16 +1588,17 @@ nav.links-sns a {
 
     .main-copy__text[lang=ja] {
         margin-top: -8px;
-        font-size: var(--text-md);
+        font-size: var(--text-5);
         height: auto;
         width: 100%;
     }
 
     .main-copy__text[lang=en] {
         margin-top: -8px;
-        font-size: var(--text-sm);
+        font-size: var(--text-2);
         height: auto;
         width: 100%;
+        line-height: var(--leading-normal);
     }
 
     .main-copy__text {
@@ -1721,18 +1696,18 @@ nav.links-sns a {
         white-space: normal !important;
     }
 
-    section.private-works {
+    .private-works {
         margin-bottom: 160px;
     }
 
-    section.private-works .contents {
+    .private-works .contents {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
         grid-column-gap: 12px;
         grid-row-gap: 16px;
     }
 
-    section.private-works .contents .works__item {
+    .private-works .contents .works__item {
         width: 100%;
     }
 
@@ -1740,31 +1715,23 @@ nav.links-sns a {
         padding: 80px 16px 0 16px;
     }
 
-    .profile-section__profile__text {
-        grid-template-columns: repeat(1, 1fr);
+    .profile-section__paragragh p[lang=en] {
+        font-family: var(--font-serif-en);
+        font-style: normal;
+        font-weight: 400;
+        line-height: var(--leading-normal);
+        letter-spacing: var(--tracking-normal);
+        font-size: var(--text-2);
     }
 
-    .profile-section__profile__text p[lang=ja],
-    .profile-section__profile__text p[lang=en] {
-        grid-column: 1/-1;
-    }
 
-    .profile figure.figure {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-    }
-
-    .profile figure.figure img {
-        max-height: 200px;
-    }
-
-    section.feature {
+    .feature {
         padding: 80px 16px;
         width: calc(100% + 32px);
         margin: 0 -16px;
     }
 
-    section.feature div.contents {
+    .feature div.contents {
         margin-top: 80px;
     }
 
@@ -1791,7 +1758,7 @@ nav.links-sns a {
         gap: 12px;
     }
 
-    section.flow {
+    .flow {
         padding: 80px 16px;
         width: calc(100% + 32px);
         margin: 0 -16px;
@@ -1867,12 +1834,12 @@ nav.links-sns a {
     .page-work__overview__list__item dt,
     .page-work__overview__list__item dd {
         font-family: var(--font-sans-jp);
-        font-size: var(--text-xs);
+        font-size: var(--text-1);
     }
 
     .page-work__overview__paragraph p[lang=ja] {
         font-family: var(--font-sans-jp);
-        font-size: var(--text-sm);
+        font-size: var(--text-2);
         font-style: normal;
         font-weight: 300;
         line-height: var(--leading-normal);
@@ -1881,7 +1848,7 @@ nav.links-sns a {
 
     .page-work__overview__paragraph p[lang=en] {
         font-family: var(--font-sans-jp);
-        font-size: var(--text-xs);
+        font-size: var(--text-1);
         font-style: normal;
         font-weight: 300;
         line-height: var(--leading-normal);
@@ -1941,17 +1908,6 @@ nav.links-sns a {
     .profile-section__profile__text p[lang=ja],
     .profile-section__profile__text p[lang=en] {
         grid-column: 1/3;
-    }
-
-    .profile figure.figure {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto;
-        margin: 40px -16px 16px;
-        width: calc(100% + 32px);
-    }
-
-    .profile figure.figure img {
-        max-height: 238px;
     }
 
     .profile-section__article__title {
