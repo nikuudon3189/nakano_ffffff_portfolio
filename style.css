@@ -149,6 +149,10 @@
     background-color: #fff;
 }
 
+.konshoku {
+    font-family: "Konshoku", "Shippori Mincho", "Hiragino Mincho Pro", "Yu Mincho", "YuMincho", "MS PMincho", "MS Mincho", serif;
+}
+
 
 
 html,
@@ -248,6 +252,12 @@ img.logo-header-img {
     animation: menuOpen 0.5s cubic-bezier(0.3, 1, 0.3, 1) forwards;
 }
 
+.menu.is-open .menu--hidden {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .menu.is-close {
     animation: menuClose 0.5s cubic-bezier(0.3, 1, 0.3, 1) forwards;
 }
@@ -301,12 +311,10 @@ img.logo-header-img {
 }
 
 
-.konshoku {
-    font-family: "Konshoku", "Shippori Mincho", "Hiragino Mincho Pro", "Yu Mincho", "YuMincho", "MS PMincho", "MS Mincho", serif;
-}
 
 
-button.menu--visible__open-menu {
+
+.menu--visible__open-menu {
     transition: all 0.2s ease;
     width: 48px;
     aspect-ratio: 1/1;
@@ -319,8 +327,8 @@ button.menu--visible__open-menu {
     cursor: pointer;
 }
 
-button.menu--visible__open-menu::before,
-button.menu--visible__open-menu::after {
+.menu--visible__open-menu::before,
+.menu--visible__open-menu::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -329,17 +337,17 @@ button.menu--visible__open-menu::after {
     background-color: #fff;
 }
 
-button.menu--visible__open-menu::before {
+.menu--visible__open-menu::before {
     width: 16px;
     height: 1px;
 }
 
-button.menu--visible__open-menu::after {
+.menu--visible__open-menu::after {
     width: 1px;
     height: 16px;
 }
 
-button.menu--visible__open-menu:hover {
+.menu--visible__open-menu:hover {
     opacity: 0.4;
     transition: all 0.2s ease;
 }
