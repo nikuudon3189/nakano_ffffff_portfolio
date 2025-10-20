@@ -115,14 +115,14 @@
 
     100% {
         width: 640px;
-        height: 575px;
+        height: 540px;
     }
 }
 
 @keyframes menuClose {
     0% {
         width: 640px;
-        height: 575px;
+        height: 540px;
     }
 
     50% {
@@ -330,22 +330,35 @@ img.logo-header-img {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
+    transition: transform 0.3s ease;
 }
 
 .menu--visible__open-menu::before {
     width: 16px;
     height: 1px;
+    transform: translate(-50%, -50%) rotate(0deg);
 }
 
 .menu--visible__open-menu::after {
     width: 1px;
     height: 16px;
+    transform: translate(-50%, -50%) rotate(0deg);
 }
 
 .menu--visible__open-menu:hover {
     opacity: 0.4;
     transition: all 0.2s ease;
 }
+
+
+.menu.is-open .menu--visible__open-menu::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.menu.is-open .menu--visible__open-menu::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
 
 .menu .menu--hidden {
     display: none;
@@ -367,16 +380,27 @@ img.logo-header-img {
     justify-content: flex-start;
     align-items: flex-start;
     gap: 16px;
+    border-bottom: 1px solid #494949;
+    padding-bottom: 16px;
 }
 
 .menu--hidden__links a {
+    display: block;
     font-family: var(--font-serif-en);
     font-style: normal;
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-3);
+    font-size: var(--text-4);
 }
+
+.menu--hidden__sns {
+    width: 100%;
+    border-bottom: 1px solid #494949;
+    padding-bottom: 16px;
+
+}
+
 
 .menu--hidden__sns a {
     display: block;
@@ -386,6 +410,10 @@ img.logo-header-img {
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
     font-size: var(--text-2);
+}
+
+.menu--hidden__sns a:not(:first-child) {
+    margin-top: 16px;
 }
 
 .menu--hidden__contact__title {
@@ -403,7 +431,7 @@ img.logo-header-img {
     font-weight: 400;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-3);
+    font-size: var(--text-7);
     text-wrap: balance;
     margin-top: 0px;
     text-decoration: underline;
@@ -414,14 +442,6 @@ img.logo-header-img {
     overflow: hidden;
     text-overflow: clip;
     width: 100%;
-}
-
-.menu--visible__open-menu::before {
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-.menu--visible__open-menu::after {
-    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .menu--hidden {
