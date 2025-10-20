@@ -43,19 +43,7 @@
    Text Utility Classes
    ============================================ */
 
-/* ============================================
-   Page Layout
-   ============================================ */
-.page-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 64px 48px 0;
-}
 
-.main-content {
-    flex: 1;
-}
 
 /* ============================================
    Font Face Declarations
@@ -159,7 +147,21 @@ html,
 body {
     color: #242426;
     position: relative;
-    background-color: #F4F4F4;
+    background-color: #f4f4f4;
+}
+
+/* ============================================
+   Page Layout
+   ============================================ */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 64px 48px 0;
+}
+
+.main-content {
+    flex: 1;
 }
 
 a {
@@ -1352,9 +1354,10 @@ img.logo-header-img {
     grid-column-gap: 24px;
     grid-row-gap: 40px;
     width: calc(100% + 96px);
-    margin: 0 -48px;
+    margin: 0 -48px -100px;
     padding: 80px 48px;
     background-color: #e6e6e6;
+    height: calc(100% + 100px);
 }
 
 
