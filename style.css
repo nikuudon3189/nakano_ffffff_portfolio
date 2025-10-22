@@ -1555,4 +1555,9 @@ img {
     }
 }
 
+/* black-grid-overlayクラスのスタイル */
+.black-grid-overlay {
+    background-color: #1F1F20 !important;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -324,22 +324,14 @@ function initHoverTypeWriters() {
 
     for (var i = 0; i < elements.length; i++) {
         (function (element) {
-            var originalText = element.innerHTML.replace(/<br[^>]*>/gi, '\n').replace(/\s+/g, ' ').trim();
+            // ページ読み込み時に一度だけ文字列を記録（固定値として保存）
+            var recordedText = element.innerHTML.replace(/<br[^>]*>/gi, '\n').replace(/\s+/g, ' ').trim();
             var settings = Utils.extractElementSettings(element);
             var currentAnimation = null;
-            var isAnimating = false;
-            var animationTimeout = null;
 
             // ホバー開始時の処理
             element.addEventListener('mouseenter', function (e) {
                 var targetElement = e.target;
-
-                // 既にアニメーション中の場合は何もしない
-                if (isAnimating) {
-                    return;
-                }
-
-                var text = targetElement.innerHTML.replace(/<br[^>]*>/gi, '\n').replace(/\s+/g, ' ').trim();
                 var opts = Utils.extractElementSettings(targetElement);
 
                 // 既存のアニメーションを停止
@@ -352,39 +344,18 @@ function initHoverTypeWriters() {
                 targetElement.style.minHeight = originalHeight + 'px';
                 targetElement.style.height = originalHeight + 'px';
 
-                isAnimating = true;
-
-                // 新しいアニメーションを開始
-                currentAnimation = hackingTypeWriter(targetElement, text, opts);
-
-                // アニメーション完了を確実に待つ
-                if (animationTimeout) {
-                    clearTimeout(animationTimeout);
-                }
-                animationTimeout = setTimeout(function () {
-                    isAnimating = false;
-                    // 確実に元のテキストに戻す
-                    targetElement.innerHTML = originalText;
-                }, 3000); // 十分な時間を確保
+                // 記録した文字列でアニメーションを開始（現在のテキストは使わない）
+                currentAnimation = hackingTypeWriter(targetElement, recordedText, opts);
             });
 
-            // ホバー終了時の処理（アニメーションは続行、元のテキストに戻すだけ）
+            // ホバー終了時の処理（アニメーションは続行、記録した文字列に戻すだけ）
             element.addEventListener('mouseleave', function (e) {
                 var targetElement = e.target;
-                // アニメーションは停止せず、元のテキストに戻すだけ
-                targetElement.innerHTML = originalText;
+                // アニメーションは停止せず、記録した文字列に戻すだけ
+                targetElement.innerHTML = recordedText;
                 // 高さの固定を解除
                 targetElement.style.minHeight = '';
                 targetElement.style.height = '';
-                // アニメーション完了を確実に待つ
-                if (animationTimeout) {
-                    clearTimeout(animationTimeout);
-                }
-                animationTimeout = setTimeout(function () {
-                    isAnimating = false;
-                    // 確実に元のテキストに戻す
-                    targetElement.innerHTML = originalText;
-                }, 3000);
             });
         })(elements[i]);
     }
