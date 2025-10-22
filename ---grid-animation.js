@@ -226,9 +226,9 @@
             var reverseNOrder = col * config.gridRows + row;
             var reverseNStartTime = calculateCumulativeTime(reverseNOrder, maxOrder) + config.reverseNDelay;
 
-            // 2つのパターンを適用
+            // 2つのパターンを適用（最後のアイテムは両方のパターンで最終表示を確実にする）
             applyBlinkPattern(item, zStartTime, originalImg, index === gridItems.length - 1);
-            applyBlinkPattern(item, reverseNStartTime, originalImg, false);
+            applyBlinkPattern(item, reverseNStartTime, originalImg, index === gridItems.length - 1);
         });
     }
 
@@ -263,18 +263,23 @@
             currentTime += hideDuration;
         });
 
-        // 最終表示
+        // 最終表示（必ず表示状態で終わる）
         setTimeout(function () {
             item.style.opacity = '1';
         }, currentTime);
 
-        // 最後のアイテムの場合のみ元の画像を表示
+        // 最後のアイテムの場合のみ元の画像を表示し、グリッドを削除
         if (isLast) {
             setTimeout(function () {
                 if (originalImg) {
                     originalImg.style.opacity = '1';
                 }
-            }, currentTime + 500);
+                // グリッドコンテナを削除（白い四角形を消す）
+                var container = item.closest('.grid-animation-container');
+                if (container && container.parentNode) {
+                    container.parentNode.removeChild(container);
+                }
+            }, currentTime + 200);
         }
     }
 
