@@ -126,10 +126,6 @@
         gap: 8px;
     }
 
-    .page-home {
-        padding: 64px 16px 0 16px;
-    }
-
     .home__works {
         display: flex;
         flex-direction: row;

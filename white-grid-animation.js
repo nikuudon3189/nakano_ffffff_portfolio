@@ -24,10 +24,10 @@ function createOverlay(img, index) {
     const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-    // 6×5のグリッドを作成（30個のグリッド）
+    // 7×6のグリッドを作成（42個のグリッド）
     const gridPositions = [];
-    const cols = 6;
-    const rows = 5;
+    const cols = 7;
+    const rows = 6;
 
     for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
@@ -173,8 +173,8 @@ function handleResize() {
         const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
         // 各グリッドの位置を更新（アニメーションは実行しない）
-        const cols = 6;
-        const rows = 5;
+        const cols = 7;
+        const rows = 6;
         const gridPositions = [];
 
         for (let row = 0; row < rows; row++) {
@@ -210,8 +210,8 @@ function handleScroll() {
         const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
         // 各グリッドの位置を更新
-        const cols = 6;
-        const rows = 5;
+        const cols = 7;
+        const rows = 6;
         const gridPositions = [];
 
         for (let row = 0; row < rows; row++) {

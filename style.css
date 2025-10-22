@@ -186,19 +186,18 @@ img {
 }
 
 
-a.logo-header-link {
+.logo-header-link {
     z-index: 10;
     display: block;
     width: auto;
     height: auto;
 }
 
-img.logo-header-img {
+.logo-header-img {
     display: block;
     width: auto;
     height: 24px;
 }
-
 
 
 /* Device-specific display classes */
@@ -210,22 +209,6 @@ img.logo-header-img {
     display: none;
 }
 
-
-
-
-
-
-.page-home {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 0px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 64px 64px 0 64px;
-    position: relative;
-}
 
 .menu--glass-overlay {
     position: fixed;
@@ -549,6 +532,10 @@ img.logo-header-img {
     height: 100%;
 }
 
+.home__works__link:hover {
+    opacity: 1;
+}
+
 .home__works__img {
     width: 100%;
     height: 100%;
@@ -563,6 +550,10 @@ img.logo-header-img {
     gap: 0px;
     position: relative;
     z-index: 5;
+}
+
+.home__works__link:hover .home__works__text {
+    opacity: 0.4;
 }
 
 .home__works__title {

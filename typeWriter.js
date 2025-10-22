@@ -316,9 +316,74 @@ function initHackingTypeWriters() {
     }
 }
 
+/**
+ * ホバー時のタイプライターアニメーション初期化関数
+ */
+function initHoverTypeWriters() {
+    var elements = document.querySelectorAll('.typewriter-hover');
+
+    for (var i = 0; i < elements.length; i++) {
+        (function (element) {
+            var originalText = element.innerHTML.replace(/<br[^>]*>/gi, '\n').replace(/\s+/g, ' ').trim();
+            var settings = Utils.extractElementSettings(element);
+            var currentAnimation = null;
+            var isAnimating = false;
+
+            // ホバー開始時の処理
+            element.addEventListener('mouseenter', function (e) {
+                var targetElement = e.target;
+
+                // 既にアニメーション中の場合は何もしない
+                if (isAnimating) {
+                    return;
+                }
+
+                var text = targetElement.innerHTML.replace(/<br[^>]*>/gi, '\n').replace(/\s+/g, ' ').trim();
+                var opts = Utils.extractElementSettings(targetElement);
+
+                // 既存のアニメーションを停止
+                if (currentAnimation) {
+                    currentAnimation.stop();
+                }
+
+                // 要素の高さを固定（アニメーション中の高さ変動を防ぐ）
+                var originalHeight = targetElement.offsetHeight;
+                targetElement.style.minHeight = originalHeight + 'px';
+                targetElement.style.height = originalHeight + 'px';
+
+                isAnimating = true;
+
+                // 新しいアニメーションを開始
+                currentAnimation = hackingTypeWriter(targetElement, text, opts);
+
+                // アニメーション完了後にフラグをリセット
+                setTimeout(function () {
+                    isAnimating = false;
+                }, 2000); // アニメーションの最大時間を想定
+            });
+
+            // ホバー終了時の処理（アニメーションは続行、元のテキストに戻すだけ）
+            element.addEventListener('mouseleave', function (e) {
+                var targetElement = e.target;
+                // アニメーションは停止せず、元のテキストに戻すだけ
+                targetElement.innerHTML = originalText;
+                // 高さの固定を解除
+                targetElement.style.minHeight = '';
+                targetElement.style.height = '';
+                // アニメーションフラグをリセット
+                isAnimating = false;
+            });
+        })(elements[i]);
+    }
+}
+
 // DOM読み込み完了後に自動実行
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initHackingTypeWriters);
+    document.addEventListener('DOMContentLoaded', function () {
+        initHackingTypeWriters();
+        initHoverTypeWriters();
+    });
 } else {
     initHackingTypeWriters();
+    initHoverTypeWriters();
 } 

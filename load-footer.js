@@ -16,6 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (typeof resizeTextToFit === 'function') {
                     resizeTextToFit();
                 }
+                // Footer読み込み完了後にタイプライターアニメーションを初期化
+                if (typeof initHoverTypeWriters === 'function') {
+                    initHoverTypeWriters();
+                }
             })
             .catch(error => {
                 console.error('Error loading footer:', error);
