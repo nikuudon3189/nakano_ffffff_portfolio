@@ -328,6 +328,7 @@ function initHoverTypeWriters() {
             var settings = Utils.extractElementSettings(element);
             var currentAnimation = null;
             var isAnimating = false;
+            var animationTimeout = null;
 
             // ホバー開始時の処理
             element.addEventListener('mouseenter', function (e) {
@@ -356,10 +357,15 @@ function initHoverTypeWriters() {
                 // 新しいアニメーションを開始
                 currentAnimation = hackingTypeWriter(targetElement, text, opts);
 
-                // アニメーション完了後にフラグをリセット
-                setTimeout(function () {
+                // アニメーション完了を確実に待つ
+                if (animationTimeout) {
+                    clearTimeout(animationTimeout);
+                }
+                animationTimeout = setTimeout(function () {
                     isAnimating = false;
-                }, 2000); // アニメーションの最大時間を想定
+                    // 確実に元のテキストに戻す
+                    targetElement.innerHTML = originalText;
+                }, 3000); // 十分な時間を確保
             });
 
             // ホバー終了時の処理（アニメーションは続行、元のテキストに戻すだけ）
@@ -370,8 +376,15 @@ function initHoverTypeWriters() {
                 // 高さの固定を解除
                 targetElement.style.minHeight = '';
                 targetElement.style.height = '';
-                // アニメーションフラグをリセット
-                isAnimating = false;
+                // アニメーション完了を確実に待つ
+                if (animationTimeout) {
+                    clearTimeout(animationTimeout);
+                }
+                animationTimeout = setTimeout(function () {
+                    isAnimating = false;
+                    // 確実に元のテキストに戻す
+                    targetElement.innerHTML = originalText;
+                }, 3000);
             });
         })(elements[i]);
     }
