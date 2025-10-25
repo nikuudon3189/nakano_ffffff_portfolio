@@ -208,12 +208,12 @@ img {
     top: 64px;
     right: 64px;
     display: inline-block;
-    z-index: 10;
+    z-index: 1001;
 }
 
 
 .logo-header-link {
-    z-index: 10;
+    z-index: 1001;
     display: block;
     width: auto;
     height: auto;
