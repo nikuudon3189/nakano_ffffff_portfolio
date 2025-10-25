@@ -1393,6 +1393,10 @@ img {
     margin-top: 104px;
 }
 
+.page-work__next-work__link:hover {
+    opacity: 1;
+}
+
 .page-work__next-work__label {
     font-family: var(--font-serif-en);
     font-style: normal;
