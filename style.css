@@ -40,6 +40,32 @@
 }
 
 /* ============================================
+   Text Selection Styles
+   ============================================ */
+::selection {
+    background-color: #1F1F20;
+    color: #fff;
+}
+
+::-moz-selection {
+    background-color: #1F1F20;
+    color: #fff;
+}
+
+/* 黒い背景の要素内では選択色を反転 */
+.bg-black ::selection,
+.bg-black::selection {
+    background-color: #fff;
+    color: #1F1F20;
+}
+
+.bg-black ::-moz-selection,
+.bg-black::-moz-selection {
+    background-color: #fff;
+    color: #1F1F20;
+}
+
+/* ============================================
    Text Utility Classes
    ============================================ */
 
@@ -811,6 +837,7 @@ img {
 
 .profile-section__profile__gallary {
     margin-top: 40px;
+    height: 560px;
     display: grid;
     grid-column: 1/-1;
     grid-template-columns: repeat(6, 1fr);
