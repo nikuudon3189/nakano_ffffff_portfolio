@@ -225,6 +225,11 @@ img {
     height: 24px;
 }
 
+.logo-header-img path {
+    fill: #000;
+    mix-blend-mode: difference;
+}
+
 
 /* Device-specific display classes */
 .pc {
