@@ -470,7 +470,7 @@
     .footer-wrapper {
         width: calc(100% + 32px);
         margin: 0 -16px;
-        padding: 40px 16px;
+        padding: 40px 16px 120px;
     }
 
     .footer__header {
