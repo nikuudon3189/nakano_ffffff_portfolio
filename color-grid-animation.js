@@ -1,30 +1,68 @@
-// white-grid-loadクラスが付与された画像に白い四角形を覆い被さるように配置する関数（読み込み時）
+// white-grid-loadクラスが付与された画像に白い四角形を覆い被さるように配置する関数（スクロール時）
 function createWhiteGridLoadOverlay() {
     // white-grid-loadクラスが付与された画像を全て取得
     const images = document.querySelectorAll('img.white-grid-load');
 
-    images.forEach((img, index) => {
-        // 画像が読み込まれるまで待機
-        if (img.complete) {
-            createOverlay(img, index, 'white');
-        } else {
-            img.addEventListener('load', () => createOverlay(img, index, 'white'));
-        }
+    // Intersection Observerを作成
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                const index = Array.from(document.querySelectorAll('img.white-grid-load')).indexOf(img);
+
+                // 画像が読み込まれるまで待機
+                if (img.complete) {
+                    createOverlay(img, index, 'white');
+                } else {
+                    img.addEventListener('load', () => createOverlay(img, index, 'white'));
+                }
+
+                // 一度発動したら監視を停止
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        threshold: 0.1, // 画像の10%がビューポートに入ったときに発動
+        rootMargin: '50px' // 50px手前から発動
+    });
+
+    // 各画像を監視開始
+    images.forEach((img) => {
+        observer.observe(img);
     });
 }
 
-// black-grid-loadクラスが付与された画像に黒い四角形を覆い被さるように配置する関数（読み込み時）
+// black-grid-loadクラスが付与された画像に黒い四角形を覆い被さるように配置する関数（スクロール時）
 function createBlackGridLoadOverlay() {
     // black-grid-loadクラスが付与された画像を全て取得
     const images = document.querySelectorAll('img.black-grid-load');
 
-    images.forEach((img, index) => {
-        // 画像が読み込まれるまで待機
-        if (img.complete) {
-            createOverlay(img, index, 'black');
-        } else {
-            img.addEventListener('load', () => createOverlay(img, index, 'black'));
-        }
+    // Intersection Observerを作成
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                const index = Array.from(document.querySelectorAll('img.black-grid-load')).indexOf(img);
+
+                // 画像が読み込まれるまで待機
+                if (img.complete) {
+                    createOverlay(img, index, 'black');
+                } else {
+                    img.addEventListener('load', () => createOverlay(img, index, 'black'));
+                }
+
+                // 一度発動したら監視を停止
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        threshold: 0.1, // 画像の10%がビューポートに入ったときに発動
+        rootMargin: '50px' // 50px手前から発動
+    });
+
+    // 各画像を監視開始
+    images.forEach((img) => {
+        observer.observe(img);
     });
 }
 
@@ -460,19 +498,49 @@ const observer = new MutationObserver((mutations) => {
                 if (node.nodeType === 1) { // Element node
                     if (node.tagName === 'IMG') {
                         if (node.classList.contains('white-grid-load')) {
-                            const index = Array.from(document.querySelectorAll('img.white-grid-load')).indexOf(node);
-                            if (node.complete) {
-                                createOverlay(node, index, 'white');
-                            } else {
-                                node.addEventListener('load', () => createOverlay(node, index, 'white'));
-                            }
+                            // スクロール監視を設定
+                            const whiteObserver = new IntersectionObserver((entries) => {
+                                entries.forEach((entry) => {
+                                    if (entry.isIntersecting) {
+                                        const img = entry.target;
+                                        const index = Array.from(document.querySelectorAll('img.white-grid-load')).indexOf(img);
+
+                                        if (img.complete) {
+                                            createOverlay(img, index, 'white');
+                                        } else {
+                                            img.addEventListener('load', () => createOverlay(img, index, 'white'));
+                                        }
+
+                                        whiteObserver.unobserve(img);
+                                    }
+                                });
+                            }, {
+                                threshold: 0.1,
+                                rootMargin: '50px'
+                            });
+                            whiteObserver.observe(node);
                         } else if (node.classList.contains('black-grid-load')) {
-                            const index = Array.from(document.querySelectorAll('img.black-grid-load')).indexOf(node);
-                            if (node.complete) {
-                                createOverlay(node, index, 'black');
-                            } else {
-                                node.addEventListener('load', () => createOverlay(node, index, 'black'));
-                            }
+                            // スクロール監視を設定
+                            const blackObserver = new IntersectionObserver((entries) => {
+                                entries.forEach((entry) => {
+                                    if (entry.isIntersecting) {
+                                        const img = entry.target;
+                                        const index = Array.from(document.querySelectorAll('img.black-grid-load')).indexOf(img);
+
+                                        if (img.complete) {
+                                            createOverlay(img, index, 'black');
+                                        } else {
+                                            img.addEventListener('load', () => createOverlay(img, index, 'black'));
+                                        }
+
+                                        blackObserver.unobserve(img);
+                                    }
+                                });
+                            }, {
+                                threshold: 0.1,
+                                rootMargin: '50px'
+                            });
+                            blackObserver.observe(node);
                         }
 
                         // ホバーイベントの設定
