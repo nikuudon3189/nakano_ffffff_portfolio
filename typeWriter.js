@@ -316,6 +316,9 @@ function initHackingTypeWriters() {
     }
 }
 
+// グローバル変数で初期化済み要素を追跡
+var initializedElements = [];
+
 /**
  * ホバー時のタイプライターアニメーション初期化関数
  */
@@ -324,8 +327,14 @@ function initHoverTypeWriters() {
 
     for (var i = 0; i < elements.length; i++) {
         (function (element) {
+            // 重複初期化を防ぐ
+            if (initializedElements.indexOf(element) !== -1) {
+                return;
+            }
+            initializedElements.push(element);
+
             // ページ読み込み時に一度だけ文字列を記録（固定値として保存）
-            var recordedText = element.innerHTML.replace(/<br[^>]*>/gi, '\n').replace(/\s+/g, ' ').trim();
+            var recordedText = element.textContent.trim();
             var settings = Utils.extractElementSettings(element);
             var currentAnimation = null;
 

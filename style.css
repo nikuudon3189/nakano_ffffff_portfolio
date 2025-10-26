@@ -1209,6 +1209,7 @@ img {
     font-size: var(--text-6);
     font-weight: 400;
     font-style: normal;
+    height: 1.2em;
 }
 
 .page-work__overview {
