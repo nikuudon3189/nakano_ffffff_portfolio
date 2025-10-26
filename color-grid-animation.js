@@ -302,7 +302,7 @@ function startHoverBlinkAnimation(element, blinkPattern) {
 
         // 表示する
         setTimeout(() => {
-            element.style.opacity = '1';
+            element.style.opacity = '0.8';
         }, totalDelay + hideTime);
 
         totalDelay += hideTime + showTime;
