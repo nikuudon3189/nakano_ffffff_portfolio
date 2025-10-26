@@ -223,7 +223,12 @@ img {
     display: block;
     width: auto;
     height: 24px;
+    fill: #fff;
     mix-blend-mode: difference;
+}
+
+.logo-container__header__svg path {
+    fill: #fff;
 }
 
 
