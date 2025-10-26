@@ -28,7 +28,17 @@ function createWhiteGridLoadOverlay() {
 
     // 各画像を監視開始
     images.forEach((img) => {
-        observer.observe(img);
+        // 既にビューポートに入っている画像をチェック
+        if (img.getBoundingClientRect().top < window.innerHeight + 50) {
+            const index = Array.from(document.querySelectorAll('img.white-grid-load')).indexOf(img);
+            if (img.complete) {
+                createOverlay(img, index, 'white');
+            } else {
+                img.addEventListener('load', () => createOverlay(img, index, 'white'));
+            }
+        } else {
+            observer.observe(img);
+        }
     });
 }
 
@@ -62,7 +72,17 @@ function createBlackGridLoadOverlay() {
 
     // 各画像を監視開始
     images.forEach((img) => {
-        observer.observe(img);
+        // 既にビューポートに入っている画像をチェック
+        if (img.getBoundingClientRect().top < window.innerHeight + 50) {
+            const index = Array.from(document.querySelectorAll('img.black-grid-load')).indexOf(img);
+            if (img.complete) {
+                createOverlay(img, index, 'black');
+            } else {
+                img.addEventListener('load', () => createOverlay(img, index, 'black'));
+            }
+        } else {
+            observer.observe(img);
+        }
     });
 }
 
