@@ -1,18 +1,20 @@
 // ロゴを読み込む関数
-function loadLogo() {
-    fetch('logo.html')
-        .then(response => response.text())
-        .then(data => {
-            // .logo-header-linkの中にロゴを挿入
-            const logoLink = document.querySelector('.logo-header-link');
-            if (logoLink) {
-                logoLink.insertAdjacentHTML('afterbegin', data);
-            }
-        })
-        .catch(error => {
-            console.error('ロゴの読み込みに失敗しました:', error);
-        });
-}
+document.addEventListener('DOMContentLoaded', function () {
+    const logoContainer = document.getElementById('logo-container');
 
-// DOMが読み込まれた後にロゴを読み込み
-document.addEventListener('DOMContentLoaded', loadLogo);
+    if (logoContainer) {
+        fetch('logo.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Logo not found');
+                }
+                return response.text();
+            })
+            .then(data => {
+                logoContainer.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading logo:', error);
+            });
+    }
+});

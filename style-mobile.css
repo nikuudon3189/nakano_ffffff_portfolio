@@ -4,12 +4,12 @@
         padding: 24px 16px 0;
     }
 
-    .logo-header-wrapper {
+    .logo-container__header-wrapper {
         z-index: 1;
         position: relative;
     }
 
-    .logo-header {
+    .logo-container__header {
         position: fixed;
         top: 32px;
         left: 16px;
@@ -50,7 +50,7 @@
         display: block;
     }
 
-    img.logo-header-img {
+    img.logo-container__header__svg {
         width: 40vw;
         min-width: 160px;
         max-width: 400px;

@@ -176,20 +176,6 @@ body {
     background-color: #f4f4f4;
 }
 
-/* ============================================
-   Page Layout
-   ============================================ */
-.page-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 64px 48px 0;
-    background-color: #f4f4f4;
-}
-
-.main-content {
-    flex: 1;
-}
 
 a {
     transition: opacity 0.3s;
@@ -203,32 +189,43 @@ img {
     display: block;
 }
 
-.logo-header {
+/* ============================================
+   Page Layout
+   ============================================ */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 64px 48px 0;
+    background-color: #f4f4f4;
+}
+
+.main-content {
+    position: relative;
+}
+
+
+.logo-container__header {
     position: fixed;
     top: 64px;
     right: 64px;
     display: inline-block;
-    z-index: 1001;
+    mix-blend-mode: difference;
 }
 
-
-.logo-header-link {
-    z-index: 1001;
+.logo-container__header__link {
     display: block;
     width: auto;
     height: auto;
 }
 
-.logo-header-img {
+.logo-container__header__svg {
     display: block;
     width: auto;
     height: 24px;
-}
-
-.logo-header-img path {
-    fill: #000;
     mix-blend-mode: difference;
 }
+
 
 
 /* Device-specific display classes */
