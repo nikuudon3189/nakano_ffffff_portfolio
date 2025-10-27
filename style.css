@@ -222,7 +222,7 @@ img {
 .logo-container__header__svg {
     display: block;
     width: auto;
-    height: 24px;
+    height: 14px;
     fill: #fff;
     mix-blend-mode: difference;
 }
