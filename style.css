@@ -282,7 +282,7 @@ img {
     gap: 16px;
     max-width: calc(100% - 48px);
     overflow: hidden;
-    padding: 16px;
+    padding: 16px 0px;
     background-color: #343434;
     border-radius: 8px;
     color: #fff;
@@ -296,6 +296,7 @@ img {
 .menu.is-open .menu--hidden {
     display: flex;
     opacity: 1;
+    padding: 0 16px;
 }
 
 .menu.is-close {
@@ -308,7 +309,7 @@ img {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    gap: 16px;
+    gap: 0px;
 }
 
 .menu--visible__announcement__text {
@@ -358,7 +359,7 @@ img {
     background-color: #424242;
     border: 1px solid #5E5E5E;
     margin-top: -12px;
-    margin-right: -12px;
+    margin-right: 4px;
     position: relative;
     cursor: pointer;
 }

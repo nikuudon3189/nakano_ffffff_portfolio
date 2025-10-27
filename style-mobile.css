@@ -50,11 +50,8 @@
         display: block;
     }
 
-    img.logo-container__header__svg {
-        width: 40vw;
-        min-width: 160px;
-        max-width: 400px;
-        height: auto;
+    .logo-container__header__svg {
+        height: 12px;
     }
 
     .header {
@@ -131,7 +128,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         gap: 12px;
-        margin-top: 40px;
+        margin-top: 136px;
         margin-bottom: 40px;
     }
 
@@ -219,6 +216,10 @@
 
     .page-profile {
         padding: 80px 16px 0 16px;
+    }
+
+    .profile-section {
+        padding-top: 136px;
     }
 
     .profile-section__title__main {
