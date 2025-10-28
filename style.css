@@ -268,7 +268,6 @@ img {
 
 .menu {
     width: 480px;
-    height: 58px;
     transition: all 0.3s cubic-bezier(0.3, 1, 0.3, 1);
     position: fixed;
     bottom: 24px;
