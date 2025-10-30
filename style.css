@@ -189,6 +189,71 @@ img {
     display: block;
 }
 
+
+/* ============================================
+   Loading Screen
+   ============================================ */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 80px);
+    height: calc(100vh - 80px);
+    margin: 40px;
+    border-radius: 8px;
+    background-color: #343434;
+    z-index: 9999;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+    box-shadow: 0 0 0 40px #f4f4f4;
+}
+
+.loading-screen.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loading-screen__progress {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-family: var(--font-sans-jp);
+    font-size: var(--text-4);
+    font-style: normal;
+    font-weight: 300;
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-normal);
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.loading-screen__progress.is-fading-out {
+    opacity: 0;
+}
+
+.loading-screen__progress.is-fading-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
 /* ============================================
    Page Layout
    ============================================ */
@@ -1648,5 +1713,6 @@ img {
 .black-grid-overlay {
     background-color: #1F1F20 !important;
 }
+
 
 /*# sourceMappingURL=style.css.map */
