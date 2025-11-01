@@ -193,23 +193,74 @@ img {
 /* ============================================
    Loading Screen
    ============================================ */
-.loading-screen {
+.loading-background {
     position: fixed;
     top: 0;
     left: 0;
-    width: calc(100vw - 80px);
-    height: calc(100vh - 80px);
-    margin: 40px;
-    border-radius: 8px;
-    background-color: #343434;
-    z-index: 9999;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f5f5f5;
+    z-index: 9998;
     opacity: 1;
     visibility: visible;
     transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-    box-shadow: 0 0 0 40px #f4f4f4;
+}
+
+.loading-background.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loading-screen {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100vw - 48px);
+    height: calc(100vh - 48px);
+    margin: 24px;
+    border-radius: 8px;
+    background-color: #343434;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out, width 0.5s cubic-bezier(0.3, 1, 0.3, 1), height 0.5s cubic-bezier(0.3, 1, 0.3, 1), top 0.5s cubic-bezier(0.3, 1, 0.3, 1), bottom 0.5s cubic-bezier(0.3, 1, 0.3, 1), left 0.5s cubic-bezier(0.3, 1, 0.3, 1), margin 0.5s cubic-bezier(0.3, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.3, 1, 0.3, 1), transform 0.5s cubic-bezier(0.3, 1, 0.3, 1);
+
+}
+
+/* ローディング画面の縮小アニメーション */
+@keyframes loadingShrink {
+    0% {
+        width: calc(100vw - 80px);
+        height: calc(100vh - 80px);
+        left: 0;
+        margin: 40px;
+
+    }
+
+    33% {
+        width: calc(100vw - 80px);
+        height: 56px;
+    }
+
+    66% {
+        width: 480px;
+        height: 56px;
+    }
+
+    100% {
+        width: 480px;
+        height: 56px;
+        bottom: 24px;
+        left: 50%;
+        margin: 0;
+
+        transform: translateX(-50%);
+    }
+}
+
+.loading-screen.is-shrinking {
+    animation: loadingShrink 1.5s cubic-bezier(0.3, 1, 0.3, 1) forwards;
 }
 
 .loading-screen.is-hidden {

@@ -1,5 +1,6 @@
 // ローディング画面の進捗更新と非表示処理
 (function () {
+    const loadingBackground = document.querySelector('.loading-background');
     const loadingScreen = document.querySelector('.loading-screen');
     const progressText = document.querySelector('.loading-screen__progress');
 
@@ -8,11 +9,15 @@
     }
 
     // 設定
-    const PROGRESS_ANIMATION_TIME = 1500; // 進捗アニメーション時間（ミリ秒）1.5秒
-    const TEXT_CHANGE_DELAY = 500; // 100%到達からテキスト変更までの時間（ミリ秒）0.5秒
-    const TEXT_DISPLAY_DURATION = 500; // テキスト変更後から非表示までの時間（ミリ秒）0.5秒
+    const PROGRESS_ANIMATION_TIME = 1000; // 0から100%になるまでの時間（ミリ秒）3秒
+    const TEXT_CHANGE_DELAY = 300; // 100%到達からテキスト変更までの時間（ミリ秒）0.5秒
+    const SHRINK_START_DELAY = 1000; // テキスト変更後から縮み開始までの時間（ミリ秒）
+    const SHRINK_DISPLAY_DURATION = 500; // 縮み開始後から非表示までの時間（ミリ秒）1秒
+    const FADE_OUT_DURATION = 300; // フェードアウト時間（ミリ秒）
+    const HIDE_DELAY = 600; // 非表示処理の遅延時間（ミリ秒）
     let assetsLoaded = false; // アセット読み込み完了フラグ
     let textChangedTime = null; // テキスト変更時刻
+    let shrinkStartTime = null; // 縮み開始時刻
     let progressAnimationId = null; // 進捗アニメーションのID
 
     // 進捗を更新する関数
@@ -22,8 +27,19 @@
         }
     }
 
+    // ローディング画面を縮小・移動させる関数
+    function shrinkAndMoveLoadingScreen() {
+        if (loadingScreen && !loadingScreen.classList.contains('is-shrinking')) {
+            loadingScreen.classList.add('is-shrinking');
+            shrinkStartTime = Date.now(); // 縮み開始時刻を記録
+        }
+    }
+
     // ローディング画面を非表示にする関数
     function hideLoadingScreen() {
+        if (loadingBackground && !loadingBackground.classList.contains('is-hidden')) {
+            loadingBackground.classList.add('is-hidden');
+        }
         if (loadingScreen && !loadingScreen.classList.contains('is-hidden')) {
             loadingScreen.classList.add('is-hidden');
             // アニメーション完了後にDOMから削除（オプション）
@@ -31,27 +47,27 @@
                 if (loadingScreen.parentNode) {
                     loadingScreen.parentNode.removeChild(loadingScreen);
                 }
-            }, 500); // フェードアウト時間と同じ
+            }, FADE_OUT_DURATION); // フェードアウト時間と同じ
         }
     }
 
     // ローディング画面を非表示にするかチェック
     function checkCanHide() {
-        // テキスト変更後0.5秒経過 && アセット読み込み完了 の2つを満たしたら非表示
-        if (assetsLoaded && textChangedTime !== null) {
-            const textElapsed = Date.now() - textChangedTime;
-            if (textElapsed >= TEXT_DISPLAY_DURATION) {
-                // テキスト変更後0.5秒経過している場合、すぐに非表示
+        // 縮み開始後1.5秒経過 && アセット読み込み完了 の2つを満たしたら非表示
+        if (assetsLoaded && shrinkStartTime !== null) {
+            const shrinkElapsed = Date.now() - shrinkStartTime;
+            if (shrinkElapsed >= SHRINK_DISPLAY_DURATION) {
+                // 縮み開始後1.5秒経過している場合、すぐに非表示
                 setTimeout(() => {
                     hideLoadingScreen();
-                }, 300);
+                }, HIDE_DELAY);
                 return true;
             } else {
-                // まだ0.5秒経過していない場合、残り時間待つ
-                const remainingTime = TEXT_DISPLAY_DURATION - textElapsed;
+                // まだ1.5秒経過していない場合、残り時間待つ
+                const remainingTime = SHRINK_DISPLAY_DURATION - shrinkElapsed;
                 setTimeout(() => {
                     hideLoadingScreen();
-                }, remainingTime + 300);
+                }, remainingTime + HIDE_DELAY);
                 return true;
             }
         }
@@ -92,6 +108,17 @@
                                 checkCanHide();
                             }
                         }, 500); // フェードアウト時間
+
+                        // SHRINK_START_DELAY後に縮み開始と同時にテキストフェードアウト
+                        setTimeout(() => {
+                            if (progressText) {
+                                progressText.classList.remove('is-fading-in');
+                                progressText.classList.add('is-fading-out');
+                            }
+                            shrinkAndMoveLoadingScreen();
+                            // 縮み開始後、アセットも読み込み完了していれば非表示チェック
+                            checkCanHide();
+                        }, 500 + SHRINK_START_DELAY);
                     }
                 }, TEXT_CHANGE_DELAY);
             }
@@ -140,12 +167,20 @@
                                 progressText.classList.remove('is-fading-out');
                                 progressText.classList.add('is-fading-in');
                                 textChangedTime = Date.now();
-                                // テキスト変更後0.5秒待ってから非表示
-                                setTimeout(() => {
-                                    hideLoadingScreen();
-                                }, TEXT_DISPLAY_DURATION + 300);
                             }
                         }, 500); // フェードアウト時間
+
+                        // SHRINK_START_DELAY後に縮み開始と同時にテキストフェードアウト、その後SHRINK_DISPLAY_DURATION待って非表示
+                        setTimeout(() => {
+                            if (progressText) {
+                                progressText.classList.remove('is-fading-in');
+                                progressText.classList.add('is-fading-out');
+                            }
+                            shrinkAndMoveLoadingScreen();
+                            setTimeout(() => {
+                                hideLoadingScreen();
+                            }, SHRINK_DISPLAY_DURATION + HIDE_DELAY);
+                        }, 500 + SHRINK_START_DELAY);
                     }
                 }, TEXT_CHANGE_DELAY);
             } else {

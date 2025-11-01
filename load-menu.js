@@ -1,17 +1,20 @@
 // メニューを読み込む関数
 function loadMenu() {
-    fetch('menu.html')
-        .then(response => response.text())
-        .then(data => {
-            // bodyの最後にメニューを挿入
-            document.body.insertAdjacentHTML('beforeend', data);
+    const menuContainer = document.getElementById('menu-container');
 
-            // メニューのイベントリスナーを設定
-            setupMenuEventListeners();
-        })
-        .catch(error => {
-            console.error('メニューの読み込みに失敗しました:', error);
-        });
+    if (menuContainer) {
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                menuContainer.innerHTML = data;
+
+                // メニューのイベントリスナーを設定
+                setupMenuEventListeners();
+            })
+            .catch(error => {
+                console.error('メニューの読み込みに失敗しました:', error);
+            });
+    }
 }
 
 // メニューのイベントリスナーを設定する関数
