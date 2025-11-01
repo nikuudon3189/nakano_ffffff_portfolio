@@ -214,11 +214,11 @@ img {
 
 .loading-screen {
     position: fixed;
-    bottom: 0;
-    left: 0;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
     width: calc(100vw - 48px);
     height: calc(100vh - 48px);
-    margin: 24px;
     border-radius: 8px;
     background-color: #343434;
     z-index: 9999;
@@ -231,15 +231,13 @@ img {
 /* ローディング画面の縮小アニメーション */
 @keyframes loadingShrink {
     0% {
-        width: calc(100vw - 80px);
-        height: calc(100vh - 80px);
-        left: 0;
-        margin: 40px;
+        width: calc(100vw - 48px);
+        height: calc(100vh - 48px);
 
     }
 
     33% {
-        width: calc(100vw - 80px);
+        width: calc(100vw - 48px);
         height: 56px;
     }
 
@@ -252,10 +250,6 @@ img {
         width: 480px;
         height: 56px;
         bottom: 24px;
-        left: 50%;
-        margin: 0;
-
-        transform: translateX(-50%);
     }
 }
 
