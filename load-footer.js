@@ -1,12 +1,12 @@
 // Footer loader
-document.addEventListener('DOMContentLoaded', function () {
+function loadFooter() {
     const footerContainer = document.getElementById('footer-container');
 
     if (footerContainer) {
         fetch('footer.html')
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Footer not found');
+                    throw new Error('Footer not found (' + response.status + ')');
                 }
                 return response.text();
             })
@@ -23,7 +23,13 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .catch(error => {
                 console.error('Error loading footer:', error);
-                // フォールバック: エラー時は何も表示しない
+                footerContainer.innerHTML = '<p style="color:red; padding:20px;">フッターの読み込みに失敗しました。サーバー経由でアクセスしているか確認してください。<br>Error: ' + error.message + '</p>';
             });
     }
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadFooter);
+} else {
+    loadFooter();
+}

@@ -363,14 +363,13 @@ img {
     backdrop-filter: blur(8px);
     opacity: 0;
     visibility: hidden;
-    z-index: 999;
     transition-property: opacity, visibility;
     transition-duration: 0.2s;
     transition-timing-function: ease;
     transition-delay: 0.2s;
 }
 
-.menu.is-open~.menu--glass-overlay {
+body:has(.menu.is-open) .menu--glass-overlay {
     opacity: 1;
     visibility: visible;
 }
@@ -395,6 +394,8 @@ img {
     border-radius: 8px;
     color: #fff;
     border: 1px solid #666;
+    z-index: 100;
+    /* フッターより手前に表示 */
 }
 
 .menu.is-open {
@@ -1542,136 +1543,152 @@ img {
 /* フッター */
 
 .footer-wrapper {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: auto;
-    grid-column-gap: 24px;
-    grid-row-gap: 40px;
+    background-color: #1F1F20;
+    color: #fff;
+    padding: 80px 48px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
     width: calc(100% + 96px);
     margin: 0 -48px -100px;
-    padding: 80px 48px;
-    background-color: #e6e6e6;
-    height: calc(100% + 100px);
+    height: auto;
+    position: relative;
+    z-index: 10;
 }
 
-
-.footer__header {
-    grid-column: 1/-1;
-    grid-row: auto;
-    border-bottom: 1px solid #D0D0D0;
-    padding-bottom: 40px;
-    text-align: left;
+/* 上段：メインコンテンツ */
+.footer__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
 }
 
-
-.footer__header a {
-    display: inline-block;
+/* 左側：ナビゲーション */
+.footer__nav {
+    display: flex;
+    gap: 120px;
 }
 
-.footer__header a img {
-    width: auto;
-    height: 40px;
-    mix-blend-mode: multiply;
+.footer__nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* gapを調整（titleのマージンを含めるため少し詰める） */
+    width: fit-content;
+    /* 幅を中身（一番長い要素）に合わせる */
 }
 
-
-
-.footer__links {
-    display: grid;
-    grid-auto-rows: auto;
-    grid-column-gap: 24px;
-    grid-row-gap: 0px;
-    grid-column: 1/4;
-    grid-row: 2/3;
-    grid-auto-rows: auto;
-}
-
-.footer__links a {
-    margin-top: 16px;
+.footer__nav-title {
     font-family: var(--font-serif-en);
-    font-style: normal;
+    font-size: var(--text-3);
+    opacity: 0.7;
     font-weight: 400;
     line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-normal);
-    font-size: var(--text-4);
+    padding-bottom: 8px;
+    /* 文字と線の間隔 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    /* 罫線追加 */
+    width: 100%;
+    /* 横幅いっぱいに線を引く */
+    margin-bottom: 8px;
+    /* 線とリストの間隔調整 */
 }
 
-
-.footer__contact {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-column-gap: 24px;
-    grid-row-gap: 0px;
-    grid-column: 4/-1;
-    grid-row: 2/3;
-    align-items: end;
+.footer__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-
-.footer__contact__title {
+.footer__nav-list a {
     font-family: var(--font-serif-en);
-    font-style: normal;
-    font-weight: 400;
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-normal);
-    font-size: var(--text-4);
-}
-
-.footer__contact__mail {
-    margin-top: 8px;
-    font-family: var(--font-serif-en);
-    font-style: normal;
-    font-weight: 400;
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-normal);
-    font-size: var(--text-6);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-    text-decoration-color: #666;
-}
-
-
-.footer__bottom {
-    grid-column: 1/-1;
-    grid-row: 3/4;
-    border-top: 1px solid #D0D0D0;
-    padding-top: 32px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: auto;
-    grid-column-gap: 24px;
-    grid-row-gap: 0px;
-
-    font-family: var(--font-serif-en);
-    font-style: normal;
-    font-weight: 400;
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-normal);
     font-size: var(--text-2);
+    color: #fff;
+    text-decoration: none;
+    opacity: 1;
+    transition: opacity 0.3s;
+    line-height: var(--leading-tight);
 }
 
-.footer__bottom__copyright {
-    grid-column: 1/4;
-    grid-row: 1/2;
+.footer__nav-list a:hover {
+    opacity: 0.6;
 }
 
-
-.footer__bottom__sns {
-    grid-column: 4/-1;
-    grid-row: 1/2;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 24px;
-    grid-row-gap: 0px;
+/* 右側：情報エリア */
+.footer__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* nav-listの高さに応じて広がるようにする */
+    min-height: 400px;
 }
 
-.footer__sns__x {
-    grid-column: 1/2;
+/* ロゴ */
+.footer__logo a {
+    display: block;
 }
 
-.footer__sns__instagram {
-    grid-column: 2/3;
+.footer__logo img {
+    height: 12px;
+    width: auto;
+    /* ロゴSVG自体を白くしたのでfilterは不要 */
+}
+
+/* コンタクト */
+.footer__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.footer__contact-label {
+    font-family: var(--font-serif-en);
+    font-size: var(--text-3);
+    opacity: 0.7;
+    line-height: var(--leading-tight);
+}
+
+.footer__contact-mail {
+    font-family: var(--font-serif-en);
+    font-size: var(--text-6);
+    color: #fff;
+    line-height: var(--leading-tight);
+}
+
+/* 下段：ボトムバー */
+.footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer__copyright,
+.footer__sns a {
+    font-family: var(--font-serif-en);
+    font-size: var(--text-2);
+    color: #fff;
+    opacity: 0.7;
+    text-decoration: none;
+    line-height: var(--leading-tight);
+    transition: opacity 0.3s;
+    /* トランジションを追加して滑らかに */
+}
+
+.footer__sns a:hover {
+    opacity: 0.4;
+    /* ホバー時に半透明に */
+}
+
+.footer__sns {
+    display: flex;
+    gap: 24px;
 }
 
 

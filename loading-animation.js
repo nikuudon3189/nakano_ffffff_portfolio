@@ -3,10 +3,24 @@
     const loadingBackground = document.querySelector('.loading-background');
     const loadingScreen = document.querySelector('.loading-screen');
     const progressText = document.querySelector('.loading-screen__progress');
+    const SESSION_KEY = 'site_visited'; // セッションストレージのキー
+
+    // 訪問済みかチェック
+    const isVisited = sessionStorage.getItem(SESSION_KEY);
 
     if (!loadingScreen || !progressText) {
         return; // 要素が存在しない場合は処理を終了
     }
+
+    // 既に訪問済みならローディング画面を即座に非表示にする
+    if (isVisited) {
+        if (loadingBackground) loadingBackground.style.display = 'none';
+        if (loadingScreen) loadingScreen.style.display = 'none';
+        return;
+    }
+
+    // 初回訪問の処理開始（フラグを保存）
+    sessionStorage.setItem(SESSION_KEY, 'true');
 
     // 設定
     const PROGRESS_ANIMATION_TIME = 1000; // 0から100%になるまでの時間（ミリ秒）3秒
