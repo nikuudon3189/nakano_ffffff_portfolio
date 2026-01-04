@@ -63,6 +63,18 @@
         overflow: hidden;
     }
 
+    .menu--hidden__contact {
+        width: 100%;
+        padding: 0 16px 0 0;
+    }
+
+    .menu--hidden__contact__mail {
+        font-size: var(--text-4);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     .contact {
         display: flex;
         flex-direction: column;
