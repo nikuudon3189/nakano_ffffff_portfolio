@@ -367,6 +367,8 @@ img {
     transition-duration: 0.2s;
     transition-timing-function: ease;
     transition-delay: 0.2s;
+    z-index: 50;
+    /* フッターより上、メニューより下 */
 }
 
 body:has(.menu.is-open) .menu--glass-overlay {
