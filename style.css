@@ -424,6 +424,8 @@ body:has(.menu.is-open) .menu--glass-overlay {
 }
 
 .menu--visible__announcement__text {
+    width: 100%;
+
     flex-grow: 1;
     overflow: hidden;
     margin-top: -8px;
@@ -726,7 +728,8 @@ body:has(.menu.is-open) .menu--glass-overlay {
 }
 
 .home__works__item--size-l .home__works__img {
-    height: 700px;
+    aspect-ratio: 1 / 1.12;
+    height: auto;
 }
 
 .home__works__item--size-s {
@@ -734,7 +737,32 @@ body:has(.menu.is-open) .menu--glass-overlay {
 }
 
 .home__works__item--size-s .home__works__img {
-    height: 350px;
+    aspect-ratio: 1 / 1.15;
+    height: auto;
+}
+
+/* スペーサーとアイテムをラップするコンテナ */
+.home__works__container {
+    display: flex;
+    flex-direction: column;
+    width: calc(25% - 18px);
+}
+
+.home__works__container--size-s {
+    width: calc(25% - 18px);
+}
+
+.home__works__container .home__works__item {
+    width: 100%;
+}
+
+/* 透明なスペーサー（tamayaの上に配置） */
+.home__works__spacer {
+    width: 100%;
+    aspect-ratio: 1 / 1.15;
+    height: auto;
+    pointer-events: none;
+    flex-shrink: 0;
 }
 
 /* 2列目の要素（3番目、4番目）は上にマージン */
@@ -748,11 +776,11 @@ body:has(.menu.is-open) .menu--glass-overlay {
 }
 
 .home__works__item:nth-of-type(3) {
-    margin-top: 350px;
+    margin-top: 0px;
 }
 
 .home__works__item:nth-of-type(4) {
-    margin-top: 350px;
+    margin-top: 0px;
 }
 
 .home__works__item:nth-of-type(5) {
@@ -764,7 +792,7 @@ body:has(.menu.is-open) .menu--glass-overlay {
 }
 
 .home__works__item:nth-of-type(7) {
-    margin-top: 350px;
+    margin-top: 0px;
 }
 
 .home__works__item:nth-of-type(8) {
@@ -784,7 +812,7 @@ body:has(.menu.is-open) .menu--glass-overlay {
 }
 
 .home__works__item:nth-of-type(12) {
-    margin-top: 350px;
+    margin-top: 0px;
 }
 
 .private-works {
@@ -1221,9 +1249,8 @@ body:has(.menu.is-open) .menu--glass-overlay {
 }
 
 .profile-section__price__osaeru {
-    margin-top: 104px;
-    border-top: 1px solid #424242;
-    padding-top: 24px;
+    margin-top: 0px;
+    padding-top: 0px;
     display: grid;
     grid-column: 2/-1;
     grid-template-columns: repeat(5, 1fr);

@@ -61,6 +61,14 @@
     .menu--visible__announcement__text {
         flex-grow: 1;
         overflow: hidden;
+        min-width: 0;
+        width: 100%;
+    }
+
+    .menu--visible__announcement__text p {
+        white-space: nowrap;
+        width: 100%;
+        min-width: max-content;
     }
 
     .menu--hidden__contact {
@@ -90,6 +98,23 @@
 
     .logo-container__header__svg {
         height: 12px;
+    }
+
+    /* ローディング画面の進捗テキスト（スマホ） */
+    .loading-screen__progress {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-family: var(--font-sans-jp);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: var(--leading-normal);
+        letter-spacing: var(--tracking-normal);
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
     }
 
     .header {
@@ -147,6 +172,7 @@
         font-size: var(--text-5);
         height: auto;
         width: 100%;
+        white-space: nowrap;
     }
 
     .main-copy__text[lang=en] {
@@ -155,6 +181,7 @@
         height: auto;
         width: 100%;
         line-height: var(--leading-normal);
+        white-space: nowrap;
     }
 
     .main-copy__text {
@@ -195,6 +222,40 @@
 
     .home__works__item--size-l .home__works__img {
         height: 440px;
+    }
+
+    /* スペーサーを表示（2カラムレイアウト用） */
+    .home__works__spacer {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1 / 1.15;
+        height: auto;
+        pointer-events: none;
+        flex-shrink: 0;
+    }
+
+    .home__works__container:nth-of-type(2) {
+        display: none;
+    }
+
+    /* ashmeaのコンテナ内のスペーサーの高さを0に */
+    .home__works__container:nth-of-type(2) .home__works__spacer {
+        height: 0 !important;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        aspect-ratio: unset;
+    }
+
+    /* コンテナを2カラムレイアウト用に設定 */
+    .home__works__container {
+        width: calc(50% - 6px);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home__works__container .home__works__item {
+        width: 100%;
     }
 
 
