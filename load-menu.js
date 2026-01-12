@@ -8,8 +8,19 @@ function loadMenu() {
             .then(data => {
                 menuContainer.innerHTML = data;
 
+                // アナウンスメントテキストを設定
+                const announcementTextElement = menuContainer.querySelector('.menu--visible__announcement__text p');
+                if (announcementTextElement && typeof ANNOUNCEMENT_TEXT !== 'undefined') {
+                    announcementTextElement.textContent = ANNOUNCEMENT_TEXT;
+                }
+
                 // メニューのイベントリスナーを設定
                 setupMenuEventListeners();
+
+                // メニュー読み込み完了後にtext-fit機能を実行
+                if (typeof resizeTextToFit === 'function') {
+                    resizeTextToFit();
+                }
             })
             .catch(error => {
                 console.error('メニューの読み込みに失敗しました:', error);

@@ -81,6 +81,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin-top: 4px;
     }
 
     .contact {
@@ -102,6 +103,7 @@
 
     /* ローディング画面の進捗テキスト（スマホ） */
     .loading-screen__progress {
+        width: 80%;
         position: absolute;
         top: 50%;
         left: 50%;
