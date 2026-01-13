@@ -9,7 +9,7 @@ function resizeTextToFit() {
             // テキストの文字数を取得
             const textLength = footerMail.textContent.length;
             // 画面幅のNN%を目標幅として設定
-            const targetWidth = window.innerWidth * 1.3;
+            const targetWidth = window.innerWidth * 1.6;
             // 1文字あたりのフォントサイズを計算（目標幅÷文字数）
             const fontSize = targetWidth / textLength;
             // 計算したフォントサイズを要素に適用
