@@ -25,7 +25,7 @@
     // 設定
     const PROGRESS_ANIMATION_TIME = 1000; // 0から100%になるまでの時間（ミリ秒）3秒
     const TEXT_CHANGE_DELAY = 300; // 100%到達からテキスト変更までの時間（ミリ秒）0.5秒
-    const SHRINK_START_DELAY = 10000000; // テキスト変更後から縮み開始までの時間（ミリ秒）
+    const SHRINK_START_DELAY = 1000; // テキスト変更後から縮み開始までの時間（ミリ秒）
     const SHRINK_DISPLAY_DURATION = 500; // 縮み開始後から非表示までの時間（ミリ秒）1秒
     const FADE_OUT_DURATION = 300; // フェードアウト時間（ミリ秒）
     const HIDE_DELAY = 600; // 非表示処理の遅延時間（ミリ秒）
