@@ -343,13 +343,15 @@ img {
 
 
 
-/* Device-specific display classes */
-.pc {
-    display: block;
-}
+/* Device-specific display classes（PC画面幅のときのみ .pc 表示） */
+@media screen and (min-width: 810px) {
+    .pc {
+        display: block;
+    }
 
-.sp {
-    display: none;
+    .sp {
+        display: none;
+    }
 }
 
 
@@ -1733,28 +1735,6 @@ body:has(.menu.is-open) .menu--glass-overlay {
 
 
 /* RESPONSIVE STYLES============================================ */
-
-/* Base styles for .pc and .sp classes */
-.pc {
-    display: block;
-}
-
-.sp {
-    display: none;
-}
-
-
-/* Tablet Styles (min-width: 810px) */
-@media screen and (min-width: 810px) {
-    .pc {
-        display: block;
-    }
-
-    .sp {
-        display: none;
-    }
-}
-
 
 /* Large Tablet Styles (max-width: 1024px) */
 @media screen and (max-width: 1024px) {
