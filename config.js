@@ -1,3 +1,3 @@
 // アナウンスメントテキストの一元管理
-const ANNOUNCEMENT_TEXT = 'あああ2025年4月以降のリクエストを受け付けています。';
+const ANNOUNCEMENT_TEXT = '2026年5月以降のリクエストを受け付けています。';
 
