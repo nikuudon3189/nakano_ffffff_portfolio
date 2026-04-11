@@ -1,6 +1,17 @@
+// 初期表示のメニュー高さを測り、開閉アニメーションの折りたたみ高さと揃える
+function syncMenuCollapsedHeight() {
+    const menu = document.querySelector('.menu');
+    if (!menu || menu.classList.contains('is-open')) return;
+    document.documentElement.style.setProperty(
+        '--menu-collapsed-height',
+        `${menu.offsetHeight}px`
+    );
+}
+
 // メニューを読み込む関数
 function loadMenu() {
     const menuContainer = document.getElementById('menu-container');
+    const defaultAnnouncementText = '2026年5月以降のリクエストを受け付けています。';
 
     if (menuContainer) {
         fetch('menu.html')
@@ -10,8 +21,11 @@ function loadMenu() {
 
                 // アナウンスメントテキストを設定
                 const announcementTextElement = menuContainer.querySelector('.menu--visible__announcement__text p');
-                if (announcementTextElement && typeof ANNOUNCEMENT_TEXT !== 'undefined') {
-                    announcementTextElement.textContent = ANNOUNCEMENT_TEXT;
+                if (announcementTextElement) {
+                    const announcementText = typeof ANNOUNCEMENT_TEXT !== 'undefined'
+                        ? ANNOUNCEMENT_TEXT
+                        : defaultAnnouncementText;
+                    announcementTextElement.textContent = announcementText;
                 }
 
                 // メニューのイベントリスナーを設定
@@ -21,6 +35,9 @@ function loadMenu() {
                 if (typeof resizeTextToFit === 'function') {
                     resizeTextToFit();
                 }
+
+                syncMenuCollapsedHeight();
+                window.addEventListener('resize', syncMenuCollapsedHeight);
             })
             .catch(error => {
                 console.error('メニューの読み込みに失敗しました:', error);

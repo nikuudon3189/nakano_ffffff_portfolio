@@ -34,6 +34,9 @@
     --breakpoint-tablet: 1024px;
     --breakpoint-mobile: 809px;
 
+    /* メニュー折りたたみ時の高さ（load-menu.js で初期表示後に実測して上書き） */
+    --menu-collapsed-height: 58px;
+
     /* For future reference: Use these values to update media queries */
     /* Tablet: 1024px */
     /* Mobile: 809px */
@@ -104,6 +107,24 @@
     /* フォント読み込み最適化 */
 }
 
+@font-face {
+    font-family: "Konshoku";
+    src: url("fonts/ShipporiMincho-Regular.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    unicode-range: U+3000-303F, U+3040-309F, U+30A0-30FF;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Konshoku";
+    src: url("fonts/IBMPlexSansJP-Regular.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    unicode-range: U+4E00-9FAF, U+3400-4DBF;
+    font-display: swap;
+}
+
 /* ============================================
    Utility Classes - Typography
    ============================================ */
@@ -119,12 +140,12 @@
 @keyframes menuOpen {
     0% {
         width: 480px;
-        height: 58px;
+        height: var(--menu-collapsed-height);
     }
 
     50% {
         width: 640px;
-        height: 58px;
+        height: var(--menu-collapsed-height);
     }
 
     100% {
@@ -141,12 +162,12 @@
 
     50% {
         width: 640px;
-        height: 58px;
+        height: var(--menu-collapsed-height);
     }
 
     100% {
         width: 480px;
-        height: 58px;
+        height: var(--menu-collapsed-height);
     }
 }
 
@@ -363,7 +384,7 @@ img {
     width: 100vw;
     height: 100vh;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
     opacity: 0;
     visibility: hidden;
     transition-property: opacity, visibility;
@@ -382,6 +403,7 @@ body:has(.menu.is-open) .menu--glass-overlay {
 
 .menu {
     width: 480px;
+    box-sizing: border-box;
     transition: all 0.3s cubic-bezier(0.3, 1, 0.3, 1);
     position: fixed;
     bottom: 24px;
@@ -428,14 +450,16 @@ body:has(.menu.is-open) .menu--glass-overlay {
 
 .menu--visible__announcement__text {
     width: 100%;
-
+    display: flex;
+    align-items: center;
     flex-grow: 1;
     overflow: hidden;
-    margin-top: -8px;
     text-overflow: clip;
+    transform: translateY(-8px);
 }
 
 .menu--visible__announcement__text p {
+    margin: 0;
     font-family: var(--font-sans-jp);
     font-size: var(--text-4);
     font-style: normal;
@@ -629,10 +653,14 @@ body:has(.menu.is-open) .menu--glass-overlay {
     margin-top: 32px;
 }
 
+.main-copy__content-en .main-copy__text[lang=en] {
+    font-size: 10px;
+}
+
 .main-copy__text[lang=ja] {
     margin-top: 4px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.4;
     letter-spacing: var(--tracking-normal);
     font-size: var(--text-6);
@@ -916,6 +944,7 @@ body:has(.menu.is-open) .menu--glass-overlay {
 
 .profile-section__title p[lang=ja] {
     font-family: "Konshoku";
+    font-weight: 300;
 }
 
 .profile-section__title p[lang=en] {
@@ -985,7 +1014,7 @@ body:has(.menu.is-open) .menu--glass-overlay {
     font-weight: 400;
     line-height: var(--leading-normal);
     letter-spacing: var(--tracking-normal);
-    font-size: var(--text-3);
+    font-size: 10px;
 }
 
 .profile-section__profile__gallary {
@@ -1049,7 +1078,7 @@ body:has(.menu.is-open) .menu--glass-overlay {
 
 .profile-section__feature__item__text p[lang=ja] {
     width: 100%;
-    font-family: var(--font-mincho);
+    font-family: var(--font-sans-jp);
     font-size: var(--text-3);
     font-style: normal;
     font-weight: 300;
@@ -1099,7 +1128,7 @@ body:has(.menu.is-open) .menu--glass-overlay {
 
 .profile-section__flow__intro p[lang=ja] {
     width: 100%;
-    font-family: var(--font-mincho);
+    font-family: var(--font-sans-jp);
     font-size: var(--text-3);
     font-style: normal;
     font-weight: 300;
@@ -1174,7 +1203,7 @@ body:has(.menu.is-open) .menu--glass-overlay {
 
 .profile-section__flow__item__content p[lang=ja] {
     width: 100%;
-    font-family: var(--font-mincho);
+    font-family: var(--font-sans-jp);
     font-size: var(--text-3);
     font-style: normal;
     font-weight: 300;
@@ -1386,7 +1415,7 @@ body:has(.menu.is-open) .menu--glass-overlay {
     font-family: var(--font-sans-jp);
     font-size: var(--text-2);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-normal);
 }
@@ -1423,7 +1452,7 @@ body:has(.menu.is-open) .menu--glass-overlay {
 }
 
 .page-work__overview__paragraph p[lang=ja] {
-    font-family: var(--font-mincho);
+    font-family: var(--font-sans-jp);
     font-size: var(--text-3);
     font-style: normal;
     font-weight: 300;
@@ -1518,7 +1547,7 @@ body:has(.menu.is-open) .menu--glass-overlay {
 }
 
 .page-work__contents__grid-text[lang=ja] {
-    font-family: var(--font-mincho);
+    font-family: var(--font-sans-jp);
     font-size: var(--text-3);
     font-style: normal;
     font-weight: 300;

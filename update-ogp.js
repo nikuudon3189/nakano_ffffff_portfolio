@@ -5,7 +5,7 @@ const path = require('path');
 // ワークページのファイル一覧
 const workFiles = [
     'works-ashmea.html',
-    'works-bathy.html',
+    'works-bathycaphe.html',
     'works-fuyuu.html',
     'works-kakapo.html',
     'works-nayuta.html',

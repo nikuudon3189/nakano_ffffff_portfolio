@@ -15,7 +15,7 @@ const htmlFiles = [
     'index.html',
     'profile.html',
     'works-ashmea.html',
-    'works-bathy.html',
+    'works-bathycaphe.html',
     'works-fuyuu.html',
     'works-kakapo.html',
     'works-nayuta.html',
